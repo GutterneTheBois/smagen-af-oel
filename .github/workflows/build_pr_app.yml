@@ -27,6 +27,16 @@ jobs:
       - uses: actions/setup-node@v3.2.0
         with:
           node-version: ${{ env.node-version }}
+          
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+            cmd: install
+            
+      - name: Build App
+        uses: borales/actions-yarn@v4
+        with:
+            cmd: build
 
       - run: npm ci
 
