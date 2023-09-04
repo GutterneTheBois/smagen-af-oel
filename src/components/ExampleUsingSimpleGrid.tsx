@@ -1,23 +1,23 @@
-import { ExampleBox, ExampleButton, ExampleSimpleGrid } from "@/barrels";
+import { Box, Button, SimpleGrid } from "@/client-components";
 
 const ExampleUsingSimpleGrid = () => {
 	return (
 		<>
-			<ExampleSimpleGrid columns={5} centerItems width={"40vw"}>
-				<ExampleBox>
-					<ExampleButton>Item 1</ExampleButton>
-				</ExampleBox>
+			<SimpleGrid columns={5} centerItems width={"40vw"}>
+				<Box>
+					<Button>Item 1</Button>
+				</Box>
 
-				<ExampleBox justifyContent="center" alignItems="center">
-					<ExampleButton>Item 2</ExampleButton>
-				</ExampleBox>
+				<Box justifyContent="center" alignItems="center">
+					<Button>Item 2</Button>
+				</Box>
 
-				<ExampleBox justifyContent="center" alignItems="center">
-					<ExampleButton>Item 3</ExampleButton>
-				</ExampleBox>
+				<Box justifyContent="center" alignItems="center">
+					<Button>Item 3</Button>
+				</Box>
 
-				<ExampleButton>Item 4</ExampleButton>
-			</ExampleSimpleGrid>
+				<Button>Item 4</Button>
+			</SimpleGrid>
 		</>
 	);
 };

@@ -1,5 +1,5 @@
 "use client";
-import { ExampleButton } from "@/barrels";
+import { Button } from "@/client-components";
 import React, { ChangeEvent, FC, useState } from "react";
 import { useDb } from "@/services";
 import styles from "./request.module.scss";
@@ -42,7 +42,7 @@ const ExampleSendPost: FC = (): JSX.Element => {
 					onChange={onChange}
 					placeholder="Email"
 				/>
-				<ExampleButton
+				<Button
 					backgroundColor="#dd0b69"
 					onClick={async () => {
 						createExampleUser(input.name, input.email);
@@ -50,7 +50,7 @@ const ExampleSendPost: FC = (): JSX.Element => {
 					}}
 				>
 					Create user
-				</ExampleButton>
+				</Button>
 			</div>
 		</div>
 	);

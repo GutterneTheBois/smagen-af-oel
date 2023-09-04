@@ -1,7 +1,7 @@
 "use client";
 import { FC, useState } from "react";
 import styles from "./modal.module.scss";
-import ExampleButton from "../ExampleButton/ExampleButton";
+import ExampleButton from "../Button/Button";
 import GhostButton from "../GhostButton/GhostButton";
 import { IoBeer, IoLogOut } from "react-icons/io5";
 

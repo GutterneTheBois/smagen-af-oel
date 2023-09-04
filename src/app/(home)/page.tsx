@@ -3,7 +3,7 @@ import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import styles from "./page.module.scss";
 import Image from "next/image";
-import { ExampleButton, ExampleSimpleGrid } from "@/barrels";
+import { Button, SimpleGrid } from "@/client-components";
 import Link from "next/link";
 
 export default async function Home() {
@@ -17,9 +17,7 @@ export default async function Home() {
 					<code className={styles.code}>src/app/page.tsx</code>
 				</p>
 				<Link href={"/route"}>
-					<ExampleButton backgroundColor="#dd0b69">
-						Go to /route
-					</ExampleButton>
+					<Button backgroundColor="#dd0b69">Go to /route</Button>
 				</Link>
 				<div>
 					<a
@@ -47,10 +45,10 @@ export default async function Home() {
 			</div>
 
 			<div /*className={styles.grid}*/></div>
-			<ExampleSimpleGrid columns={2}>
+			<SimpleGrid columns={2}>
 				<ExampleDbTable />
 				<ExampleSendPost />
-			</ExampleSimpleGrid>
+			</SimpleGrid>
 		</main>
 	);
 }

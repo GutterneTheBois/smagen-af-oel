@@ -1,6 +1,6 @@
 import styles from "../page.module.scss";
 import { UpdaterExample } from "@/components";
-import { ExampleButton, ExampleSimpleGrid, Modal } from "@/barrels";
+import { Button, SimpleGrid, Modal } from "@/client-components";
 import ExampleApiGet from "@/components/ExampleApiGet";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ export default async function Home() {
 			<Modal />
 			<div className={styles.description}>
 				<Link href={"/"}>
-					<ExampleButton>Go to home</ExampleButton>
+					<Button>Go to home</Button>
 				</Link>
 			</div>
 
@@ -20,10 +20,10 @@ export default async function Home() {
 				</p>
 			</div>
 
-			<ExampleSimpleGrid columns={2}>
+			<SimpleGrid columns={2}>
 				<ExampleApiGet />
 				<UpdaterExample />
-			</ExampleSimpleGrid>
+			</SimpleGrid>
 		</main>
 	);
 }
