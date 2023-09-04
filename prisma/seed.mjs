@@ -6,7 +6,7 @@ async function main() {
         where: { email: "nick@smagen.ui" },
         update: {},
         create: {
-            name: "Nick",
+            name: "Nicolai",
             email: "nick@smagen.ui",
             posts: {
                 create: [
