@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/barrels";
+import { Button } from "@/client-components";
 import { FC } from "react";
 import { useDb } from "@/services";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
