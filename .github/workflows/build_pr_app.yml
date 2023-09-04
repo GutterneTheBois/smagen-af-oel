@@ -37,7 +37,3 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
             cmd: build
-
-      - run: npm ci
-
-      - run: npm run build
