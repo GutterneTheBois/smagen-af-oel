@@ -1,0 +1,20 @@
+.ghost {
+    display: inline-block;
+    color: #000;
+    border-radius: 0.5rem;
+    padding-left: 1.5vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-right: 1vw;
+    outline: none;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &Content {
+        display: flex;
+    }
+    
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
