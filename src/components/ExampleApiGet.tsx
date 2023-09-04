@@ -1,5 +1,5 @@
 "use client";
-import { ExampleButton } from "@/barrels";
+import { Button } from "@/barrels";
 import { FC } from "react";
 import { useDb } from "@/services";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
@@ -14,9 +14,7 @@ const ExampleApiGet: FC = (): JSX.Element => {
 	return (
 		<>
 			{!loading && (
-				<ExampleButton onClick={() => console.table(exampleUsers)}>
-					GET
-				</ExampleButton>
+				<Button onClick={() => console.table(exampleUsers)}>GET</Button>
 			)}
 		</>
 	);

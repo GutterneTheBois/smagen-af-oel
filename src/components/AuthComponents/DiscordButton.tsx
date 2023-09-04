@@ -1,11 +1,11 @@
 "use client";
 
-import { ExampleButton } from "@/barrels";
+import { Button } from "@/client-components";
 import { signIn } from "next-auth/react";
 
 export default function DiscordButton() {
 	return (
-		<ExampleButton
+		<Button
 			className="border border-slate-300 rounded px-5 py-4 flex items-center"
 			onClick={() => signIn("discord")}
 		>
@@ -32,6 +32,6 @@ export default function DiscordButton() {
 			</svg>
 			<div className="px-2"></div>
 			<span>Sign In with Discord</span>
-		</ExampleButton>
+		</Button>
 	);
 }
