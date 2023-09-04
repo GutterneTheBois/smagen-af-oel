@@ -1,32 +1,33 @@
-name: Full App Build, Format, and Test
+name: Full Frontend Build, Format, and Test
 
 on:
-    pull_request:
-        paths:
-            - "*/**"
-        branches:
-            - main
-            - "SAL/**"
-            - "SAL-*"
-    # defaults:
-    #     run:
-    #         working-directory: .
+  pull_request:
+    paths:
+      - "frontend/**"
+    branches:
+      - main
+      - 'feature/**'
+      - 'ITM-*'
 
-    env:
-        node-version: 18.x
+defaults:
+  run:
+    working-directory: frontend
 
-    jobs:
-        build:
-            name: Full build validation
-            runs-on: ubuntu-latest
+env:
+  node-version: 18.x
 
-            steps:
-                - uses: actions/checkout@v2
+jobs:
+  build:
+    name: Full build validation
+    runs-on: ubuntu-latest
 
-                - uses: actions/setup-node@v3.2.0
-                  with:
-                      node-versions: ${{ env.node-version }}
+    steps:
+      - uses: actions/checkout@v2
 
-                - run: npm ci
+      - uses: actions/setup-node@v3.2.0
+        with:
+          node-version: ${{ env.node-version }}
 
-                - run: npm run build
+      - run: npm ci
+
+      - run: npm run build
