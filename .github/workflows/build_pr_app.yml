@@ -8,9 +8,9 @@ on:
             - main
             - "SAL/**"
             - "SAL-*"
-    defaults:
-        run:
-            working-directory: .
+    # defaults:
+    #     run:
+    #         working-directory: .
 
     env:
         node-version: 18.x
