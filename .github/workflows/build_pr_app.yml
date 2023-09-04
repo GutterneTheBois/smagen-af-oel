@@ -3,15 +3,15 @@ name: Full Frontend Build, Format, and Test
 on:
   pull_request:
     paths:
-      - "frontend/**"
+      - "*/**"
     branches:
       - main
-      - 'feature/**'
-      - 'ITM-*'
+      - 'SAL/**'
+      - 'SAL-*'
 
 defaults:
   run:
-    working-directory: frontend
+    working-directory: *
 
 env:
   node-version: 18.x
