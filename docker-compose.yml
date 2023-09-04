@@ -6,4 +6,4 @@ services:
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: secret
-      POSTGRES_DB: EXAMPLE_DB # Change this
+      POSTGRES_DB: smagen_db

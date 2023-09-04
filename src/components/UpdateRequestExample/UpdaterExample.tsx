@@ -2,7 +2,7 @@
 import { useDb } from "@/services";
 import { ChangeEvent, FC, useState } from "react";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
-import { ExampleBox, ExampleButton } from "@/barrels";
+import { Box, Button } from "@/client-components";
 import styles from "./updater.module.scss";
 
 type HTMLConnectElement = HTMLSelectElement & HTMLInputElement;
@@ -33,7 +33,7 @@ const UpdaterExample: FC = () => {
 	};
 
 	return (
-		<ExampleBox className={styles.addMargin}>
+		<Box className={styles.addMargin}>
 			{!loading && (
 				<select
 					defaultValue={input.id}
@@ -55,21 +55,21 @@ const UpdaterExample: FC = () => {
 				onChange={onChange}
 				className={styles.adjustedHeight}
 			/>
-			<ExampleButton
+			<Button
 				onClick={async () => {
 					await updateExampleUser(input.id, input.name);
 				}}
 			>
 				Update user
-			</ExampleButton>
-			<ExampleButton
+			</Button>
+			<Button
 				onClick={async () => {
 					await deleteExampleUser(input.id);
 				}}
 			>
 				Delete User
-			</ExampleButton>
-		</ExampleBox>
+			</Button>
+		</Box>
 	);
 };
 
