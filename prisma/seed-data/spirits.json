@@ -4,7 +4,7 @@
         "description": "En god rom",
         "type": "Rom",
         "destillery": "Marsk",
-        "alc_percent": "40",
+        "vol": "40",
         "size": "700",
         "image": "nordicRom.jpeg"
     },
@@ -13,7 +13,7 @@
         "description": "En rom med appelsin",
         "type": "Rom",
         "destillery": "Marsk",
-        "alc_percent": "40",
+        "vol": "40",
         "size": "500",
         "image": "orangeRom.jpeg"
     },
@@ -22,7 +22,7 @@
         "description": "Hej mor",
         "type": "Rom",
         "destillery": "Marsk",
-        "alc_percent": "40",
+        "vol": "40",
         "size": "700",
         "image": "sortSolRom.jpeg"
     },
@@ -31,7 +31,7 @@
         "description": "Gin",
         "type": "Gin",
         "destillery": "Marsk",
-        "alc_percent": "40",
+        "vol": "40",
         "size": "700",
         "image": "originalGin.jpeg"
     },
@@ -40,7 +40,7 @@
         "description": "Gin med æble",
         "type": "Gin",
         "destillery": "Marsk",
-        "alc_percent": "40",
+        "vol": "40",
         "size": "700",
         "image": "appleGin.jpeg"
     },
@@ -49,7 +49,7 @@
         "description": "Rom med kokos",
         "type": "Rom",
         "destillery": "Marsk",
-        "alc_percent": "40",
+        "vol": "40",
         "size": "700",
         "image": "kokosrom.jpeg"
     },
@@ -58,7 +58,7 @@
         "description": "Hej igen",
         "type": "Gin",
         "destillery": "Marsk",
-        "alc_percent": "43",
+        "vol": "43",
         "size": "700",
         "image": "klitroseGin.jpeg"
     },
@@ -67,7 +67,7 @@
         "description": "Gin med citrus",
         "type": "Gin",
         "destillery": "Marsk",
-        "alc_percent": "40",
+        "vol": "40",
         "size": "700",
         "image": "citrusGin.jpeg"
     },
@@ -76,7 +76,7 @@
         "description": "Den er med pink grape",
         "type": "Gin",
         "destillery": "Marsk",
-        "alc_percent": "40",
+        "vol": "40",
         "size": "700",
         "image": "pinkGrapeGin.jpeg"
     },
@@ -85,7 +85,7 @@
         "description": "Jeg skriver det ikke igen",
         "type": "Gin",
         "destillery": "Marsk",
-        "alc_percent": "38",
+        "vol": "38",
         "size": "700",
         "image": "rhubarbGin.jpeg"
     },
@@ -94,7 +94,7 @@
         "description": "Small batch",
         "type": "Gin",
         "destillery": "Kimerud",
-        "alc_percent": "42",
+        "vol": "42",
         "size": "700",
         "image": "kimerudAged.jpeg"
     },
@@ -103,7 +103,7 @@
         "description": "Pink Gin",
         "type": "Gin",
         "destillery": "Kimerud",
-        "alc_percent": "38",
+        "vol": "38",
         "size": "700",
         "image": "kimerudPink.jpeg"
     },
@@ -112,7 +112,7 @@
         "description": "Kimerud Gin",
         "type": "Gin",
         "destillery": "Kimerud",
-        "alc_percent": "40",
+        "vol": "40",
         "size": "700",
         "image": "kimerudGin.jpeg"
     },
@@ -121,7 +121,7 @@
         "description": "Gin af Brewdog",
         "type": "Gin",
         "destillery": "Brewdog Distilling Co.",
-        "alc_percent": "40",
+        "vol": "40",
         "size": "700",
         "image": "lonewolfGin.jpeg"
     }
