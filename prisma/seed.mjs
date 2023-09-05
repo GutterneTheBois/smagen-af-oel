@@ -1,6 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import breweryData from "./seed-data/breweries.json" assert { type: "json" };
 import beerData from "./seed-data/beers.json" assert { type: "json" };
+import destilleryData from "./seed-data/destilleries.json" assert { type: "json" };
+import spiritData from "./seed-data/spirits.json" assert { type: "json" };
 
 const prisma = new PrismaClient();
 
