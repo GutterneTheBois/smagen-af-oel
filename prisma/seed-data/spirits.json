@@ -6,7 +6,7 @@
         "destillery": "Marsk",
         "vol": "40",
         "size": "700",
-        "image": "nordicRom.jpeg"
+        "image_url": "nordicRom.jpeg"
     },
     {
         "name": "Orange",
@@ -15,7 +15,7 @@
         "destillery": "Marsk",
         "vol": "40",
         "size": "500",
-        "image": "orangeRom.jpeg"
+        "image_url": "orangeRom.jpeg"
     },
     {
         "name": "Sort Sol",
@@ -24,7 +24,7 @@
         "destillery": "Marsk",
         "vol": "40",
         "size": "700",
-        "image": "sortSolRom.jpeg"
+        "image_url": "sortSolRom.jpeg"
     },
     {
         "name": "Original",
@@ -33,7 +33,7 @@
         "destillery": "Marsk",
         "vol": "40",
         "size": "700",
-        "image": "originalGin.jpeg"
+        "image_url": "originalGin.jpeg"
     },
     {
         "name": "Apple",
@@ -42,7 +42,7 @@
         "destillery": "Marsk",
         "vol": "40",
         "size": "700",
-        "image": "appleGin.jpeg"
+        "image_url": "appleGin.jpeg"
     },
     {
         "name": "Kokos",
@@ -51,7 +51,7 @@
         "destillery": "Marsk",
         "vol": "40",
         "size": "700",
-        "image": "kokosrom.jpeg"
+        "image_url": "kokosrom.jpeg"
     },
     {
         "name": "Klitrose",
@@ -60,7 +60,7 @@
         "destillery": "Marsk",
         "vol": "43",
         "size": "700",
-        "image": "klitroseGin.jpeg"
+        "image_url": "klitroseGin.jpeg"
     },
     {
         "name": "Citrus",
@@ -69,7 +69,7 @@
         "destillery": "Marsk",
         "vol": "40",
         "size": "700",
-        "image": "citrusGin.jpeg"
+        "image_url": "citrusGin.jpeg"
     },
     {
         "name": "Pink Grape",
@@ -78,7 +78,7 @@
         "destillery": "Marsk",
         "vol": "40",
         "size": "700",
-        "image": "pinkGrapeGin.jpeg"
+        "image_url": "pinkGrapeGin.jpeg"
     },
     {
         "name": "Rhubarb",
@@ -87,7 +87,7 @@
         "destillery": "Marsk",
         "vol": "38",
         "size": "700",
-        "image": "rhubarbGin.jpeg"
+        "image_url": "rhubarbGin.jpeg"
     },
     {
         "name": "Hillside Aged Gin",
@@ -96,7 +96,7 @@
         "destillery": "Kimerud",
         "vol": "42",
         "size": "700",
-        "image": "kimerudAged.jpeg"
+        "image_url": "kimerudAged.jpeg"
     },
     {
         "name": "Collectors Pink Gin",
@@ -105,7 +105,7 @@
         "destillery": "Kimerud",
         "vol": "38",
         "size": "700",
-        "image": "kimerudPink.jpeg"
+        "image_url": "kimerudPink.jpeg"
     },
     {
         "name": "Kimerud Gin",
@@ -114,7 +114,7 @@
         "destillery": "Kimerud",
         "vol": "40",
         "size": "700",
-        "image": "kimerudGin.jpeg"
+        "image_url": "kimerudGin.jpeg"
     },
     {
         "name": "Lone Wolf",
@@ -123,6 +123,6 @@
         "destillery": "Brewdog Distilling Co.",
         "vol": "40",
         "size": "700",
-        "image": "lonewolfGin.jpeg"
+        "image_url": "lonewolfGin.jpeg"
     }
 ]
