@@ -66,7 +66,6 @@ async function main() {
           description: spirit.description,
           type: spirit.type,
           vol: spirit.vol,
-          ibu: spirit.ibu,
           size: spirit.size,
           image_url: spirit.image_url,
           destillery: {
