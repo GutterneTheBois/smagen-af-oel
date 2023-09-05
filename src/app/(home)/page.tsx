@@ -1,4 +1,3 @@
-import { ExampleDbTable, ExampleSendPost } from "@/components";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import styles from "./page.module.scss";
@@ -44,11 +43,7 @@ export default async function Home() {
 				</p>
 			</div>
 
-			<div /*className={styles.grid}*/></div>
-			<SimpleGrid columns={2}>
-				<ExampleDbTable />
-				<ExampleSendPost />
-			</SimpleGrid>
+			<SimpleGrid columns={2}></SimpleGrid>
 		</main>
 	);
 }
