@@ -3,25 +3,11 @@ generator client {
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = env("POSTGRES_PRISMA_URL") // uses connection pooling
+    provider     = "postgresql"
+    url          = env("POSTGRES_PRISMA_URL") // uses connection pooling
+    relationMode = "foreignKeys"
     //directUrl         = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
     //shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
-}
-
-model Beer {
-    id          String  @id @default(cuid())
-    name        String  @unique
-    description String?
-    type        String
-    vol         String
-    ibu         Int?
-    size        Int
-    image_url   String
-    brewery     Brewery @relation(fields: [breweryName], references: [name])
-    breweryName String
-
-    @@map(name: "beers")
 }
 
 model Brewery {
@@ -31,4 +17,19 @@ model Brewery {
     beers       Beer[]
 
     @@map(name: "breweries")
+}
+
+model Beer {
+    id          String  @id @default(cuid())
+    name        String  @unique
+    description String?
+    type        String
+    vol         Decimal
+    ibu         Int?
+    size        Int
+    image_url   String
+    brewery     Brewery @relation(fields: [breweryName], references: [name])
+    breweryName String
+
+    @@map(name: "beers")
 }
