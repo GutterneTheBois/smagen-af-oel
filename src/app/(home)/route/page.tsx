@@ -1,7 +1,5 @@
 import styles from "../page.module.scss";
-import { UpdaterExample } from "@/components";
 import { Button, SimpleGrid, Modal } from "@/client-components";
-import ExampleApiGet from "@/components/ExampleApiGet";
 import Link from "next/link";
 
 export default async function Home() {
@@ -20,10 +18,7 @@ export default async function Home() {
 				</p>
 			</div>
 
-			<SimpleGrid columns={2}>
-				<ExampleApiGet />
-				<UpdaterExample />
-			</SimpleGrid>
+			<SimpleGrid columns={2}></SimpleGrid>
 		</main>
 	);
 }
