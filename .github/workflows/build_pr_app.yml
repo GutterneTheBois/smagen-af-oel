@@ -26,7 +26,8 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
-            - uses: isbang/compose-action@v1.5.1
+            - name: Setup docker
+              uses: isbang/compose-action@v1.5.1
               with:
                   compose-file: "./docker-compose.yml"
                   services: |
@@ -40,6 +41,11 @@ jobs:
               uses: borales/actions-yarn@v4
               with:
                   cmd: install
+
+            - name: Init database
+              uses: borales/actions-yarn@v4
+              with:
+                  cmd: db:init
 
             - name: Build App
               uses: borales/actions-yarn@v4
