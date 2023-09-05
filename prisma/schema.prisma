@@ -33,3 +33,26 @@ model Beer {
 
     @@map(name: "beers")
 }
+
+model Destillery {
+    id          String   @id @default(cuid())
+    name        String   @unique
+    description String?
+    spirits     Spirit[]
+
+    @@map(name: "destilleries")
+}
+
+model Spirit {
+    id             String     @id @default(cuid())
+    name           String     @unique
+    description    String?
+    type           String
+    vol            Decimal
+    size           Int
+    image_url      String
+    destillery     Destillery @relation(fields: [destilleryName], references: [name])
+    destilleryName String
+
+    @@map(name: "spirits")
+}
