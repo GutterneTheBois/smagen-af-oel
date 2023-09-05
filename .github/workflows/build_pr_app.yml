@@ -1,39 +1,41 @@
 name: Full Frontend Build, Format, and Test
 
 on:
-  pull_request:
-    paths:
-      - "*/**"
-    branches:
-      - main
-      - 'SAL/**'
-      - 'SAL-*'
+    pull_request:
+        paths:
+            - "*/**"
+        branches:
+            - main
+            - "SAL/**"
+            - "SAL-*"
 
 defaults:
-  run:
-    working-directory: .
+    run:
+        working-directory: .
 
 env:
-  node-version: 18.x
+    node-version: 18.x
+    POSTGRES_PRISMA_URL: postgresql://root:secret@localhost/smagen_db
+    BACKEND_URL: http://localhost:3000/
 
 jobs:
-  build:
-    name: Full build validation
-    runs-on: ubuntu-latest
+    build:
+        name: Full build validation
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
+        steps:
+            - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3.2.0
-        with:
-          node-version: ${{ env.node-version }}
-          
-      - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-            cmd: install
-            
-      - name: Build App
-        uses: borales/actions-yarn@v4
-        with:
-            cmd: build
+            - uses: actions/setup-node@v3.2.0
+              with:
+                  node-version: ${{ env.node-version }}
+
+            - name: Run install
+              uses: borales/actions-yarn@v4
+              with:
+                  cmd: install
+
+            - name: Build App
+              uses: borales/actions-yarn@v4
+              with:
+                  cmd: build
