@@ -3,26 +3,56 @@ generator client {
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = env("POSTGRES_PRISMA_URL") // uses connection pooling
+    provider     = "postgresql"
+    url          = env("POSTGRES_PRISMA_URL") // uses connection pooling
+    relationMode = "foreignKeys"
     //directUrl         = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
     //shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 }
 
-model ExamplePost {
-    id        Int          @id @default(autoincrement())
-    title     String
-    content   String?
-    published Boolean      @default(false)
-    author    ExampleUser? @relation(fields: [authorId], references: [id])
-    authorId  String?
+model Brewery {
+    id          String  @id @default(cuid())
+    name        String  @unique
+    description String?
+    beers       Beer[]
+
+    @@map(name: "breweries")
 }
 
-model ExampleUser {
-    id    String        @id @default(cuid())
-    name  String?
-    email String        @unique
-    posts ExamplePost[]
+model Beer {
+    id          String  @id @default(cuid())
+    name        String  @unique
+    description String?
+    type        String
+    vol         Decimal
+    ibu         Int?
+    size        Int
+    image_url   String
+    brewery     Brewery @relation(fields: [breweryName], references: [name])
+    breweryName String
 
-    @@map(name: "users")
+    @@map(name: "beers")
+}
+
+model Destillery {
+    id          String   @id @default(cuid())
+    name        String   @unique
+    description String?
+    spirits     Spirit[]
+
+    @@map(name: "destilleries")
+}
+
+model Spirit {
+    id             String     @id @default(cuid())
+    name           String     @unique
+    description    String?
+    type           String
+    vol            Decimal
+    size           Int
+    image_url      String
+    destillery     Destillery @relation(fields: [destilleryName], references: [name])
+    destilleryName String
+
+    @@map(name: "spirits")
 }
