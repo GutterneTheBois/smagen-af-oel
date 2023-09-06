@@ -3,7 +3,7 @@
         "name": "Nordic",
         "description": "En god rom",
         "type": "Rom",
-        "destilleryName": "Marsk",
+        "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
         "image_url": "nordicRom.jpeg"
@@ -12,7 +12,7 @@
         "name": "Orange",
         "description": "En rom med appelsin",
         "type": "Rom",
-        "destilleryName": "Marsk",
+        "distilleryName": "Marsk",
         "vol": 40,
         "size": 500,
         "image_url": "orangeRom.jpeg"
@@ -21,7 +21,7 @@
         "name": "Sort Sol",
         "description": "Hej mor",
         "type": "Rom",
-        "destilleryName": "Marsk",
+        "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
         "image_url": "sortSolRom.jpeg"
@@ -30,7 +30,7 @@
         "name": "Original",
         "description": "Gin",
         "type": "Gin",
-        "destilleryName": "Marsk",
+        "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
         "image_url": "originalGin.jpeg"
@@ -39,7 +39,7 @@
         "name": "Apple",
         "description": "Gin med æble",
         "type": "Gin",
-        "destilleryName": "Marsk",
+        "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
         "image_url": "appleGin.jpeg"
@@ -48,7 +48,7 @@
         "name": "Kokos",
         "description": "Rom med kokos",
         "type": "Rom",
-        "destilleryName": "Marsk",
+        "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
         "image_url": "kokosrom.jpeg"
@@ -57,7 +57,7 @@
         "name": "Klitrose",
         "description": "Hej igen",
         "type": "Gin",
-        "destilleryName": "Marsk",
+        "distilleryName": "Marsk",
         "vol": 43,
         "size": 700,
         "image_url": "klitroseGin.jpeg"
@@ -66,7 +66,7 @@
         "name": "Citrus",
         "description": "Gin med citrus",
         "type": "Gin",
-        "destilleryName": "Marsk",
+        "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
         "image_url": "citrusGin.jpeg"
@@ -75,7 +75,7 @@
         "name": "Pink Grape",
         "description": "Den er med pink grape",
         "type": "Gin",
-        "destilleryName": "Marsk",
+        "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
         "image_url": "pinkGrapeGin.jpeg"
@@ -84,7 +84,7 @@
         "name": "Rhubarb",
         "description": "Jeg skriver det ikke igen",
         "type": "Gin",
-        "destilleryName": "Marsk",
+        "distilleryName": "Marsk",
         "vol": 38,
         "size": 700,
         "image_url": "rhubarbGin.jpeg"
@@ -93,7 +93,7 @@
         "name": "Hillside Aged Gin",
         "description": "Small batch",
         "type": "Gin",
-        "destilleryName": "Kimerud",
+        "distilleryName": "Kimerud",
         "vol": 42,
         "size": 700,
         "image_url": "kimerudAged.jpeg"
@@ -102,7 +102,7 @@
         "name": "Collectors Pink Gin",
         "description": "Pink Gin",
         "type": "Gin",
-        "destilleryName": "Kimerud",
+        "distilleryName": "Kimerud",
         "vol": 38,
         "size": 700,
         "image_url": "kimerudPink.jpeg"
@@ -111,7 +111,7 @@
         "name": "Kimerud Gin",
         "description": "Kimerud Gin",
         "type": "Gin",
-        "destilleryName": "Kimerud",
+        "distilleryName": "Kimerud",
         "vol": 40,
         "size": 700,
         "image_url": "kimerudGin.jpeg"
@@ -120,7 +120,7 @@
         "name": "Lone Wolf",
         "description": "Gin af Brewdog",
         "type": "Gin",
-        "destilleryName": "Brewdog Distilling Co.",
+        "distilleryName": "Brewdog Distilling Co.",
         "vol": 40,
         "size": 700,
         "image_url": "lonewolfGin.jpeg"

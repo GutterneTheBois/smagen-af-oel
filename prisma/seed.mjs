@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import breweryData from "./seed-data/breweries.json" assert { type: "json" };
 import beerData from "./seed-data/beers.json" assert { type: "json" };
-import destilleryData from "./seed-data/destilleries.json" assert { type: "json" };
+import distilleryData from "./seed-data/distilleries.json" assert { type: "json" };
 import spiritData from "./seed-data/spirits.json" assert { type: "json" };
 
 const prisma = new PrismaClient();
@@ -44,13 +44,13 @@ async function main() {
   );
 
   const destilleries = await prisma.$transaction(
-    destilleryData.map((destillery) =>
-      prisma.destillery.upsert({
-        where: { name: destillery.name },
+    distilleryData.map((distillery) =>
+      prisma.distillery.upsert({
+        where: { name: distillery.name },
         update: {},
         create: {
-          name: destillery.name,
-          description: destillery.description,
+          name: distillery.name,
+          description: distillery.description,
         },
       })
     )
@@ -68,9 +68,9 @@ async function main() {
           vol: spirit.vol,
           size: spirit.size,
           image_url: spirit.image_url,
-          destillery: {
+          distillery: {
             connect: {
-              name: spirit.destilleryName,
+              name: spirit.distilleryName,
             },
           },
         },
