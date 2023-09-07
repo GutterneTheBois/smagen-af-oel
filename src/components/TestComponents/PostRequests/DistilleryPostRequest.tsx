@@ -1,22 +1,16 @@
 "use client";
-import { ChangeEvent, FC, useState, useEffect } from "react";
+import { FC, useState, ChangeEvent } from "react";
 import { useDb } from "@/services";
 import { Button } from "@/client-components";
-import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
 
-const BreweryPostRequest: FC = () => {
-	const { createBrewery, breweries, refreshBreweries } = useDb();
-
+const DistilleryPostRequest: FC = () => {
+	const { createDistillery } = useDb();
 	const [input, setInput] = useState({
 		name: "",
 		description: "",
 	});
 
-	const { loading } = useLoadingAsync(async () => {
-		await refreshBreweries();
-	}, []);
-
-	const onChange = (ev: ChangeEvent<HTMLInputElement>): void => {
+	const onChange = (ev: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = ev.target;
 
 		setInput({
@@ -25,13 +19,9 @@ const BreweryPostRequest: FC = () => {
 		});
 	};
 
-	const isExistingBrewery = (name: string): boolean => {
-		return breweries.some((brewery) => brewery.name === name);
-	};
-
 	return (
-		<div style={{ marginRight: "10vw" }}>
-			<h1>Create Brewery</h1>
+		<div>
+			<h1>Create Distillery</h1>
 			<div>
 				<label htmlFor="name">Name:</label>
 				<br />
@@ -51,7 +41,9 @@ const BreweryPostRequest: FC = () => {
 					placeholder="Description"
 				/>
 				<Button
-					onClick={() => createBrewery(input.name, input.description)}
+					onClick={() =>
+						createDistillery(input.name, input.description)
+					}
 				>
 					Submit
 				</Button>
@@ -60,4 +52,4 @@ const BreweryPostRequest: FC = () => {
 	);
 };
 
-export default BreweryPostRequest;
+export default DistilleryPostRequest;

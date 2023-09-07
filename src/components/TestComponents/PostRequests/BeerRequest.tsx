@@ -19,10 +19,10 @@ type BeerNumbers = {
 };
 
 const PostBeer: FC = () => {
-	const { createBeer, breweries, getAllBreweries } = useDb();
+	const { createBeer, breweries, refreshBreweries } = useDb();
 
 	const { loading } = useLoadingAsync(async () => {
-		await getAllBreweries();
+		await refreshBreweries();
 	}, []);
 
 	const [inputStrings, setInputStrings] = useState<BeerStrings>({
@@ -125,16 +125,19 @@ const PostBeer: FC = () => {
 				/>
 
 				<hr />
-				{!loading && (
-					<select onChange={onChangeSelect} defaultValue={"select"}>
-						<option value={"select"}>-- Select brewery --</option>
-						{breweries.map((brewery) => (
-							<option key={brewery.id} value={brewery.name}>
-								{brewery.name}
-							</option>
-						))}
-					</select>
-				)}
+
+				<select onChange={onChangeSelect} defaultValue={"select"}>
+					<option value={"select"}>-- Select brewery --</option>
+					{!loading && (
+						<>
+							{breweries.map((brewery) => (
+								<option key={brewery.id} value={brewery.name}>
+									{brewery.name}
+								</option>
+							))}
+						</>
+					)}
+				</select>
 
 				{/* <label htmlFor="brewery">Brewery Name:</label>
 				<br />

@@ -1,13 +1,11 @@
 "use client";
-import { FC, useState, ChangeEvent } from "react";
+import { FC, ChangeEvent, useState } from "react";
 import { useDb } from "@/services";
 import { Button } from "@/client-components";
-import { Brewery } from "@prisma/client";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
 
-const BreweryPutRequest: FC = () => {
-	const { updateDescription, breweries, refreshData, refreshBreweries } =
-		useDb();
+const DistilleryPutRequest: FC = () => {
+	const { updateDescription, distilleries, refreshDistilleries } = useDb();
 
 	const [id, setId] = useState<string>("");
 	const [description, setDescription] = useState<string>("");
@@ -20,30 +18,24 @@ const BreweryPutRequest: FC = () => {
 		setDescription(ev.target.value);
 	};
 
-	const getBreweryDescription = (): void => {
-		const brewery: Brewery = breweries[
-			breweries.findIndex((brew) => brew.id === id)
-		] as Brewery;
-
-		setDescription(String(brewery.description));
-	};
-
 	const { loading } = useLoadingAsync(async () => {
-		await refreshBreweries();
-		getBreweryDescription();
+		await refreshDistilleries();
 	}, []);
 
 	return (
-		<div>
-			<h1>Update Brewery</h1>
+		<div style={{ marginLeft: "10vw" }}>
+			<h1>Update Distillery</h1>
 			<div>
 				<select onChange={onChangeSelect} defaultValue={"select"}>
-					<option value="select">-- Choose Brewery --</option>
+					<option value="select">-- Choose Distillery --</option>
 					{!loading && (
 						<>
-							{breweries.map((brewery) => (
-								<option key={brewery.id} value={brewery.id}>
-									{brewery.name}
+							{distilleries.map((distillery) => (
+								<option
+									key={distillery.id}
+									value={distillery.id}
+								>
+									{distillery.name}
 								</option>
 							))}
 						</>
@@ -58,7 +50,7 @@ const BreweryPutRequest: FC = () => {
 				/>
 				<Button
 					onClick={() =>
-						updateDescription("brewery", id, description)
+						updateDescription("distillery", id, description)
 					}
 				>
 					Submit
@@ -68,4 +60,4 @@ const BreweryPutRequest: FC = () => {
 	);
 };
 
-export default BreweryPutRequest;
+export default DistilleryPutRequest;

@@ -1,18 +1,15 @@
 import { useCallback, useState } from "react";
-import { Beer, Brewery, Prisma } from "@prisma/client";
+import { Beer, Brewery, Distillery, Prisma } from "@prisma/client";
 import { genApiClient } from "../backend/appApiClient";
 
 export type DatabaseHook = {
 	breweries: Brewery[];
-	getAllBreweries: () => Promise<void>;
+	refreshBreweries: () => Promise<void>;
 	createBrewery: (name: string, description?: string) => Promise<void>;
-	updateBreweryDescription: (
-		id: string,
-		newDescription: string
-	) => Promise<void>;
+	deleteBrewery: (id: string) => Promise<void>;
 
 	beers: Beer[];
-	getAllBeers: () => Promise<void>;
+	refreshBeers: () => Promise<void>;
 	createBeer: (
 		name: string,
 		type: string,
@@ -23,13 +20,24 @@ export type DatabaseHook = {
 		ibu?: number,
 		description?: string
 	) => Promise<void>;
+
+	distilleries: Distillery[];
+	refreshDistilleries: () => Promise<void>;
+	createDistillery: (name: string, description?: string) => Promise<void>;
+
+	refreshData: () => Promise<void>;
+	updateDescription: (
+		toUpdate: "brewery" | "distillery",
+		id: string,
+		newDescription: string
+	) => Promise<void>;
 };
 
 export const useDbContextValue = (): DatabaseHook => {
 	/* Brewery Functions */
 	const [breweries, setBreweries] = useState<Brewery[]>([]);
 
-	const getAllBreweries = useCallback(async () => {
+	const refreshBreweries = useCallback(async () => {
 		const client = await genApiClient();
 		const res: any = await client.getRequest("brewery");
 
@@ -57,22 +65,20 @@ export const useDbContextValue = (): DatabaseHook => {
 		[setBreweries, breweries]
 	);
 
-	const updateBreweryDescription = useCallback(
-		async (id: string, newDescription: string) => {
-			const update = { id, newDescription };
-
+	const deleteBrewery = useCallback(
+		async (id: string) => {
 			const client = await genApiClient();
-			await client.putRequest("brewery", update);
+			await client.postRequest("brewery/delete", { id });
 
-			await getAllBreweries();
+			await refreshBreweries();
 		},
-		[getAllBreweries]
+		[refreshBreweries]
 	);
 
 	/* Beer Functions */
 	const [beers, setBeers] = useState<Beer[]>([]);
 
-	const getAllBeers = useCallback(async (): Promise<void> => {
+	const refreshBeers = useCallback(async (): Promise<void> => {
 		const client = await genApiClient();
 		const res: any = await client.getRequest("beer");
 
@@ -112,14 +118,82 @@ export const useDbContextValue = (): DatabaseHook => {
 		[setBeers, beers]
 	);
 
+	/* Distillery Functions */
+	const [distilleries, setDistilleries] = useState<Distillery[]>([]);
+
+	const refreshDistilleries = useCallback(async () => {
+		const client = await genApiClient();
+		const res: any = await client.getRequest("distillery");
+
+		const distilleries: Distillery[] = res.distilleries;
+
+		setDistilleries(distilleries);
+	}, [setDistilleries]);
+
+	const createDistillery = useCallback(
+		async (name: string, description?: string) => {
+			const client = await genApiClient();
+
+			const newDistillery = {
+				name: name,
+				description: description,
+			};
+
+			const distillery = (await client.postRequest(
+				"distillery",
+				newDistillery
+			)) as Distillery;
+
+			setDistilleries([...distilleries, distillery]);
+		},
+		[setDistilleries, distilleries]
+	);
+
+	/* Common functions */
+	const refreshData = useCallback(async () => {
+		await refreshBreweries();
+		await refreshBeers();
+		await refreshDistilleries();
+	}, [refreshBreweries, refreshBeers, refreshDistilleries]);
+
+	const updateDescription = useCallback(
+		async (
+			elementToUpdate: "brewery" | "distillery",
+			id: string,
+			newDescription: string
+		) => {
+			const update = { id, newDescription };
+
+			const client = await genApiClient();
+			await client.putRequest(elementToUpdate, update);
+
+			switch (elementToUpdate) {
+				case "brewery":
+					await refreshBreweries();
+					break;
+				case "distillery":
+					await refreshDistilleries();
+					break;
+			}
+		},
+		[]
+	);
+
 	return {
 		breweries,
-		getAllBreweries,
+		refreshBreweries,
 		createBrewery,
-		updateBreweryDescription,
+		deleteBrewery,
 
 		beers,
-		getAllBeers,
+		refreshBeers,
 		createBeer,
+
+		distilleries,
+		refreshDistilleries,
+		createDistillery,
+
+		refreshData,
+		updateDescription,
 	};
 };
