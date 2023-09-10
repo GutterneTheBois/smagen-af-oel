@@ -34,13 +34,13 @@ model Beer {
     @@map(name: "beers")
 }
 
-model Destillery {
+model Distillery {
     id          String   @id @default(cuid())
     name        String   @unique
     description String?
     spirits     Spirit[]
 
-    @@map(name: "destilleries")
+    @@map(name: "distilleries")
 }
 
 model Spirit {
@@ -51,8 +51,8 @@ model Spirit {
     vol            Decimal
     size           Int
     image_url      String
-    destillery     Destillery @relation(fields: [destilleryName], references: [name])
-    destilleryName String
+    distillery     Distillery @relation(fields: [distilleryName], references: [name])
+    distilleryName String
 
     @@map(name: "spirits")
 }
