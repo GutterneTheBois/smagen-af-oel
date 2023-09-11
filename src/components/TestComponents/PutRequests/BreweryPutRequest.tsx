@@ -1,13 +1,19 @@
 "use client";
-import { FC, useState, ChangeEvent } from "react";
+import {
+	FC,
+	useState,
+	ChangeEvent,
+	useEffect,
+	KeyboardEvent,
+	useRef,
+} from "react";
 import { useDb } from "@/services";
 import { Button } from "@/client-components";
 import { Brewery } from "@prisma/client";
-import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
 
 const BreweryPutRequest: FC = () => {
-	const { updateDescription, breweries, refreshData, refreshBreweries } =
-		useDb();
+	const { updateDescription, breweries, refreshBreweries } = useDb();
+	const ref = useRef(null);
 
 	const [id, setId] = useState<string>("");
 	const [description, setDescription] = useState<string>("");
@@ -20,18 +26,37 @@ const BreweryPutRequest: FC = () => {
 		setDescription(ev.target.value);
 	};
 
-	const getBreweryDescription = (): void => {
-		const brewery: Brewery = breweries[
+	const getBreweryDescription = (): string => {
+		let brewery: Brewery = breweries[
 			breweries.findIndex((brew) => brew.id === id)
 		] as Brewery;
 
-		setDescription(String(brewery.description));
+		if (brewery === undefined || brewery.description === null)
+			return "Description";
+
+		return brewery.description;
 	};
 
-	const { loading } = useLoadingAsync(async () => {
-		await refreshBreweries();
-		getBreweryDescription();
-	}, []);
+	const onKeyPress = (ev: KeyboardEvent<HTMLInputElement>) => {
+		if (ev.key === "Enter") update();
+	};
+
+	const fillInput = (desc: string) => {
+		setDescription(desc);
+	};
+
+	useEffect(() => {
+		(async () => {
+			await refreshBreweries();
+		})();
+	}, [breweries]);
+
+	const update = () => {
+		updateDescription("brewery", id, description);
+		setDescription("");
+		// @ts-ignore
+		ref.current.value = "";
+	};
 
 	return (
 		<div>
@@ -39,30 +64,29 @@ const BreweryPutRequest: FC = () => {
 			<div>
 				<select onChange={onChangeSelect} defaultValue={"select"}>
 					<option value="select">-- Choose Brewery --</option>
-					{!loading && (
-						<>
-							{breweries.map((brewery) => (
-								<option key={brewery.id} value={brewery.id}>
-									{brewery.name}
-								</option>
-							))}
-						</>
-					)}
+					{breweries.map((brewery) => (
+						<option key={brewery.id} value={brewery.id}>
+							{brewery.name}
+						</option>
+					))}
 				</select>
 
 				<hr />
 				<input
+					ref={ref}
 					type="text"
 					onChange={onChangeInput}
 					defaultValue={description}
+					placeholder={getBreweryDescription()}
+					onKeyDown={onKeyPress}
 				/>
-				<Button
-					onClick={() =>
-						updateDescription("brewery", id, description)
-					}
+				<button
+					style={{ color: "black" }}
+					onClick={() => fillInput(getBreweryDescription())}
 				>
-					Submit
-				</Button>
+					Fill input
+				</button>
+				<Button onClick={update}>Submit</Button>
 			</div>
 		</div>
 	);

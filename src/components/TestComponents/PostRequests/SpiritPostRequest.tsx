@@ -1,52 +1,34 @@
 "use client";
-import { Button } from "@/client-components";
+import { FC, ChangeEvent, useState } from "react";
 import { useDb } from "@/services";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
-import { ChangeEvent, FC, useState } from "react";
+import { Button } from "@/client-components";
 
-type BeerStrings = {
-	name: string;
-	type: string;
-	image_url: string;
-	description?: string;
-};
-
-type BeerNumbers = {
-	vol: number;
-	ibu: number;
-	size: number;
-};
-
-const PostBeer: FC = () => {
-	const { createBeer, breweries, refreshBreweries } = useDb();
+const SpiritPostRequest: FC = () => {
+	const { createSpirit, distilleries, refreshDistilleries } = useDb();
 
 	const { loading } = useLoadingAsync(async () => {
-		await refreshBreweries();
-	}, []);
+		await refreshDistilleries();
+	}, [refreshDistilleries]);
 
-	const [inputStrings, setInputStrings] = useState<BeerStrings>({
+	const [inputStrings, setInputStrings] = useState({
 		name: "",
 		type: "",
 		image_url: "",
 		description: undefined,
 	});
 
-	const [inputNumbers, setInputNumbers] = useState<BeerNumbers>({
+	const [inputNumbers, setInputNumbers] = useState({
 		vol: 0.0,
-		ibu: 0,
 		size: 0,
 	});
 
-	const [selectValue, setSelectValue] = useState<string>("");
+	const [selectValue, setSelectValue] = useState("");
 
 	const onChange = (ev: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = ev.target;
 
-		setInputStrings({
-			...inputStrings,
-			[name]: value,
-		});
-
+		setInputStrings({ ...inputStrings, [name]: value });
 		setInputNumbers({
 			...inputNumbers,
 			[name]: Number(value),
@@ -59,7 +41,7 @@ const PostBeer: FC = () => {
 
 	return (
 		<div style={{ marginRight: "10vw" }}>
-			<h1>Create Beer</h1>
+			<h1>Create Spirit</h1>
 			<div>
 				<label htmlFor="name">Name:</label>
 				<br />
@@ -102,17 +84,6 @@ const PostBeer: FC = () => {
 				/>
 
 				<hr />
-				<label htmlFor="ibu">Ibu:</label>
-				<br />
-				<input
-					type="number"
-					name="ibu"
-					defaultValue={inputNumbers.ibu}
-					onChange={onChange}
-					placeholder="Ibu"
-				/>
-
-				<hr />
 				<label htmlFor="size">Size:</label>
 				<br />
 				<input
@@ -126,37 +97,30 @@ const PostBeer: FC = () => {
 				<hr />
 
 				<select onChange={onChangeSelect} defaultValue={"select"}>
-					<option value={"select"}>-- Select brewery --</option>
+					<option value={"select"}>-- Select distillery --</option>
 					{!loading && (
 						<>
-							{breweries.map((brewery) => (
-								<option key={brewery.id} value={brewery.name}>
-									{brewery.name}
+							{distilleries.map((distillery) => (
+								<option
+									key={distillery.id}
+									value={distillery.name}
+								>
+									{distillery.name}
 								</option>
 							))}
 						</>
 					)}
 				</select>
 
-				{/* <label htmlFor="brewery">Brewery Name:</label>
-				<br />
-				<input
-					name="brewery"
-					defaultValue={inputStrings.breweryName}
-					onChange={onChange}
-					placeholder="Brewery Name"
-				/> */}
-
 				<Button
 					onClick={() =>
-						createBeer(
+						createSpirit(
 							inputStrings.name,
-							inputStrings.type,
+							selectValue,
+							inputStrings.name,
 							inputNumbers.vol,
 							inputNumbers.size,
 							inputStrings.image_url,
-							selectValue,
-							inputNumbers.ibu,
 							inputStrings.description
 						)
 					}
@@ -168,4 +132,4 @@ const PostBeer: FC = () => {
 	);
 };
 
-export default PostBeer;
+export default SpiritPostRequest;

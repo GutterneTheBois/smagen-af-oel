@@ -27,7 +27,7 @@ model Beer {
     vol         Decimal
     ibu         Int?
     size        Int
-    image_url   String
+    image_url   String?
     brewery     Brewery @relation(fields: [breweryName], references: [name])
     breweryName String
 
@@ -50,7 +50,7 @@ model Spirit {
     type           String
     vol            Decimal
     size           Int
-    image_url      String
+    image_url      String?
     distillery     Distillery @relation(fields: [distilleryName], references: [name])
     distilleryName String
 
