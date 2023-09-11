@@ -18,13 +18,11 @@ export class AppApiClient {
 		return res.json();
 	}
 
-	async getRequest(endPoint: string): Promise<any> {
-		const res = await fetch(`${this.baseUrl}/api/${endPoint}`, {
+	async getRequest(endPoint: string, body?: any): Promise<any> {
+		return await fetch(`${this.baseUrl}/api/${endPoint}`, {
 			method: "GET",
 			headers: { "Content-Type": "application/json" },
 		}).then((x) => x.json());
-
-		return res;
 	}
 
 	async putRequest(endPoint: string, updateBody: any): Promise<void> {
