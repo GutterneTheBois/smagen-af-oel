@@ -12,10 +12,12 @@ import {
 	SpiritPostRequest,
 	StatusField,
 } from "@/components/TestComponents";
+import { NavBar } from "@/components";
 
 const TestPage: FC = async () => {
 	return (
 		<>
+			<NavBar push />
 			<div
 				style={{
 					display: "flex",
