@@ -18,6 +18,9 @@ export default async function Home() {
 				<Link href={"/route"}>
 					<Button backgroundColor="#dd0b69">Go to /route</Button>
 				</Link>
+				<Link href={"/test_page"}>
+					<Button backgroundColor="#dd0b69">Test Page</Button>
+				</Link>
 				<div>
 					<a
 						href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"

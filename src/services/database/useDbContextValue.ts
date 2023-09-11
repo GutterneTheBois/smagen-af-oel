@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { Beer, Brewery, Distillery, Prisma } from "@prisma/client";
+import { Beer, Brewery, Distillery, Spirit } from "@prisma/client";
 import { genApiClient } from "../backend/appApiClient";
 
 export type DatabaseHook = {
@@ -20,10 +20,25 @@ export type DatabaseHook = {
 		ibu?: number,
 		description?: string
 	) => Promise<void>;
+	deleteBeer: (id: string) => Promise<void>;
 
 	distilleries: Distillery[];
 	refreshDistilleries: () => Promise<void>;
 	createDistillery: (name: string, description?: string) => Promise<void>;
+	deleteDistillery: (id: string) => Promise<void>;
+
+	spirits: Spirit[];
+	refreshSpirits: () => Promise<void>;
+	createSpirit: (
+		name: string,
+		distilleryName: string,
+		type: string,
+		vol: number,
+		size: number,
+		image_url?: string,
+		description?: string
+	) => Promise<void>;
+	deleteSpirit: (id: string) => Promise<void>;
 
 	refreshData: () => Promise<void>;
 	updateDescription: (
@@ -118,6 +133,16 @@ export const useDbContextValue = (): DatabaseHook => {
 		[setBeers, beers]
 	);
 
+	const deleteBeer = useCallback(
+		async (id: string) => {
+			const client = await genApiClient();
+			await client.postRequest("beer/delete", { id });
+
+			await refreshBeers();
+		},
+		[refreshBeers]
+	);
+
 	/* Distillery Functions */
 	const [distilleries, setDistilleries] = useState<Distillery[]>([]);
 
@@ -149,12 +174,78 @@ export const useDbContextValue = (): DatabaseHook => {
 		[setDistilleries, distilleries]
 	);
 
+	const deleteDistillery = useCallback(
+		async (id: string) => {
+			const client = await genApiClient();
+
+			await client.postRequest("distillery", { id });
+
+			await refreshDistilleries();
+		},
+		[refreshDistilleries]
+	);
+
+	/* Spirit functions */
+	const [spirits, setSpirits] = useState<Spirit[]>([]);
+
+	const refreshSpirits = useCallback(async () => {
+		const client = await genApiClient();
+		const res: any = await client.getRequest("spirit");
+
+		const spirits: Spirit[] = res.spirits;
+
+		setSpirits(spirits);
+	}, [setSpirits]);
+
+	const createSpirit = useCallback(
+		async (
+			name: string,
+			distilleryName: string,
+			type: string,
+			vol: number,
+			size: number,
+			image_url?: string,
+			description?: string
+		) => {
+			const client = await genApiClient();
+
+			const newSpirit = {
+				name: name,
+				description: description || null,
+				type: type,
+				vol: vol,
+				size: size,
+				image_url: image_url,
+				distilleryName: distilleryName,
+			};
+
+			const spirit = (await client.postRequest(
+				"spirit",
+				newSpirit
+			)) as Spirit;
+
+			setSpirits([...spirits, spirit]);
+		},
+		[setSpirits]
+	);
+
+	const deleteSpirit = useCallback(
+		async (id: string) => {
+			const client = await genApiClient();
+			await client.postRequest("spirit/delete", { id });
+
+			await refreshSpirits();
+		},
+		[refreshSpirits]
+	);
+
 	/* Common functions */
 	const refreshData = useCallback(async () => {
 		await refreshBreweries();
 		await refreshBeers();
 		await refreshDistilleries();
-	}, [refreshBreweries, refreshBeers, refreshDistilleries]);
+		await refreshSpirits();
+	}, [refreshBreweries, refreshBeers, refreshDistilleries, refreshSpirits]);
 
 	const updateDescription = useCallback(
 		async (
@@ -188,10 +279,17 @@ export const useDbContextValue = (): DatabaseHook => {
 		beers,
 		refreshBeers,
 		createBeer,
+		deleteBeer,
 
 		distilleries,
 		refreshDistilleries,
 		createDistillery,
+		deleteDistillery,
+
+		spirits,
+		refreshSpirits,
+		createSpirit,
+		deleteSpirit,
 
 		refreshData,
 		updateDescription,

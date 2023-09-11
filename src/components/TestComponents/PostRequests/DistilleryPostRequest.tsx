@@ -7,7 +7,7 @@ const DistilleryPostRequest: FC = () => {
 	const { createDistillery } = useDb();
 	const [input, setInput] = useState({
 		name: "",
-		description: "",
+		description: undefined,
 	});
 
 	const onChange = (ev: ChangeEvent<HTMLInputElement>) => {
