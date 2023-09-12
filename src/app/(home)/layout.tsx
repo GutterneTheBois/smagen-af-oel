@@ -1,9 +1,9 @@
 import { DatabaseContextProvider } from "@/services";
 import "./globals.scss";
-import { Inter } from "next/font/google";
 import { NavBar } from "@/components";
+import { Khand } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const khand = Khand({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
 	title: "Create Next App",
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={khand.className}>
 				<DatabaseContextProvider>
 					<NavBar />
 					{children}

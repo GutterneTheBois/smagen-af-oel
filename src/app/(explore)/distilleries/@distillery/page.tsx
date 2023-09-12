@@ -4,31 +4,28 @@ import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
 import styles from "../../explore.module.scss";
 import { LoadingCard, Card } from "@/components";
 
-const BeerGrid = () => {
-	const { beers, refreshBeers } = useDb();
+const DistilleryGrid = () => {
+	const { distilleries, refreshDistilleries } = useDb();
 
 	const { loading } = useLoadingAsync(async () => {
-		await refreshBeers();
-	}, [beers]);
+		await refreshDistilleries();
+	}, [distilleries]);
 
 	return (
 		<div className={styles.container}>
 			{loading ? (
 				<>
-					<LoadingCard />
-					<LoadingCard />
-					<LoadingCard />
-					<LoadingCard />
-					<LoadingCard />
-					<LoadingCard />
-					<LoadingCard />
-					<LoadingCard />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
 				</>
 			) : (
-				beers.map((beer) => <Card key={beer.id} beer={beer} />)
+				distilleries.map((distillery) => (
+					<Card key={distillery.id} distillery={distillery} />
+				))
 			)}
 		</div>
 	);
 };
 
-export default BeerGrid;
+export default DistilleryGrid;

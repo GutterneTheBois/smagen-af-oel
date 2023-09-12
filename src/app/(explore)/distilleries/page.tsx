@@ -1,11 +1,11 @@
 import styles from "../explore.module.scss";
 
-const ExploreBreweries = (): JSX.Element => {
+const Explore = (): JSX.Element => {
 	return (
 		<main className={styles.title}>
-			<h1>Bryggerier</h1>
+			<h1>Destillerier</h1>
 		</main>
 	);
 };
 
-export default ExploreBreweries;
+export default Explore;

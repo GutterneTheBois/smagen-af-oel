@@ -1,7 +1,6 @@
 import { FC } from "react";
 import styles from "./navbar.module.scss";
 import Image from "next/image";
-import Link from "next/link";
 
 type Item = {
 	name: string;
@@ -16,18 +15,26 @@ const NavBar: FC<NavBarProps> = ({ push }) => {
 	const items: Item[] = [
 		{
 			name: "Øl",
-			href: "http://localhost:3000/beers",
+			href: "/beers",
 		},
 		{
 			name: "Bryggerier",
-			href: "http://localhost:3000/breweries",
+			href: "/breweries",
+		},
+		{
+			name: "Spiritus",
+			href: "/spirits",
+		},
+		{
+			name: "Destillerier",
+			href: "/distilleries",
 		},
 	];
 
 	return (
 		<div className={`${push ? styles.navbarContainer : ""}`}>
 			<div className={styles.navbar}>
-				<a href={"http://localhost:3000"}>
+				<a href={"/"}>
 					<Image
 						className={styles.img}
 						width={83}
