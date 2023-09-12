@@ -1,8 +1,8 @@
 "use client";
 import { useDb } from "@/services";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
-import { DistilleryCard, LoadingCard } from "@/client-components";
 import styles from "../../explore.module.scss";
+import { LoadingCard, Card } from "@/components";
 
 const DistilleryGrid = () => {
 	const { distilleries, refreshDistilleries } = useDb();
@@ -21,10 +21,7 @@ const DistilleryGrid = () => {
 				</>
 			) : (
 				distilleries.map((distillery) => (
-					<DistilleryCard
-						key={distillery.id}
-						distillery={distillery}
-					/>
+					<Card key={distillery.id} distillery={distillery} />
 				))
 			)}
 		</div>

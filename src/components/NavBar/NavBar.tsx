@@ -23,12 +23,12 @@ const NavBar: FC<NavBarProps> = ({ push }) => {
 			href: "/breweries",
 		},
 		{
-			name: "Destillerier",
-			href: "/distilleries",
-		},
-		{
 			name: "Spiritus",
 			href: "/spirits",
+		},
+		{
+			name: "Destillerier",
+			href: "/distilleries",
 		},
 	];
 

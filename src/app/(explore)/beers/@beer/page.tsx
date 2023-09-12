@@ -1,8 +1,8 @@
 "use client";
 import { useDb } from "@/services";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
-import { BeerCard, LoadingCard } from "@/client-components";
 import styles from "../../explore.module.scss";
+import { LoadingCard, Card } from "@/components";
 
 const BeerGrid = () => {
 	const { beers, refreshBeers } = useDb();
@@ -25,7 +25,7 @@ const BeerGrid = () => {
 					<LoadingCard />
 				</>
 			) : (
-				beers.map((beer) => <BeerCard key={beer.id} beer={beer} />)
+				beers.map((beer) => <Card key={beer.id} beer={beer} />)
 			)}
 		</div>
 	);
