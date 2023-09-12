@@ -1,7 +1,6 @@
 import { FC } from "react";
 import styles from "./navbar.module.scss";
 import Image from "next/image";
-import Link from "next/link";
 
 type Item = {
 	name: string;

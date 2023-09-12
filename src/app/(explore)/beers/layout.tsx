@@ -9,8 +9,10 @@ const BeerExploreLayout = async (props: {
 	return (
 		<DatabaseContextProvider>
 			<NavBar push />
-			{props.children}
-			{props.beer}
+			<main>
+				{props.children}
+				{props.beer}
+			</main>
 		</DatabaseContextProvider>
 	);
 };

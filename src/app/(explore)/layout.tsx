@@ -1,8 +1,8 @@
 import { NavBar } from "@/components";
 import { DatabaseContextProvider } from "@/services";
-import { Inter } from "next/font/google";
+import { Khand } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const khand = Khand({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
 	title: "Next.js",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body style={{ fontSize: "X-Large" }} className={khand.className}>
 				<DatabaseContextProvider>{children}</DatabaseContextProvider>
 			</body>
 		</html>

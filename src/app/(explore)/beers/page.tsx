@@ -1,11 +1,7 @@
 import styles from "../explore.module.scss";
 
 const Explore = (): JSX.Element => {
-	return (
-		<main className={styles.title}>
-			<h1>Øl</h1>
-		</main>
-	);
+	return <h1 className={styles.title}>Øl</h1>;
 };
 
 export default Explore;

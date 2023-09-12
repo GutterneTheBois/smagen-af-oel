@@ -45,6 +45,22 @@
 	width: 75vw;
 }
 
+.hr {
+	background-color: #000;
+	height: 1px;
+	border: none;
+	width: 80%;
+	margin-bottom: 0.1rem;
+	margin-top: 0.1rem;
+}
+
+.spacing {
+	&__sm {
+		margin-top: 0.3vh;
+		margin-bottom: 0.5vh;
+	}
+}
+
 .loader,
 .loader:before,
 .loader:after {

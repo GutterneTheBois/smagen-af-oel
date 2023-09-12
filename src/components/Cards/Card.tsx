@@ -39,7 +39,7 @@ const Card: FC<CardProps> = (props: CardProps): JSX.Element => {
 		else if (props.spirit)
 			return {
 				...props.spirit,
-				href: `/spirit//${props.spirit.id}`,
+				href: `/spirit/${props.spirit.id}`,
 			} as Spirit;
 	};
 
@@ -49,25 +49,36 @@ const Card: FC<CardProps> = (props: CardProps): JSX.Element => {
 				<>
 					{(getModelProps() as Beer | Spirit).image_url !==
 						undefined && (
-						<Image
-							className={styles.card__img}
-							width={100}
-							height={100}
-							src={
-								(getModelProps() as Beer | Spirit).image_url ===
-								"flygtning.jpeg"
-									? `/beers/${
-											(getModelProps() as Beer | Spirit)
-												.image_url
-									  }`
-									: "/beers/standin.jpg"
-							}
-							alt={getModelProps()?.name || ""}
-						/>
+						<>
+							<Image
+								className={styles.card__img}
+								width={100}
+								height={100}
+								src={
+									(getModelProps() as Beer | Spirit)
+										.image_url === "flygtning.jpeg"
+										? `/beers/${
+												(
+													getModelProps() as
+														| Beer
+														| Spirit
+												).image_url
+										  }`
+										: "/beers/standin.jpg"
+								}
+								alt={getModelProps()?.name || ""}
+							/>
+							<hr className={styles.hr} />
+						</>
 					)}
-					<hr />
-					<h3>{getModelProps()?.name}</h3>
-					<h4>{getModelProps()?.description}</h4>
+
+					<h3 className={styles.spacing__sm}>
+						{getModelProps()?.name}
+					</h3>
+					<hr className={styles.hr} />
+					<h4 className={styles.spacing__sm}>
+						{getModelProps()?.description}
+					</h4>
 					<a
 						className={styles.link}
 						href={(getModelProps() as any).href}
