@@ -1,16 +1,15 @@
 import { FC } from "react";
-import Link from "next/link";
 import { Brewery } from "@prisma/client";
 import styles from "./card.module.scss";
-import Button from "../Button";
+import Button from "../../client-components/Button";
 
 type CardProps = {
 	brewery: Brewery;
 };
 
-const Card: FC<CardProps> = ({ brewery }): JSX.Element => {
+const BreweryCard: FC<CardProps> = ({ brewery }): JSX.Element => {
 	return (
-		<div className={styles.card}>
+		<div className={styles.card__sm}>
 			{brewery !== undefined && (
 				<>
 					<h3>{brewery.name}</h3>
@@ -27,4 +26,4 @@ const Card: FC<CardProps> = ({ brewery }): JSX.Element => {
 	);
 };
 
-export default Card;
+export default BreweryCard;

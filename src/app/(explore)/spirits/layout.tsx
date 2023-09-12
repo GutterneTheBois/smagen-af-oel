@@ -2,17 +2,17 @@ import { ReactNode } from "react";
 import { DatabaseContextProvider } from "@/services";
 import { NavBar } from "@/components";
 
-const BreweryExploreLayout = async (props: {
+const SpiritExploreLayout = async (props: {
 	children: ReactNode;
-	brewery: ReactNode;
+	spirit: ReactNode;
 }) => {
 	return (
 		<DatabaseContextProvider>
 			<NavBar push />
 			{props.children}
-			{props.brewery}
+			{props.spirit}
 		</DatabaseContextProvider>
 	);
 };
 
-export default BreweryExploreLayout;
+export default SpiritExploreLayout;

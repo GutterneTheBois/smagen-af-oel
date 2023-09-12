@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import styles from "../../explore.module.scss";
 
 const BeerPage = async ({ params }: { params: { id: string } }) => {
 	const beer = async () => {
@@ -10,7 +11,7 @@ const BeerPage = async ({ params }: { params: { id: string } }) => {
 	};
 
 	return (
-		<div>
+		<div className={styles.title}>
 			<h1>{(await beer()).name}</h1>
 		</div>
 	);

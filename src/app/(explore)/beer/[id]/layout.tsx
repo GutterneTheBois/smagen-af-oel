@@ -1,5 +1,4 @@
 import { NavBar } from "@/components";
-import { DatabaseContextProvider } from "@/services";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,7 +17,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<NavBar push />
-				<DatabaseContextProvider>{children}</DatabaseContextProvider>
+				{children}
 			</body>
 		</html>
 	);

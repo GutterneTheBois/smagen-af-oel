@@ -1,7 +1,7 @@
 "use client";
 import { useDb } from "@/services";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
-import { BreweryCard } from "@/client-components";
+import { BreweryCard, LoadingCard } from "@/client-components";
 import styles from "../../explore.module.scss";
 
 const BreweryGrid = () => {
@@ -14,7 +14,22 @@ const BreweryGrid = () => {
 	return (
 		<div className={styles.container}>
 			{loading ? (
-				<div>Loading...</div>
+				<>
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+					<LoadingCard small />
+				</>
 			) : (
 				breweries.map((brewery) => (
 					<BreweryCard key={brewery.id} brewery={brewery} />

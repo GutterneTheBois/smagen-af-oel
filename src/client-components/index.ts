@@ -6,4 +6,9 @@ export { default as SimpleGrid } from "./SimpleGrid";
 export { default as Box } from "./Box";
 export { default as Modal } from "./Modal";
 export { default as GhostButton } from "./GhostButton";
-export { BeerCard, BreweryCard } from "./Cards";
+export {
+	BeerCard,
+	BreweryCard,
+	DistilleryCard,
+	LoadingCard,
+} from "../components/Cards";

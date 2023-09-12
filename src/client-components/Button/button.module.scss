@@ -1,9 +1,9 @@
 .btn {
-    transition: 0.3s;
-    border-radius: 0.6rem;
+	transition: 0.3s;
+	border-radius: 0.5rem;
 
-    &:hover {
-        cursor: pointer;
-        filter: brightness(120%);
-    }
+	&:hover {
+		cursor: pointer;
+		filter: brightness(120%);
+	}
 }

@@ -7,15 +7,11 @@ const BeerExploreLayout = async (props: {
 	beer: ReactNode;
 }) => {
 	return (
-		<html lang="en">
-			<body>
-				<DatabaseContextProvider>
-					<NavBar push />
-					{props.children}
-					{props.beer}
-				</DatabaseContextProvider>
-			</body>
-		</html>
+		<DatabaseContextProvider>
+			<NavBar push />
+			{props.children}
+			{props.beer}
+		</DatabaseContextProvider>
 	);
 };
 

@@ -1,36 +1,36 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Beer } from "@prisma/client";
+import { Spirit } from "@prisma/client";
 import styles from "./card.module.scss";
-import Button from "../Button";
+import Button from "../../client-components/Button";
 
 type CardProps = {
-	beer: Beer;
+	spirit: Spirit;
 };
 
-const Card: FC<CardProps> = ({ beer }): JSX.Element => {
+const SpiritCard: FC<CardProps> = ({ spirit }): JSX.Element => {
 	return (
 		<div className={styles.card}>
-			{beer !== undefined && (
+			{spirit !== undefined && (
 				<>
 					<Image
 						className={styles.card__img}
 						width={100}
 						height={100}
 						src={
-							beer.image_url === "flygtning.jpeg"
-								? `/beers/${beer.image_url}`
+							spirit.image_url === "flygtning.jpeg"
+								? `/spirits/${spirit.image_url}`
 								: "/beers/standin.jpg"
 						}
-						alt={beer.name}
+						alt={spirit.name}
 					/>
 					<hr />
-					<h3>{beer.name}</h3>
-					<h4>{beer.type}</h4>
+					<h3>{spirit.name}</h3>
+					<h4>{spirit.type}</h4>
 					<a
 						className={styles.link}
-						href={`http://localhost:3000/beer/${beer.id}`}
+						href={`http://localhost:3000/spirit/${spirit.id}`}
 					>
 						<Button width={"20vw"}>AAAAAAA</Button>
 					</a>
@@ -40,4 +40,4 @@ const Card: FC<CardProps> = ({ beer }): JSX.Element => {
 	);
 };
 
-export default Card;
+export default SpiritCard;

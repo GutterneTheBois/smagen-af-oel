@@ -1,0 +1,93 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	height: 50vh;
+	width: 20vw;
+	text-align: center;
+	justify-content: center;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+}
+
+.card__sm {
+	height: 20vh;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	width: 20vw;
+	text-align: center;
+	justify-content: center;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+
+	.loader {
+		justify-self: center;
+	}
+}
+
+.card__img {
+	width: 10vw;
+	height: auto;
+	margin: auto auto;
+}
+
+.link {
+	text-decoration: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+}
+
+.btn {
+	width: 75vw;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+	border-radius: 50%;
+	width: 2.5em;
+	height: 2.5em;
+	animation-fill-mode: both;
+	animation: fadeInOut 1.8s infinite ease-in-out;
+}
+
+.loader {
+	color: #000;
+	font-size: 7px;
+	position: relative;
+	left: 45%;
+	text-indent: -9999em;
+	transform: translateZ(0);
+	animation-delay: -0.16s;
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+	}
+
+	&:before {
+		left: -3.5em;
+		animation-delay: -0.32s;
+	}
+
+	&:after {
+		left: 3.5em;
+	}
+}
+
+@keyframes fadeInOut {
+	0%,
+	80%,
+	100% {
+		box-shadow: 0 2.5em 0 -1.3em;
+	}
+	40% {
+		box-shadow: 0 2.5em 0 0;
+	}
+}
