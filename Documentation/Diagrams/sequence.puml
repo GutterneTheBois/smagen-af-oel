@@ -1,0 +1,25 @@
+@startuml API
+actor User
+
+participant "RestAPI" as A
+participant "Prisma" as P
+participant "Database" as D
+
+User -> A: sendServiceRequest
+activate A
+
+A -> P: Process Request
+
+P -> D: Create Query
+activate D
+
+D --> P: Send Response
+deactivate D
+
+P --> A: Process Response
+deactivate P
+
+A --> User: Render Response
+deactivate A
+
+@enduml

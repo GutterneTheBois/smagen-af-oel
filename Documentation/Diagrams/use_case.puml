@@ -1,0 +1,21 @@
+@startuml uc
+
+left to right direction
+
+actor Guest as G
+actor Admin as A
+
+package RestAPI {
+    usecase "Send Get Request" as UC1
+    usecase "Send Post Request" as UC2
+    usecase "Send Put Request" as UC3
+    usecase "Send Delete Request" as UC4
+}
+
+G --> UC1
+A --> UC1
+A --> UC2
+A --> UC3
+A --> UC4
+
+@enduml
