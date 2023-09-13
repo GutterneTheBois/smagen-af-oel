@@ -28,23 +28,19 @@ const ProductsGrid: FC<ProductsGridProps> = async ({
 		return products as Beer[] | Spirit[];
 	};
 
-	const getBeers = async (): Promise<Beer[]> => {
-		return (await prisma.beer.findMany({
-			where: { breweryName: breweryName },
-		})) as Beer[];
-	};
-
 	return (
-		<div className={styles.grid}>
-			{(await getProducts()).map((product) => (
-				<>
-					{product.breweryName !== undefined ? (
-						<Card beer={product as Beer} />
-					) : (
-						<Card spirit={product as Spirit} />
-					)}
-				</>
-			))}
+		<div className={styles.products__container}>
+			<div className={styles.grid}>
+				{(await getProducts()).map((product) => (
+					<>
+						{breweryName !== undefined ? (
+							<Card beer={product as Beer} />
+						) : (
+							<Card spirit={product as Spirit} />
+						)}
+					</>
+				))}
+			</div>
 		</div>
 	);
 };

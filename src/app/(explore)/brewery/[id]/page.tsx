@@ -13,9 +13,13 @@ const BreweryPage = async ({ params }: { params: { id: string } }) => {
 
 	return (
 		<div className={styles.title}>
-			<h1>{(await brewery()).name}</h1>
-			<h2>{(await brewery()).description}</h2>
-			<ProductsGrid breweryName={(await brewery()).name} />
+			<div className={styles.products}>
+				<div className={styles.fixed}>
+					<h1>{(await brewery()).name}</h1>
+					<h2>{(await brewery()).description}</h2>
+				</div>
+				<ProductsGrid breweryName={(await brewery()).name} />
+			</div>
 		</div>
 	);
 };
