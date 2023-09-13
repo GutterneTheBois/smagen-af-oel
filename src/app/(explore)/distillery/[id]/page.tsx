@@ -14,7 +14,7 @@ const DistilleryPage = async ({ params }: { params: { id: string } }) => {
 	return (
 		<div className={styles.title}>
 			<div className={styles.products}>
-				<div>
+				<div className={styles.fixed}>
 					<h1>{(await distillery()).name}</h1>
 					<h2>{(await distillery()).description}</h2>
 				</div>
