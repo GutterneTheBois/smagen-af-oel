@@ -15,13 +15,9 @@ export default function ExploreLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body className={inter.className}>
-				<DatabaseContextProvider>
-					<NavBar push />
-					{children}
-				</DatabaseContextProvider>
-			</body>
-		</html>
+		<DatabaseContextProvider>
+			<NavBar push />
+			{children}
+		</DatabaseContextProvider>
 	);
 }

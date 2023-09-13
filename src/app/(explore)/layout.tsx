@@ -1,4 +1,4 @@
-import { NavBar } from "@/components";
+import { Footer, NavBar } from "@/components";
 import { DatabaseContextProvider } from "@/services";
 import { Khand } from "next/font/google";
 
@@ -18,6 +18,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body style={{ fontSize: "X-Large" }} className={khand.className}>
 				<DatabaseContextProvider>{children}</DatabaseContextProvider>
+				<Footer />
 			</body>
 		</html>
 	);

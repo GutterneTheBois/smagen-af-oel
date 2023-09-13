@@ -32,7 +32,7 @@ const NavBar: FC<NavBarProps> = ({ push }) => {
 	];
 
 	return (
-		<div className={`${push ? styles.navbarContainer : ""}`}>
+		<div className={`${push ? styles.navbar__container : ""}`}>
 			<div className={styles.navbar}>
 				<a href={"/"}>
 					<Image
