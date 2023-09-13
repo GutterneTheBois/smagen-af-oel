@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import styles from "../../explore.module.scss";
+import { ProductsGrid } from "@/components";
 
 const BreweryPage = async ({ params }: { params: { id: string } }) => {
 	const brewery = async () => {
@@ -7,13 +8,14 @@ const BreweryPage = async ({ params }: { params: { id: string } }) => {
 			where: { id: params.id },
 		});
 
-		return { name: res?.name, description: res?.description };
+		return { ...res };
 	};
 
 	return (
 		<div className={styles.title}>
 			<h1>{(await brewery()).name}</h1>
 			<h2>{(await brewery()).description}</h2>
+			<ProductsGrid breweryName={(await brewery()).name} />
 		</div>
 	);
 };

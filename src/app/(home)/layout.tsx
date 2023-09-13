@@ -1,6 +1,6 @@
 import { DatabaseContextProvider } from "@/services";
 import "./globals.scss";
-import { NavBar } from "@/components";
+import { Footer, NavBar } from "@/components";
 import { Khand } from "next/font/google";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
@@ -25,6 +25,7 @@ export default function RootLayout({
 					{children}
 					{beer}
 				</DatabaseContextProvider>
+				<Footer />
 			</body>
 		</html>
 	);
