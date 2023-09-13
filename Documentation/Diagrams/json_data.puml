@@ -1,0 +1,42 @@
+@startjson brewery
+{
+    "id": "cuid",
+    "name": "breweryName",
+    "description?": "description of the brewery",
+    "beers": [
+        {
+            "id": "cuid",
+            "name": "beerName",
+            "description?": "Description of the beer",
+            "type": "beer type",
+            "vol": "<decimal> alcohol %",
+            "ibu?": "<int> bitterness of the beer",
+            "size": "<int> size of the can or bottle",
+            "image_url?": "path to the image of the beer",
+            "breweryName": "foreign key to the brewery"
+        },
+        {"...": "..."}
+    ]
+}
+@enduml
+
+@startjson distillery
+{
+    "id": "cuid",
+    "name": "distilleryName",
+    "description?": "description of the distillery",
+    "spirits": [
+        {
+            "id": "cuid",
+            "name": "spiritName",
+            "description?": "Description of the spirit",
+            "type": "spirit type",
+            "vol": "<decimal> alcohol %",
+            "size": "<int> size of the bottle",
+            "image_url?": "path to the image of the spirit",
+            "distilleryName": "foreign key to the distillery"
+        },
+        {"...": "..."}
+    ]
+}
+@enduml

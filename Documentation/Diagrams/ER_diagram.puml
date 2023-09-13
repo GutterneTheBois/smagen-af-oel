@@ -1,0 +1,45 @@
+@startuml er_diagram
+
+entity Brewery {
+    PK | id: cuid <<generated>>
+    --
+    * name: text
+    description: text
+}
+
+entity Beer {
+    PK | id: cuid <<generated>>
+    --
+    * breweryName: text <<FK>>
+    * name: text
+    description: text
+    * type: text
+    * vol: decimal
+    ibu: int
+    * size: int
+    image_url: text
+}
+
+entity Distillery {
+    PK | id: cuid <<generated>>
+    --
+    * name: text
+    description: text
+}
+
+entity Spirit {
+    PK | id: cuid <<generated>>
+    --
+    * distilleryName: text <<FK>>
+    * name: text
+    description: text
+    * type: text
+    * vol: decimal
+    * size: int
+    image_url: text
+}
+
+Beer }o--|| Brewery
+Spirit }o--|| Distillery
+
+@enduml
