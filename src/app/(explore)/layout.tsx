@@ -1,6 +1,7 @@
 import { Footer, NavBar } from "@/components";
 import { DatabaseContextProvider } from "@/services";
 import { Khand } from "next/font/google";
+import styles from "./explore.module.scss";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
 
@@ -16,7 +17,8 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body style={{ fontSize: "X-Large" }} className={khand.className}>
+			<body className={`${khand.className} ${styles.app}`}>
+				<NavBar push />
 				<DatabaseContextProvider>{children}</DatabaseContextProvider>
 				<Footer />
 			</body>

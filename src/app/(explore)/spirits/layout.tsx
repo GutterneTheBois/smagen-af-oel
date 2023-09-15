@@ -7,7 +7,6 @@ const SpiritExploreLayout = async (props: {
 }) => {
 	return (
 		<>
-			<NavBar push />
 			{props.children}
 			{props.spirit}
 		</>
