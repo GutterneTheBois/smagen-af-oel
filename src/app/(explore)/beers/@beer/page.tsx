@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, useEffect } from "react";
 import { useDb } from "@/services";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
 import styles from "../../explore.module.scss";
@@ -8,8 +8,18 @@ import { Beer } from "@prisma/client";
 
 const BeerGrid = () => {
 	const { beers, refreshBeers } = useDb();
-	const [filteredBeers, setFilteredBeers] = useState<Beer[]>(beers);
+
+	const [filteredBeers, setFilteredBeers] = useState<Beer[]>([]);
 	const [query, setQuery] = useState<string>("");
+
+	useEffect(() => {
+		if (filteredBeers.length === 0) {
+			(async () => {
+				await refreshBeers();
+				setFilteredBeers(beers);
+			})();
+		}
+	}, [beers]);
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshBeers();
@@ -19,7 +29,7 @@ const BeerGrid = () => {
 		) as Beer[];
 
 		setFilteredBeers(filtered);
-	}, [beers, query]);
+	}, [query]);
 
 	const onChange = (ev: ChangeEvent<HTMLInputElement>) => {
 		setQuery(ev.target.value.toLowerCase());
@@ -27,18 +37,14 @@ const BeerGrid = () => {
 
 	return (
 		<>
-			<div className={styles.pre__container}>
-				<h1 className={styles.title}>Øl</h1>
-				<div style={{ marginRight: "2vw" }}>
-					<label style={{ marginRight: "0.8vw" }} htmlFor="search">
-						Søg:
-					</label>
-					<input
-						name="search"
-						className={styles.search}
-						onChange={onChange}
-					/>
-				</div>
+			<h1 className={styles.title}>Øl</h1>
+			<div className={styles.search}>
+				<label htmlFor="search">Søg:</label>
+				<input
+					className={styles.search__input}
+					name="search"
+					onChange={onChange}
+				/>
 			</div>
 			<div className={styles.container}>
 				{loading ? (
