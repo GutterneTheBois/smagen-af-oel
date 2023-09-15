@@ -7,11 +7,10 @@ const BreweryExploreLayout = async (props: {
 	brewery: ReactNode;
 }) => {
 	return (
-		<DatabaseContextProvider>
-			<NavBar push />
+		<>
 			{props.children}
 			{props.brewery}
-		</DatabaseContextProvider>
+		</>
 	);
 };
 

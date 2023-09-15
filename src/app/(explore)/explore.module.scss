@@ -1,5 +1,24 @@
+.app {
+	font-size: x-large;
+	margin: 0;
+}
+
 .title {
-	margin: 10vh 2vw auto 2vw;
+	margin: auto 2vw auto 2vw;
+}
+
+.pre__container {
+	position: sticky;
+	display: flex;
+	justify-content: space-between;
+	top: 8vh;
+	width: 100%;
+	background-color: forestgreen;
+}
+
+.search {
+	margin-top: 2vh;
+	height: 2vh;
 }
 
 .container {

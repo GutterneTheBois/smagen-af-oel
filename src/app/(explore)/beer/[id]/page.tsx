@@ -13,6 +13,7 @@ const BeerPage = async ({ params }: { params: { id: string } }) => {
 	return (
 		<div className={styles.title}>
 			<h1>{(await beer()).name}</h1>
+			<h2>{(await beer()).type}</h2>
 		</div>
 	);
 };
