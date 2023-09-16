@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { NavBar } from "@/components";
 
 const SpiritExploreLayout = async (props: {
 	children: ReactNode;
