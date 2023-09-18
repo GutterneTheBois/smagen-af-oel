@@ -34,9 +34,9 @@ const ProductsGrid: FC<ProductsGridProps> = async ({
 				{(await getProducts()).map((product) => (
 					<>
 						{breweryName !== undefined ? (
-							<Card beer={product as Beer} />
+							<Card key={product.id} beer={product as Beer} />
 						) : (
-							<Card spirit={product as Spirit} />
+							<Card key={product.id} spirit={product as Spirit} />
 						)}
 					</>
 				))}
