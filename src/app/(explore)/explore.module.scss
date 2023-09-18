@@ -1,6 +1,33 @@
+.app {
+	height: 100vh;
+	font-size: x-large;
+	margin: 0;
+}
+
 .title {
 	margin: 10vh 2vw auto 2vw;
 	color: #fff;
+}
+
+.pre__container {
+	position: sticky;
+	display: flex;
+	justify-content: space-between;
+	top: 8vh;
+	width: 100%;
+	background-color: forestgreen;
+}
+
+.search {
+	position: fixed;
+	top: 2.5vh;
+	right: 15vw;
+
+	&__input {
+		position: fixed;
+		top: 3.1vh;
+		right: 2vw;
+	}
 }
 
 .container {

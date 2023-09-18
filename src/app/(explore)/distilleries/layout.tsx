@@ -7,11 +7,10 @@ const DistilleryExploreLayout = async (props: {
 	distillery: ReactNode;
 }) => {
 	return (
-		<DatabaseContextProvider>
-			<NavBar push />
+		<>
 			{props.children}
 			{props.distillery}
-		</DatabaseContextProvider>
+		</>
 	);
 };
 

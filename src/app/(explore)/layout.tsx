@@ -4,6 +4,7 @@ import { Khand } from "next/font/google";
 import Favicon from "../../../public/metadata/favicon.ico";
 import bg from "../../../public/background.jpg";
 import "./explore.scss";
+import styles from "./explore.module.scss";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
 
@@ -27,6 +28,8 @@ export default function RootLayout({
 				}}
 				className={khand.className}
 			>
+			<body className={`${khand.className} ${styles.app}`}>
+				<NavBar push />
 				<DatabaseContextProvider>{children}</DatabaseContextProvider>
 				<Footer />
 			</body>
