@@ -1,5 +1,6 @@
 .card {
 	display: flex;
+	background-color: #ffffffdd;
 	flex-direction: column;
 	border: 1px solid black;
 	border-radius: 0.5rem;
@@ -9,22 +10,22 @@
 	justify-content: center;
 	margin-top: 1vh;
 	margin-bottom: 1vh;
-}
 
-.card__sm {
-	height: 20vh;
-	display: flex;
-	flex-direction: column;
-	border: 1px solid black;
-	border-radius: 0.5rem;
-	width: 20vw;
-	text-align: center;
-	justify-content: center;
-	margin-top: 1vh;
-	margin-bottom: 1vh;
+	&__sm {
+		height: 20vh;
+		background-color: #ffffffdd;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid black;
+		border-radius: 0.5rem;
+		text-align: center;
+		justify-content: center;
+		margin-top: 1vh;
+		margin-bottom: 1vh;
 
-	.loader {
-		justify-self: center;
+		.loader {
+			justify-self: center;
+		}
 	}
 }
 
