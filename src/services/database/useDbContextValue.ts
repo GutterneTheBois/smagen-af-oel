@@ -56,7 +56,8 @@ export const useDbContextValue = (): DatabaseHook => {
 		const client = await genApiClient();
 		const res: any = await client.getRequest("brewery");
 
-		const breweries: Brewery[] = res.breweries;
+		const data = await res.json();
+		const breweries = data.breweries as Brewery[];
 
 		setBreweries(breweries);
 	}, [setBreweries]);
@@ -70,10 +71,8 @@ export const useDbContextValue = (): DatabaseHook => {
 				description: description,
 			};
 
-			const brewery = (await client.postRequest(
-				"brewery",
-				newBrewery
-			)) as Brewery;
+			const request = await client.postRequest("brewery", newBrewery);
+			const brewery = request.json() as Brewery;
 
 			setBreweries([...breweries, brewery]);
 		},
@@ -97,7 +96,8 @@ export const useDbContextValue = (): DatabaseHook => {
 		const client = await genApiClient();
 		const res: any = await client.getRequest("beer");
 
-		const beers: Beer[] = res.beers;
+		const data = await res.json();
+		const beers = data.beers as Beer[];
 
 		setBeers(beers);
 	}, [setBeers]);
@@ -126,7 +126,8 @@ export const useDbContextValue = (): DatabaseHook => {
 				breweryName: breweryName,
 			};
 
-			const beer = (await client.postRequest("beer", newBeer)) as Beer;
+			const request = await client.postRequest("beer", newBeer);
+			const beer = request.json() as Beer;
 
 			setBeers([...beers, beer]);
 		},
@@ -150,7 +151,8 @@ export const useDbContextValue = (): DatabaseHook => {
 		const client = await genApiClient();
 		const res: any = await client.getRequest("distillery");
 
-		const distilleries: Distillery[] = res.distilleries;
+		const data = await res.json();
+		const distilleries = data.distilleries as Distillery[];
 
 		setDistilleries(distilleries);
 	}, [setDistilleries]);
@@ -164,10 +166,11 @@ export const useDbContextValue = (): DatabaseHook => {
 				description: description,
 			};
 
-			const distillery = (await client.postRequest(
+			const request = await client.postRequest(
 				"distillery",
 				newDistillery
-			)) as Distillery;
+			);
+			const distillery = request.json() as Distillery;
 
 			setDistilleries([...distilleries, distillery]);
 		},
@@ -192,7 +195,8 @@ export const useDbContextValue = (): DatabaseHook => {
 		const client = await genApiClient();
 		const res: any = await client.getRequest("spirit");
 
-		const spirits: Spirit[] = res.spirits;
+		const data = await res.json();
+		const spirits = data.spirits as Spirit[];
 
 		setSpirits(spirits);
 	}, [setSpirits]);
@@ -219,10 +223,8 @@ export const useDbContextValue = (): DatabaseHook => {
 				distilleryName: distilleryName,
 			};
 
-			const spirit = (await client.postRequest(
-				"spirit",
-				newSpirit
-			)) as Spirit;
+			const request = await client.postRequest("spirit", newSpirit);
+			const spirit = request.json() as Spirit;
 
 			setSpirits([...spirits, spirit]);
 		},

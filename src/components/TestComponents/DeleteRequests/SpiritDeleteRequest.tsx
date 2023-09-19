@@ -25,8 +25,8 @@ const SpiritDeleteRequest: FC = () => {
 					<option value={"select"}>-- Choose Spirit --</option>
 					{!loading && (
 						<>
-							{spirits.map((spirit) => (
-								<option key={spirit.id} value={spirit.id}>
+							{spirits.map((spirit, index) => (
+								<option key={index} value={spirit.id}>
 									{spirit.name}
 								</option>
 							))}
