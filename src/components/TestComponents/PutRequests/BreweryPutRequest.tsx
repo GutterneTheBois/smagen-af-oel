@@ -64,8 +64,8 @@ const BreweryPutRequest: FC = () => {
 			<div>
 				<select onChange={onChangeSelect} defaultValue={"select"}>
 					<option value="select">-- Choose Brewery --</option>
-					{breweries.map((brewery) => (
-						<option key={brewery.id} value={brewery.id}>
+					{breweries.map((brewery, index) => (
+						<option key={index} value={brewery.id}>
 							{brewery.name}
 						</option>
 					))}

@@ -25,8 +25,8 @@ const BeerDeleteRequest: FC = () => {
 					<option>-- Choose Beer --</option>
 					{!loading && (
 						<>
-							{beers.map((beer) => (
-								<option key={beer.id} value={beer.id}>
+							{beers.map((beer, index) => (
+								<option key={index} value={beer.id}>
 									{beer.name}
 								</option>
 							))}
