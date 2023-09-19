@@ -30,11 +30,8 @@ const DistilleryPutRequest: FC = () => {
 					<option value="select">-- Choose Distillery --</option>
 					{!loading && (
 						<>
-							{distilleries.map((distillery) => (
-								<option
-									key={distillery.id}
-									value={distillery.id}
-								>
+							{distilleries.map((distillery, index) => (
+								<option key={index} value={distillery.id}>
 									{distillery.name}
 								</option>
 							))}

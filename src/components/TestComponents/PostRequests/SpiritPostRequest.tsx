@@ -100,11 +100,8 @@ const SpiritPostRequest: FC = () => {
 					<option value={"select"}>-- Select distillery --</option>
 					{!loading && (
 						<>
-							{distilleries.map((distillery) => (
-								<option
-									key={distillery.id}
-									value={distillery.name}
-								>
+							{distilleries.map((distillery, index) => (
+								<option key={index} value={distillery.name}>
 									{distillery.name}
 								</option>
 							))}
