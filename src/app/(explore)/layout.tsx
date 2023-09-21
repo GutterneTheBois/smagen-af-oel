@@ -2,7 +2,7 @@ import { Footer, NavBar } from "@/components";
 import { DatabaseContextProvider } from "@/services";
 import { Khand } from "next/font/google";
 import Favicon from "../../../public/metadata/favicon.ico";
-import bg from "../../../public/background.jpg";
+import bg from "../../../public/background.png";
 import "./explore.scss";
 import styles from "./explore.module.scss";
 
