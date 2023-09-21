@@ -1,6 +1,11 @@
 import { FC } from "react";
 import styles from "./navbar.module.scss";
 import Image from "next/image";
+import GoogleButton from "../AuthComponents/GoogleButton";
+import { getServerSession } from "next-auth";
+import SignOutButton from "../AuthComponents/SignOutButton";
+import { authOptions } from "@/lib/auth";
+import { Button, GhostButton } from "@/client-components";
 
 type Item = {
 	name: string;
@@ -11,7 +16,9 @@ type NavBarProps = {
 	push?: boolean;
 };
 
-const NavBar: FC<NavBarProps> = ({ push }) => {
+const NavBar: FC<NavBarProps> = async ({ push }) => {
+	const session = await getServerSession(authOptions);
+
 	const items: Item[] = [
 		{
 			name: "Øl",
@@ -52,6 +59,28 @@ const NavBar: FC<NavBarProps> = ({ push }) => {
 						{item.name}
 					</a>
 				))}
+				<div className={styles.auth__area}>
+					{!session ? (
+						<GoogleButton />
+					) : (
+						<div style={{ display: "flex" }}>
+							<img
+								className={styles.user__img}
+								src={session.user?.image || ""}
+								alt={" "}
+							/>
+							<span
+								style={{
+									marginRight: "0.5vw",
+									paddingTop: "0.2vh",
+								}}
+							>
+								{session.user?.name}
+							</span>
+							<SignOutButton />
+						</div>
+					)}
+				</div>
 			</div>
 		</div>
 	);

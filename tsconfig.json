@@ -29,7 +29,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"prisma/seed.mjs"
+		"prisma/seed.mjs",
+		"__tests__/index.test.js"
 	],
 	"exclude": ["node_modules"]
 }
