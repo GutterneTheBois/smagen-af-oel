@@ -1,7 +1,8 @@
 import { DatabaseContextProvider } from "@/services";
-import "./globals.scss";
+import "../globals.scss";
 import { Footer, NavBar } from "@/components";
 import { Khand } from "next/font/google";
+import bg from "../../../public/background.jpg";
 import Favicon from "../../../public/metadata/favicon.ico";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
@@ -14,19 +15,19 @@ export const metadata = {
 
 export default function RootLayout({
 	children,
-	beer,
 }: {
 	children: React.ReactNode;
-	beer: React.ReactNode;
 }) {
 	return (
 		<html lang="en">
-			<body className={khand.className}>
-				<DatabaseContextProvider>
-					<NavBar />
-					{children}
-					{beer}
-				</DatabaseContextProvider>
+			<body
+				style={{
+					backgroundImage: `url(${bg.src})`,
+				}}
+				className={`${khand.className}`}
+			>
+				<NavBar />
+				<DatabaseContextProvider>{children}</DatabaseContextProvider>
 				<Footer />
 			</body>
 		</html>
