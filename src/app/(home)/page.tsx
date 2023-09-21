@@ -18,11 +18,12 @@ export default async function Home() {
 				<Link href={"/route"}>
 					<Button backgroundColor="#dd0b69">Go to /route</Button>
 				</Link>
-				{session?.user?.name === "Nicolai Walther" && (
-					<Link href={"/test_page"}>
-						<Button backgroundColor="#dd0b69">Test Page</Button>
-					</Link>
-				)}
+				{session?.user?.name === "Nicolai Walther" ||
+					(session?.user?.name === "Mikkel Christensen" && (
+						<Link href={"/test_page"}>
+							<Button backgroundColor="#dd0b69">Test Page</Button>
+						</Link>
+					))}
 
 				<div>
 					<a
