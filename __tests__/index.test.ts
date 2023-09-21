@@ -1,12 +1,14 @@
 import { Brewery, Prisma } from "@prisma/client";
 import { genApiClient } from "../src/services/backend/appApiClient";
 
-test("should create new brewery and match", async () => {
+it("should make GET request for breweries and receive status 200", async () => {
   const client = await genApiClient();
 
   const response: any = await client.getRequest("brewery");
 
-  await expect(response).resolves.toEqual(200);
+  console.log(response);
+
+  expect(response.status).toEqual(200);
 });
 
 // test("should create new brewery and not match", async () => {

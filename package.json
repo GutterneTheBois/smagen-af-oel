@@ -12,7 +12,7 @@
     "db:seed": "npx prisma db seed",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down",
-    "test": "jest --watch"
+    "test": "next dev && jest --watch"
   },
   "prisma": {
     "seed": "node prisma/seed.mjs"
