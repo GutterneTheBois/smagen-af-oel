@@ -1,5 +1,8 @@
 import { Brewery, Prisma } from "@prisma/client";
 import { genApiClient } from "../src/services/backend/appApiClient";
+import { initScriptLoader } from "next/script";
+
+beforeAll(async () => {});
 
 it("should make GET request for breweries and receive status 200", async () => {
   const client = await genApiClient();
