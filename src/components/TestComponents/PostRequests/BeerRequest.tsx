@@ -129,8 +129,8 @@ const PostBeer: FC = () => {
 					<option value={"select"}>-- Select brewery --</option>
 					{!loading && (
 						<>
-							{breweries.map((brewery) => (
-								<option key={brewery.id} value={brewery.name}>
+							{breweries.map((brewery, index) => (
+								<option key={index} value={brewery.name}>
 									{brewery.name}
 								</option>
 							))}

@@ -23,12 +23,10 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				style={{
-					fontSize: "X-Large",
 					backgroundImage: `url(${bg.src})`,
 				}}
-				className={khand.className}
+				className={`${khand.className} ${styles.app}`}
 			>
-			<body className={`${khand.className} ${styles.app}`}>
 				<NavBar push />
 				<DatabaseContextProvider>{children}</DatabaseContextProvider>
 				<Footer />
