@@ -1,16 +1,13 @@
 "use client";
-
 import { Button } from "@/client-components";
 import { signIn } from "next-auth/react";
+import { BsGithub } from "react-icons/bs";
 
 export default function GithubButton() {
-	return (
-		<Button
-			className="border border-slate-300 rounded px-5 py-4 flex items-center"
-			onClick={() => signIn("github")}
-		>
-			<div className="px-2"></div>
-			<span>Sign In with Github</span>
-		</Button>
-	);
+    return (
+        <Button padding={"0 0 0 0.5vw"} onClick={() => signIn("github")}>
+            <BsGithub style={{ width: "2vw", height: "auto" }} />
+            <span>Sign In with Github</span>
+        </Button>
+    );
 }
