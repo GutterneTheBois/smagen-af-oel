@@ -2,6 +2,7 @@
 const nextConfig = {
     images: {
         formats: ['image/webp'],
+        domains: ["www.dropbox.com"]
     },
 }
 
