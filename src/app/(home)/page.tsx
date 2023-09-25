@@ -1,6 +1,6 @@
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
-import styles from "./page.module.scss";
+import styles from "./index.module.scss";
 import Image from "next/image";
 import { Button, SimpleGrid } from "@/client-components";
 import Link from "next/link";
@@ -10,7 +10,10 @@ export default async function Home() {
 
 	return (
 		<main className={styles.main}>
-			<div className={styles.description}>
+			{/* <div className={styles.grid}> */}
+			{/* random beer should render here */}
+			{/* </div> */}
+			{/* <div className={styles.description}>
 				<p>
 					Get started by editing&nbsp;
 					<code className={styles.code}>src/app/page.tsx</code>
@@ -50,7 +53,7 @@ export default async function Home() {
 				</p>
 			</div>
 
-			<SimpleGrid columns={2}></SimpleGrid>
+			<SimpleGrid columns={2}></SimpleGrid> */}
 		</main>
 	);
 }
