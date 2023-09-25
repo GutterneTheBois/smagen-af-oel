@@ -1,11 +1,11 @@
 import { FC } from "react";
 import styles from "./navbar.module.scss";
 import Image from "next/image";
-import GoogleButton from "../AuthComponents/GoogleButton";
 import { getServerSession } from "next-auth";
-import SignOutButton from "../AuthComponents/SignOutButton";
+import { SignOutButton } from "../AuthComponents";
 import { authOptions } from "@/lib/auth";
-import { Button, GhostButton } from "@/client-components";
+import { Button } from "@/client-components";
+import { TbGlassFullFilled } from "react-icons/tb";
 
 type Item = {
 	name: string;
@@ -61,7 +61,18 @@ const NavBar: FC<NavBarProps> = async ({ push }) => {
 				))}
 				<div className={styles.auth__area}>
 					{!session ? (
-						<GoogleButton />
+						<a href="/login">
+							<Button>
+								<TbGlassFullFilled
+									style={{
+										height: "2vh",
+										width: "auto",
+										marginRight: "1vw",
+									}}
+								/>
+								<span>Log in</span>
+							</Button>
+						</a>
 					) : (
 						<div style={{ display: "flex" }}>
 							<img

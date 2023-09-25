@@ -1,11 +1,11 @@
 @startuml API
-actor User
+actor Visitor
 
 participant "RestAPI" as A
 participant "Prisma" as P
 participant "Database" as D
 
-User -> A: sendServiceRequest
+Visitor -> A: sendServiceRequest
 activate A
 
 A -> P: Process Request
