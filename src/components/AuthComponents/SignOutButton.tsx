@@ -1,12 +1,14 @@
 "use client";
 import { Button } from "@/client-components";
 import { signOut } from "next-auth/react";
-import { HiOutlineLogout } from "react-icons/hi";
+import { TbGlassOff } from "react-icons/tb";
 
 const SignoutButton = () => {
     return (
-        <Button width={"4vw"} onClick={() => signOut()}>
-            <HiOutlineLogout style={{ marginRight: "0.25vw" }} />
+        <Button width={"6vw"} onClick={() => signOut()}>
+            <TbGlassOff
+                style={{ height: "2vh", width: "auto", marginRight: "1vw" }}
+            />
             <span>Sign Out</span>
         </Button>
     );

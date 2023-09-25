@@ -6,6 +6,7 @@ import SignOutButton from "../AuthComponents/SignOutButton";
 import { authOptions } from "@/lib/auth";
 import FacebookButton from "../AuthComponents/FacebookButton";
 import { Button } from "@/client-components";
+import { TbGlassFullFilled } from "react-icons/tb";
 
 type Item = {
     name: string;
@@ -63,7 +64,13 @@ const NavBar: FC<NavBarProps> = async ({ push }) => {
                     {!session ? (
                         <a href="/login">
                             <Button>
-                                {/* ICON HERE */}
+                                <TbGlassFullFilled
+                                    style={{
+                                        height: "2vh",
+                                        width: "auto",
+                                        marginRight: "1vw",
+                                    }}
+                                />
                                 <span>Log in</span>
                             </Button>
                         </a>

@@ -1,3 +1,59 @@
-.loginarea {
+.loginPage {
     margin-top: 15vh;
+
+    .loginContainer {
+        display: flex;
+        background-color: #ffffffdd;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        height: 50vh;
+        width: 20vw;
+        text-align: center;
+        justify-content: center;
+        margin: 1vh auto 1vh auto;
+        color: #000;
+
+        .loginTextArea {
+            display: inline;
+            margin: auto;
+
+            .loginTextField {
+                display: flex;
+                margin: 0.5rem;
+                border: 0.1rem solid #000;
+                border-radius: 0.3rem;
+
+                .icon {
+                    padding: 0.2rem;
+                    border-right: 0.1rem solid #000;
+                    display: inline-flex;
+                    justify-self: center;
+                }
+
+                .input {
+                    background: none;
+                    border: none;
+                    text-indent: 0.4rem;
+                    outline: transparent;
+                    color: #000;
+                }
+            }
+        }
+
+        .divider {
+            height: 0.1rem;
+            width: 90%;
+            border-radius: 0.05rem;
+            border: 0.05rem solid #ababab;
+            align-self: center;
+        }
+
+        .loginWith_Container {
+            width: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 }
