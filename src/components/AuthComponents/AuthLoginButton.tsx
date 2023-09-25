@@ -52,8 +52,8 @@ const AuthLoginButton: FC<Props> = ({ type }) => {
 			onClick={() => signIn(`${type}`, { callbackUrl: "/" })}
 		>
 			{getIconByPropType()}
-			<span>
-				Sign in with {type.charAt(0).toUpperCase() + type.slice(1)}
+			<span className={styles.justifiedText}>
+				Sign in with {type[0].toUpperCase() + type.slice(1)}
 			</span>
 		</Button>
 	);
