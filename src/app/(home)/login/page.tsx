@@ -40,7 +40,7 @@ const LoginPage: FC = (): JSX.Element => {
 							margin: "1rem",
 						}}
 					>
-						<Button width="100%">Login</Button>
+						<Button width="90%">Login</Button>
 					</div>
 				</div>
 				<div className={styles.divider}></div>

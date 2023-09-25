@@ -5,6 +5,11 @@
 	background-color: #ffffffdd;
 	width: 100%;
 	background-color: darkgrey;
+
+	&_attach {
+		position: absolute;
+		bottom: 0;
+	}
 }
 
 .logo {
