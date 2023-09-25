@@ -5,6 +5,7 @@ import { Khand } from "next/font/google";
 import bg from "../../../public/background.png";
 import Favicon from "../../../public/metadata/favicon.ico";
 import styles from "./index.module.scss";
+import "../globals.scss";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
 
@@ -23,13 +24,7 @@ const RootLayout = ({
 }) => {
 	return (
 		<html lang="en">
-			<body
-				style={{
-					backgroundImage: `url(${bg.src})`,
-					height: "100%",
-				}}
-				className={`${khand.className}`}
-			>
+			<body className={`${khand.className}`}>
 				<main className={styles.main}>
 					<NavBar />
 					<DatabaseContextProvider>
