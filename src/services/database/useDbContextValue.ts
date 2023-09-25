@@ -228,7 +228,7 @@ export const useDbContextValue = (): DatabaseHook => {
 
 			setSpirits([...spirits, spirit]);
 		},
-		[setSpirits]
+		[spirits, setSpirits]
 	);
 
 	const deleteSpirit = useCallback(
@@ -269,7 +269,7 @@ export const useDbContextValue = (): DatabaseHook => {
 					break;
 			}
 		},
-		[]
+		[refreshBreweries, refreshDistilleries]
 	);
 
 	return {
