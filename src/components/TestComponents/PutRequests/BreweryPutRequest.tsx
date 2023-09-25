@@ -49,7 +49,7 @@ const BreweryPutRequest: FC = () => {
 		(async () => {
 			await refreshBreweries();
 		})();
-	}, [breweries]);
+	}, [breweries, refreshBreweries]);
 
 	const update = () => {
 		updateDescription("brewery", id, description);
