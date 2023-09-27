@@ -28,14 +28,14 @@ const RandomBeer = () => {
 	const BeerCard = (): JSX.Element => {
 		return (
 			<>
-				<Image
-					width={500}
-					height={500}
-					src={
-						"https://www.dropbox.com/s/8msstai7ficca3n/15imp.jpeg?raw=1"
-					}
-					alt={beer?.image_url || " "}
-				/>
+				<a href={`/beer/${beer?.id}`}>
+					<Image
+						width={500}
+						height={500}
+						src={beer?.image_url || ""}
+						alt={beer?.image_url || " "}
+					/>
+				</a>
 				<hr />
 				<div className={styles.buttons}>
 					<a href={"/beers"}>
