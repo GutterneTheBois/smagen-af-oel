@@ -5,6 +5,7 @@ import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
 import { Beer } from "@prisma/client";
 import styles from "../index.module.scss";
 import { Button } from "@/client-components";
+import Image from "next/image";
 
 const RandomBeer = () => {
 	const { beers, refreshBeers } = useDb();
@@ -27,7 +28,9 @@ const RandomBeer = () => {
 	const BeerCard = (): JSX.Element => {
 		return (
 			<>
-				<img
+				<Image
+					width={500}
+					height={500}
 					src={
 						"https://www.dropbox.com/s/8msstai7ficca3n/15imp.jpeg?raw=1"
 					}
