@@ -2,10 +2,8 @@ import { DatabaseContextProvider } from "@/services";
 import "../globals.scss";
 import { Footer, NavBar } from "@/components";
 import { Khand } from "next/font/google";
-import bg from "../../../public/background.png";
 import Favicon from "../../../public/metadata/favicon.ico";
 import styles from "./index.module.scss";
-import "../globals.scss";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
 
