@@ -2,7 +2,6 @@ import { DatabaseContextProvider } from "@/services";
 import "../globals.scss";
 import { Footer, NavBar } from "@/components";
 import { Khand } from "next/font/google";
-import bg from "../../../public/background.png";
 import Favicon from "../../../public/metadata/favicon.ico";
 import styles from "./index.module.scss";
 
@@ -23,13 +22,7 @@ const RootLayout = ({
 }) => {
 	return (
 		<html lang="en">
-			<body
-				style={{
-					backgroundImage: `url(${bg.src})`,
-					height: "100%",
-				}}
-				className={`${khand.className}`}
-			>
+			<body className={`${khand.className}`}>
 				<main className={styles.main}>
 					<NavBar />
 					<DatabaseContextProvider>

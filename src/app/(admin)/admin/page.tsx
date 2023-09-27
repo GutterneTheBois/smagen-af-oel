@@ -12,12 +12,10 @@ import {
 	SpiritPostRequest,
 	StatusField,
 } from "@/components/TestComponents";
-import { NavBar } from "@/components";
 
-const TestPage: FC = async () => {
+const AdminPage: FC = async () => {
 	return (
 		<>
-			<NavBar push />
 			<div
 				style={{
 					display: "flex",
@@ -56,7 +54,11 @@ const TestPage: FC = async () => {
 			</div>
 			<hr />
 			<div
-				style={{ display: "flex", marginTop: "2vh", marginLeft: "2vw" }}
+				style={{
+					display: "flex",
+					marginTop: "2vh",
+					marginLeft: "2vw",
+				}}
 			>
 				<SpiritPostRequest />
 				<SpiritDeleteRequest />
@@ -65,4 +67,4 @@ const TestPage: FC = async () => {
 	);
 };
 
-export default TestPage;
+export default AdminPage;
