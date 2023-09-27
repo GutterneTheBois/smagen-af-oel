@@ -75,6 +75,13 @@ const NavBar: FC<NavBarProps> = async ({ push }) => {
 						</a>
 					) : (
 						<div style={{ display: "flex" }}>
+							{(session.user?.name === "Nicolai Walther" ||
+								session.user?.name ===
+									"Mikkel Christensen") && (
+								<a href="/admin">
+									<Button>Test Page</Button>
+								</a>
+							)}
 							<img
 								className={styles.user__img}
 								src={session.user?.image || ""}
