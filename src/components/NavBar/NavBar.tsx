@@ -39,7 +39,7 @@ const NavBar: FC<NavBarProps> = async ({ push }) => {
 	];
 
 	return (
-		<div className={`${push ? styles.navbar__container : ""}`}>
+		<header>
 			<div className={styles.navbar}>
 				<a href={"/"}>
 					<Image
@@ -100,7 +100,7 @@ const NavBar: FC<NavBarProps> = async ({ push }) => {
 					)}
 				</div>
 			</div>
-		</div>
+		</header>
 	);
 };
 

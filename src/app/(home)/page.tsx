@@ -9,8 +9,9 @@ export default async function Home() {
 	const session = await getServerSession(authOptions);
 
 	return (
-		<main className={styles.main}>
-			{/* <div className={styles.grid}> */}
+		<>
+			{/* <main>
+			<div className={styles.grid}> */}
 			{/* random beer should render here */}
 			{/* </div> */}
 			{/* <div className={styles.description}>
@@ -53,7 +54,8 @@ export default async function Home() {
 				</p>
 			</div>
 
-			<SimpleGrid columns={2}></SimpleGrid> */}
-		</main>
+			<SimpleGrid columns={2}></SimpleGrid> 
+		</main>*/}
+		</>
 	);
 }

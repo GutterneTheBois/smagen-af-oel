@@ -23,8 +23,8 @@ const RootLayout = ({
 	return (
 		<html lang="en">
 			<body className={`${khand.className}`}>
+				<NavBar />
 				<main className={styles.main}>
-					<NavBar />
 					<DatabaseContextProvider>
 						<div className={styles.grid}>
 							<div className={styles.card}>left</div>
@@ -33,8 +33,8 @@ const RootLayout = ({
 						</div>
 						{children}
 					</DatabaseContextProvider>
-					<Footer attach />
 				</main>
+				<Footer attach />
 			</body>
 		</html>
 	);
