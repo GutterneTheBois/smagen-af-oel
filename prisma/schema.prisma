@@ -20,16 +20,18 @@ model Brewery {
 }
 
 model Beer {
-    id          String  @id @default(cuid())
-    name        String  @unique
-    description String?
-    type        String
-    vol         Decimal
-    ibu         Int?
-    size        Int
-    image_url   String?
-    brewery     Brewery @relation(fields: [breweryName], references: [name])
-    breweryName String
+    id                String  @id @default(cuid())
+    name              String  @unique
+    description       String?
+    type              String
+    vol               Decimal
+    ibu               Int?
+    size              Int
+    image_url         String?
+    brewery           Brewery @relation(fields: [breweryName], references: [name])
+    breweryName       String
+    Beer_of_the_day   BotD?   @relation(fields: [beer_of_the_dayId], references: [id])
+    beer_of_the_dayId Int?
 
     @@map(name: "beers")
 }
@@ -55,4 +57,19 @@ model Spirit {
     distilleryName String
 
     @@map(name: "spirits")
+}
+
+model Announcement {
+    id          String @id @default(cuid())
+    title       String
+    description String
+
+    @@map(name: "announcements")
+}
+
+model BotD {
+    id    Int    @id @default(autoincrement())
+    beers Beer[]
+
+    @@map(name: "botds")
 }
