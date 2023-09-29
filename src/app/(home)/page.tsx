@@ -10,6 +10,17 @@ export default async function Home() {
 
 	return (
 		<>
+			<div className={styles.headings}>
+				<div>
+					<h2>Dagens Øl</h2>
+				</div>
+				<div>
+					<h2>Udforsk Butikken</h2>
+				</div>
+				<div>
+					<h2>Nyheder</h2>
+				</div>
+			</div>
 			{/* <main>
 			<div className={styles.grid}> */}
 			{/* random beer should render here */}

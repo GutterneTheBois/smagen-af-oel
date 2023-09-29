@@ -23,7 +23,7 @@ export const useInfoContextValue = (): InfoHook => {
 		// handle botds
 		const botdsRes: any = await client.getRequest("botd");
 		const botdsData = await botdsRes.json();
-		setBotds(botdsData.botd);
+		setBotds(botdsData.botds as Beer[]);
 
 		// handle announcements
 		const announcementsRes: any = await client.getRequest("announcement");
