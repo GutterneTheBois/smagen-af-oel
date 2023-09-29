@@ -4,6 +4,7 @@ import { Footer, NavBar } from "@/components";
 import { Khand } from "next/font/google";
 import Favicon from "../../../public/metadata/favicon.ico";
 import styles from "./index.module.scss";
+import { InfoContextProvider } from "@/services/info/useInfo";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
 
@@ -26,12 +27,14 @@ const RootLayout = ({
 				<NavBar />
 				<main className={styles.main}>
 					<DatabaseContextProvider>
-						<div className={styles.grid}>
-							<div className={styles.card}>left</div>
-							{random_beer}
-							<div className={styles.card}>right</div>
-						</div>
-						{children}
+						<InfoContextProvider>
+							<div className={styles.grid}>
+								<div className={styles.card}>left</div>
+								{random_beer}
+								<div className={styles.card}>right</div>
+							</div>
+							{children}
+						</InfoContextProvider>
 					</DatabaseContextProvider>
 				</main>
 				<Footer attach />
