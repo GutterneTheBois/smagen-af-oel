@@ -17,23 +17,27 @@ export const metadata = {
 const RootLayout = ({
 	children,
 	random_beer,
+	botd,
+	announcements,
 }: {
 	children: React.ReactNode;
 	random_beer: React.ReactNode;
+	botd: React.ReactNode;
+	announcements: React.ReactNode;
 }) => {
 	return (
 		<html lang="en">
 			<body className={`${khand.className}`}>
 				<NavBar />
 				<main className={styles.main}>
+					{children}
 					<DatabaseContextProvider>
 						<InfoContextProvider>
 							<div className={styles.grid}>
-								<div className={styles.card}>left</div>
+								{botd}
 								{random_beer}
-								<div className={styles.card}>right</div>
+								{announcements}
 							</div>
-							{children}
 						</InfoContextProvider>
 					</DatabaseContextProvider>
 				</main>

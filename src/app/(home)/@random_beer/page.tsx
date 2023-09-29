@@ -30,6 +30,7 @@ const RandomBeer = () => {
 			<>
 				<a href={`/beer/${beer?.id}`}>
 					<Image
+						className={styles.beer_img}
 						width={500}
 						height={500}
 						src={beer?.image_url || ""}
