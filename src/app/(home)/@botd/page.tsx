@@ -5,11 +5,11 @@ import styles from "../index.module.scss";
 import Image from "next/image";
 
 const BeerOfTheDay = () => {
-	const { botds, refreshData } = useInfo();
+	const { botds, refreshBotD } = useInfo();
 
 	const { loading } = useLoadingAsync(async () => {
-		await refreshData();
-	}, [refreshData]);
+		await refreshBotD();
+	}, [refreshBotD]);
 
 	return (
 		<div className={`${styles.card} ${styles.overflow}`}>

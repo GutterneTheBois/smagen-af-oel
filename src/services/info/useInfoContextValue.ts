@@ -6,9 +6,10 @@ export type InfoHook = {
 	botds: Beer[];
 	announcements: Announcement[];
 
-	refreshData: () => Promise<void>;
+	refreshBotD: () => Promise<void>;
 	handleSetBotD: (id: string) => Promise<void>;
 
+	refreshAnnouncements: () => Promise<void>;
 	createAnnouncement: (title: string, description: string) => Promise<void>;
 	updateAnnouncement: (id: string, newDescription: string) => Promise<void>;
 };
@@ -17,19 +18,14 @@ export const useInfoContextValue = (): InfoHook => {
 	const [botds, setBotds] = useState<Beer[]>([]);
 	const [announcements, setAnnouncements] = useState<Announcement[]>([]);
 
-	const refreshData = useCallback(async () => {
+	const refreshBotD = useCallback(async () => {
 		const client = await genApiClient();
 
 		// handle botds
 		const botdsRes: any = await client.getRequest("botd");
 		const botdsData = await botdsRes.json();
 		setBotds(botdsData.botds as Beer[]);
-
-		// handle announcements
-		const announcementsRes: any = await client.getRequest("announcement");
-		const announcementData = await announcementsRes.json();
-		setAnnouncements(announcementData.announcements as Announcement[]);
-	}, [setBotds, setAnnouncements]);
+	}, [setBotds]);
 
 	const handleSetBotD = useCallback(
 		async (id: string) => {
@@ -84,8 +80,9 @@ export const useInfoContextValue = (): InfoHook => {
 	return {
 		botds,
 		announcements,
-		refreshData,
+		refreshBotD,
 		handleSetBotD,
+		refreshAnnouncements,
 		createAnnouncement,
 		updateAnnouncement,
 	};
