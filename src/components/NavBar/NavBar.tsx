@@ -82,7 +82,9 @@ const NavBar: FC<NavBarProps> = async ({ push }) => {
 									<Button>Test Page</Button>
 								</a>
 							)}
-							<img
+							<Image
+								width={200}
+								height={200}
 								className={styles.user__img}
 								src={session.user?.image || ""}
 								alt={" "}

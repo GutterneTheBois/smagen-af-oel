@@ -5,6 +5,7 @@ import { BsDiscord, BsFacebook, BsGithub } from "react-icons/bs";
 import styles from "./auth.module.scss";
 import { FC } from "react";
 import g_logo from "../../../public/Google__G__Logo.svg";
+import Image from "next/image";
 
 type Props = {
 	type: "facebook" | "google" | "discord" | "github";
@@ -21,7 +22,9 @@ const AuthLoginButton: FC<Props> = ({ type }) => {
 				);
 			case "google":
 				return (
-					<img
+					<Image
+						width={100}
+						height={100}
 						src={g_logo.src}
 						alt="Google G logo"
 						className={`${styles.google} ${styles.authIcon}`}
