@@ -21,9 +21,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${khand.className}`}>
-				<NavBar push />
-				<DatabaseContextProvider>{children}</DatabaseContextProvider>
-				<Footer />
+				<DatabaseContextProvider>
+					<NavBar push />
+					{children}
+					<Footer />
+				</DatabaseContextProvider>
 			</body>
 		</html>
 	);

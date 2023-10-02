@@ -2,6 +2,7 @@ import "../globals.scss";
 import { Footer, NavBar } from "@/components";
 import { Khand } from "next/font/google";
 import Favicon from "../../../public/metadata/favicon.ico";
+import { DatabaseContextProvider } from "@/services";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
 
@@ -16,7 +17,9 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
 		<html lang="en">
 			<body className={`${khand.className}`}>
 				<main>
-					<NavBar />
+					<DatabaseContextProvider>
+						<NavBar />
+					</DatabaseContextProvider>
 					{children}
 					<Footer attach />
 				</main>

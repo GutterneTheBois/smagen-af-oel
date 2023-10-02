@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { Beer, Brewery, Distillery, Spirit } from "@prisma/client";
+import { Admin, Beer, Brewery, Distillery, Spirit } from "@prisma/client";
 import { genApiClient } from "../backend/appApiClient";
 
 export type DatabaseHook = {
@@ -46,6 +46,10 @@ export type DatabaseHook = {
 		id: string,
 		newDescription: string
 	) => Promise<void>;
+
+	admins: Admin[];
+	refreshAdmins: () => Promise<void>;
+	addAdmin: (name: string) => Promise<void>;
 };
 
 export const useDbContextValue = (): DatabaseHook => {
@@ -272,6 +276,27 @@ export const useDbContextValue = (): DatabaseHook => {
 		[refreshBreweries, refreshDistilleries]
 	);
 
+	// admin
+	const [admins, setAdmins] = useState<Admin[]>([]);
+
+	const refreshAdmins = useCallback(async () => {
+		const client = await genApiClient();
+		const res = await client.getRequest("admin");
+
+		const data = await res.json();
+		setAdmins(data.admins as Admin[]);
+	}, []);
+
+	const addAdmin = useCallback(
+		async (name: string) => {
+			const client = await genApiClient();
+			const request = await client.postRequest("admin", { name: name });
+
+			setAdmins([...admins, request.json() as Admin]);
+		},
+		[setAdmins]
+	);
+
 	return {
 		breweries,
 		refreshBreweries,
@@ -295,5 +320,9 @@ export const useDbContextValue = (): DatabaseHook => {
 
 		refreshData,
 		updateDescription,
+
+		admins,
+		refreshAdmins,
+		addAdmin,
 	};
 };
