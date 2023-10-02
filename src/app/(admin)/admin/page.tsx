@@ -1,5 +1,6 @@
 import { FC } from "react";
 import {
+	AdminPostRequest,
 	BeerDeleteRequest,
 	BeerRequest,
 	BreweryDeleteRequest,
@@ -62,6 +63,16 @@ const AdminPage: FC = async () => {
 			>
 				<SpiritPostRequest />
 				<SpiritDeleteRequest />
+			</div>
+			<hr />
+			<div
+				style={{
+					display: "flex",
+					marginTop: "2vh",
+					marginLeft: "2vw",
+				}}
+			>
+				<AdminPostRequest />
 			</div>
 		</>
 	);

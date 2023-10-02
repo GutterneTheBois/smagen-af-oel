@@ -1,14 +1,16 @@
 "use client";
-import { useInfo } from "@/services";
+import { useDb, useInfo } from "@/services";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
 import styles from "../index.module.scss";
-import Image from "next/image";
+import { Button } from "@/client-components";
 
 const Announcements = () => {
 	const { announcements, refreshAnnouncements } = useInfo();
+	const { admins, refreshAdmins } = useDb();
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshAnnouncements();
+		await refreshAdmins();
 	}, [refreshAnnouncements]);
 
 	return (

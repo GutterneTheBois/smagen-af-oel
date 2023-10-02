@@ -3,10 +3,28 @@ import breweryData from "./seed-data/breweries.json" assert { type: "json" };
 import beerData from "./seed-data/beers.json" assert { type: "json" };
 import distilleryData from "./seed-data/distilleries.json" assert { type: "json" };
 import spiritData from "./seed-data/spirits.json" assert { type: "json" };
+import adminData from "./seed-data/admins.json" assert { type: "json" };
 
 const prisma = new PrismaClient();
 
 async function main() {
+  // seeding admins
+  const admins = await prisma.$transaction(
+    adminData.map((admin) => 
+      prisma.admin.upsert({
+          where: { name: admin.name },
+          update: {},
+          create: {
+            name: admin.name,
+          },
+        })
+      )
+  );
+
+  console.log(`Added ${admins.length} admins!`);
+
+
+  // seeding products
   const breweries = await prisma.$transaction(
     breweryData.map((brewery) =>
       prisma.brewery.upsert({
