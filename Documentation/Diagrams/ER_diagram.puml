@@ -72,4 +72,7 @@ Spirit }o-|| Distillery
 Beer ||--o{ BeerStock
 Spirit ||--o{ SpiritStock
 
+Announcements..
+Admin ..
+
 @enduml
