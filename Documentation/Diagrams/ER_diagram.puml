@@ -66,8 +66,8 @@ entity Admin {
     * name: text
 }
 
-Beer }o--|| Brewery
-Spirit }o--|| Distillery
+Beer }o-|| Brewery
+Spirit }o-|| Distillery
 
 Beer ||--o{ BeerStock
 Spirit ||--o{ SpiritStock
