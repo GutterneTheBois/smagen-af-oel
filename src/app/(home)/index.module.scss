@@ -1,82 +1,83 @@
 .main {
-	display: flex;
-	flex-direction: column;
-	//justify-content: space-between;
-	align-items: center;
-	padding: 6rem;
-	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  //justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
 }
 
 .headings {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	width: 100%;
-	justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  justify-items: center;
 }
 
 .grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	width: 100%;
-	justify-items: center;
-	padding-top: 2vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  justify-items: center;
+  padding-top: 2vh;
 
-	.card {
-		background-color: #ffffffdd;
-		height: 60vh;
-		width: 90%;
-		text-align: center;
-		border: 1px solid #000;
-		border-radius: 0.5rem;
-		color: #000;
+  .card {
+    background-color: #ffffffdd;
+    height: 60vh;
+    width: 90%;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+    color: #000;
+    overflow: clip;
 
-		.buttons {
-			height: 25vh;
-			padding-top: 2.5vh;
-		}
+    .buttons {
+      height: 25vh;
+      padding-top: 2.5vh;
+    }
 
-		img {
-			height: 50%;
-			width: auto;
-			margin: 2vh auto 0.5vh auto;
-			border-radius: 0.5rem;
-		}
+    img {
+      height: 50%;
+      width: auto;
+      margin: 2vh auto 0.5vh auto;
+      border-radius: 0.5rem;
+    }
 
-		button {
-			margin: 1vh auto 0.5vh auto;
-		}
+    button {
+      margin: 1vh auto 0.5vh auto;
+    }
 
-		&::-webkit-scrollbar {
-			width: 0.5vw;
-		}
+    &::-webkit-scrollbar {
+      width: 0.5vw;
+    }
 
-		&::-webkit-scrollbar-track {
-			background: #f1f1f1;
-		}
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
 
-		&::-webkit-scrollbar-thumb {
-			background: #888;
-			border-radius: 0.5rem;
-		}
-	}
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 0.5rem;
+    }
+  }
 }
 
 .overflow {
-	overflow-y: auto;
+  overflow-y: auto;
 }
 
 .botd_card {
-	height: 50%;
+  height: 50%;
 
-	.beer_img {
-		height: 100%;
-		width: auto;
-		margin: 2vh auto 0.5vh auto;
-	}
+  .botd_divider {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-	.botd_divider {
-		width: 75%;
-		margin-left: auto;
-		margin-right: auto;
-	}
+  .beer_img {
+    height: 100%;
+    width: auto;
+    margin: 2vh auto 0.5vh auto;
+  }
 }
