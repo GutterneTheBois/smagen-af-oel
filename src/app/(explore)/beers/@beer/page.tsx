@@ -25,7 +25,7 @@ const BeerGrid = () => {
 		await refreshBeers();
 
 		const filtered = beers.filter((beer) =>
-			beer.type.toLowerCase().includes(query)
+			beer.type.toLowerCase().includes(query.toLowerCase())
 		) as Beer[];
 
 		setFilteredBeers(filtered);
@@ -35,17 +35,20 @@ const BeerGrid = () => {
 		setQuery(ev.target.value.toLowerCase());
 	};
 
+	const opts = ["lager", "pilsner", "stout"];
+
 	return (
 		<>
 			<h1 className={styles.title}>Øl</h1>
-			<div className={styles.search}>
-				<label htmlFor="search">Søg:</label>
-				<input
-					className={styles.search__input}
-					name="search"
-					onChange={onChange}
-				/>
-			</div>
+			{/* <div className={styles.search}>
+        <label htmlFor="search">Søg:</label>
+        <input
+          id="search"
+          className={styles.search__input}
+          name="search"
+          onChange={onChange}
+        />
+      </div> */}
 			<div className={styles.container}>
 				{loading ? (
 					<>
