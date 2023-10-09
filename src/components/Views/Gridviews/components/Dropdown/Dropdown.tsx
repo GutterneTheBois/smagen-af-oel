@@ -66,36 +66,17 @@ const Dropdown: FC<DropdownProps> = ({ type, setFilteredOptions, queries }) => {
 		setIsDropdownOpen(!isDropdownOpen);
 	};
 
-	const DropdownOptions = (): JSX.Element => {
-		const onClick = (option: Option, index: number) => {
-			option.isSelected = true;
-			setUnselectedOptions([
-				...unselectedOptions.slice(0, index),
-				...unselectedOptions.slice(index + 1),
-			]);
-			setSelectedOptions([...selectedOptions, option]);
+	const selectOption = (option: Option, index: number) => {
+		option.isSelected = true;
+		setUnselectedOptions([
+			...unselectedOptions.slice(0, index),
+			...unselectedOptions.slice(index + 1),
+		]);
+		setSelectedOptions([...selectedOptions, option]);
 
-			const queries = selectedOptions.map((so) => so.label);
+		const queries = selectedOptions.map((so) => so.label);
 
-			setFilteredOptions([...queries]);
-		};
-
-		return (
-			<div
-				className={styles.dropdownOptions}
-				style={{ display: !isDropdownOpen ? "none" : "" }}
-			>
-				{unselectedOptions.map((opt, index) => (
-					<div
-						key={index}
-						className={styles.option}
-						onClick={() => onClick(opt, index)}
-					>
-						{opt.label}
-					</div>
-				))}
-			</div>
-		);
+		setFilteredOptions([...queries]);
 	};
 
 	const unSelect = (option: Option, index: number) => {
@@ -126,7 +107,20 @@ const Dropdown: FC<DropdownProps> = ({ type, setFilteredOptions, queries }) => {
 					</span>
 				))}
 			</div>
-			<DropdownOptions />
+			<div
+				className={styles.dropdownOptions}
+				style={{ display: !isDropdownOpen ? "none" : "" }}
+			>
+				{unselectedOptions.map((opt, index) => (
+					<div
+						key={index}
+						className={styles.option}
+						onClick={() => selectOption(opt, index)}
+					>
+						{opt.label}
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };
