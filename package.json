@@ -2,7 +2,9 @@
 	"name": "app",
 	"version": "0.1.0",
 	"private": true,
+	"type": "module",
 	"scripts": {
+		"full:start": "yarn docker:up && yarn db:init && yarn db:seed && yarn dev",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
@@ -12,7 +14,8 @@
 		"db:seed": "npx prisma db seed",
 		"docker:up": "docker compose up -d",
 		"docker:down": "docker compose down",
-		"test": "next dev && jest --watch"
+		"test:first": "yarn full:start && jest --watch",
+		"test:only": "jest --watch"
 	},
 	"prisma": {
 		"seed": "node prisma/seed.mjs"
