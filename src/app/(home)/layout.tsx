@@ -2,8 +2,9 @@ import { DatabaseContextProvider } from "@/services";
 import "../globals.scss";
 import { Footer, NavBar } from "@/components";
 import { Khand } from "next/font/google";
-import bg from "../../../public/background.jpg";
 import Favicon from "../../../public/metadata/favicon.ico";
+import styles from "./index.module.scss";
+import { InfoContextProvider } from "@/services/info/useInfo";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
 
@@ -13,23 +14,38 @@ export const metadata = {
 	icons: [{ rel: "icon", url: Favicon.src }],
 };
 
-export default function RootLayout({
+const RootLayout = ({
 	children,
+	random_beer,
+	botd,
+	announcements,
 }: {
 	children: React.ReactNode;
-}) {
+	random_beer: React.ReactNode;
+	botd: React.ReactNode;
+	announcements: React.ReactNode;
+}) => {
 	return (
 		<html lang="en">
-			<body
-				style={{
-					backgroundImage: `url(${bg.src})`,
-				}}
-				className={`${khand.className}`}
-			>
-				<NavBar />
-				<DatabaseContextProvider>{children}</DatabaseContextProvider>
-				<Footer />
+			<body className={`${khand.className}`}>
+				<DatabaseContextProvider>
+					<NavBar />
+					<main className={styles.main}>
+						{children}
+
+						<InfoContextProvider>
+							<div className={styles.grid}>
+								{botd}
+								{random_beer}
+								{announcements}
+							</div>
+						</InfoContextProvider>
+					</main>
+					<Footer attach />
+				</DatabaseContextProvider>
 			</body>
 		</html>
 	);
-}
+};
+
+export default RootLayout;

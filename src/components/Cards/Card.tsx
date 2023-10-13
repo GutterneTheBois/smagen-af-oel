@@ -56,15 +56,7 @@ const Card: FC<CardProps> = (props: CardProps): JSX.Element => {
 								height={100}
 								src={
 									(getModelProps() as Beer | Spirit)
-										.image_url === "flygtning.jpeg"
-										? `/beers/${
-												(
-													getModelProps() as
-														| Beer
-														| Spirit
-												).image_url
-										  }`
-										: "/beers/standin.jpg"
+										.image_url || "/beers/standin.jpg"
 								}
 								alt={getModelProps()?.name || ""}
 							/>

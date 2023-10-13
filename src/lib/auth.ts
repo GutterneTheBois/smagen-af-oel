@@ -4,6 +4,8 @@ import DiscordProvider from "next-auth/providers/discord";
 import GithubProvider from "next-auth/providers/github";
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
+import AppleProvider from "next-auth/providers/apple";
+import EmailProvider from "next-auth/providers/email";
 
 export const authOptions: NextAuthOptions = {
 	session: {
@@ -26,25 +28,10 @@ export const authOptions: NextAuthOptions = {
 			clientId: process.env.FACEBOOK_CLIENT_ID || "",
 			clientSecret: process.env.FACEBOOK_CLIENT_SECRET || "",
 		}),
-		CredentialsProvider({
-			name: "Sign in",
-			credentials: {
-				email: {
-					label: "Email",
-					type: "email",
-					placeholder: "example@example.com",
-				},
-				password: { label: "Password", type: "password" },
-			},
-			async authorize(credentials) {
-				const user = {
-					id: "1",
-					name: "Admin",
-					email: "admin@admin.com",
-				};
-				return user;
-			},
-		}),
+		// EmailProvider({
+		//     server: process.env.EMAIL_SERVER || "",
+		//     from: process.env.EMAIL_FROM || "",
+		// }),
 	],
 	pages: {
 		signIn: "/auth/signin",

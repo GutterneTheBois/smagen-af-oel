@@ -18,7 +18,7 @@ const SpiritGrid = () => {
 				setFilteredSpirits(spirits);
 			})();
 		}
-	}, [spirits]);
+	}, [spirits, refreshSpirits, filteredSpirits.length]);
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshSpirits();

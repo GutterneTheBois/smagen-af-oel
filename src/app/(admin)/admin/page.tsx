@@ -1,5 +1,6 @@
 import { FC } from "react";
 import {
+	AdminPostRequest,
 	BeerDeleteRequest,
 	BeerRequest,
 	BreweryDeleteRequest,
@@ -12,12 +13,10 @@ import {
 	SpiritPostRequest,
 	StatusField,
 } from "@/components/TestComponents";
-import { NavBar } from "@/components";
 
-const TestPage: FC = async () => {
+const AdminPage: FC = async () => {
 	return (
 		<>
-			<NavBar push />
 			<div
 				style={{
 					display: "flex",
@@ -56,13 +55,27 @@ const TestPage: FC = async () => {
 			</div>
 			<hr />
 			<div
-				style={{ display: "flex", marginTop: "2vh", marginLeft: "2vw" }}
+				style={{
+					display: "flex",
+					marginTop: "2vh",
+					marginLeft: "2vw",
+				}}
 			>
 				<SpiritPostRequest />
 				<SpiritDeleteRequest />
+			</div>
+			<hr />
+			<div
+				style={{
+					display: "flex",
+					marginTop: "2vh",
+					marginLeft: "2vw",
+				}}
+			>
+				<AdminPostRequest />
 			</div>
 		</>
 	);
 };
 
-export default TestPage;
+export default AdminPage;

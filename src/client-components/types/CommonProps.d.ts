@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 /**
  * Here we define our props to be used by the "Button" component
@@ -11,6 +11,7 @@ export interface CommonProps {
     width?: string;
     border?: string;
     borderRadius?: string;
+    padding?: string;
     color?: string;
     backgroundColor?: string;
     className?: string;

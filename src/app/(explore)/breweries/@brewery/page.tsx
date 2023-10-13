@@ -19,7 +19,7 @@ const BreweryGrid = () => {
 				setFilteredBreweries(breweries);
 			})();
 		}
-	}, [breweries]);
+	}, [breweries, refreshBreweries, filteredBreweries.length]);
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshBreweries();

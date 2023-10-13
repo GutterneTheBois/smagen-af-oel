@@ -1,11 +1,12 @@
 import { FC } from "react";
 import styles from "./navbar.module.scss";
 import Image from "next/image";
-import GoogleButton from "../AuthComponents/GoogleButton";
 import { getServerSession } from "next-auth";
-import SignOutButton from "../AuthComponents/SignOutButton";
+import { SignOutButton } from "../AuthComponents";
 import { authOptions } from "@/lib/auth";
-import { Button, GhostButton } from "@/client-components";
+import { Button } from "@/client-components";
+import { TbGlassFullFilled } from "react-icons/tb";
+import AuthArea from "./AuthArea";
 
 type Item = {
 	name: string;
@@ -39,7 +40,7 @@ const NavBar: FC<NavBarProps> = async ({ push }) => {
 	];
 
 	return (
-		<div className={`${push ? styles.navbar__container : ""}`}>
+		<header>
 			<div className={styles.navbar}>
 				<a href={"/"}>
 					<Image
@@ -59,30 +60,9 @@ const NavBar: FC<NavBarProps> = async ({ push }) => {
 						{item.name}
 					</a>
 				))}
-				<div className={styles.auth__area}>
-					{!session ? (
-						<GoogleButton />
-					) : (
-						<div style={{ display: "flex" }}>
-							<img
-								className={styles.user__img}
-								src={session.user?.image || ""}
-								alt={" "}
-							/>
-							<span
-								style={{
-									marginRight: "0.5vw",
-									paddingTop: "0.2vh",
-								}}
-							>
-								{session.user?.name}
-							</span>
-							<SignOutButton />
-						</div>
-					)}
-				</div>
+				<AuthArea session={session} />
 			</div>
-		</div>
+		</header>
 	);
 };
 

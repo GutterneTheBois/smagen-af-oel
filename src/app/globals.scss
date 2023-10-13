@@ -120,11 +120,14 @@ a {
 }
 
 body {
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	// background-image: url("../../public/background.png");
+	// background-repeat: no-repeat;
+
+	// background-origin: fixed;
+	background: #000000 url("../../public/background.png") no-repeat fixed;
 	background-size: cover;
-	background-position: 0 8vh;
 	height: 100vh;
 	font-size: x-large;
 	margin: 0;
+	overflow: auto;
 }
