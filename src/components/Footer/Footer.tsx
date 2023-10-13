@@ -3,9 +3,15 @@ import Image from "next/image";
 import styles from "./footer.module.scss";
 import { BsFacebook } from "react-icons/bs";
 
-const Footer: FC = () => {
+type FooterProps = {
+	attach?: boolean;
+};
+
+const Footer: FC<FooterProps> = ({ attach }) => {
 	return (
-		<footer className={styles.footer}>
+		<footer
+			className={`${styles.footer} ${attach && styles.footer_attach}`}
+		>
 			<div className={styles.item__menu__container}>
 				<div className={styles.item__menu__list}>
 					<a className={styles.logo} href="/">

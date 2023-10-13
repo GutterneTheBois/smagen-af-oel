@@ -2,7 +2,7 @@ export class AppApiClient {
 	private baseUrl: string;
 
 	constructor() {
-		this.baseUrl = process.env.BACKEND_URL || "";
+		this.baseUrl = process.env.BACKEND_URL || "http://localhost:3000/";
 	}
 
 	async postRequest(endPoint: string, body: any): Promise<any> {
@@ -25,8 +25,8 @@ export class AppApiClient {
 		});
 	}
 
-	async putRequest(endPoint: string, updateBody: any): Promise<void> {
-		await fetch(`${this.baseUrl}/api/${endPoint}`, {
+	async putRequest(endPoint: string, updateBody: any): Promise<any> {
+		return await fetch(`${this.baseUrl}/api/${endPoint}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",

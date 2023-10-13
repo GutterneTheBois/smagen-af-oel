@@ -23,6 +23,7 @@
 		justify-content: center;
 		margin-top: 1vh;
 		margin-bottom: 1vh;
+		color: #000;
 
 		.loader {
 			justify-self: center;
@@ -31,9 +32,10 @@
 }
 
 .card__img {
-	width: 10vw;
-	height: auto;
-	margin: auto auto;
+	width: auto;
+	height: 30vh;
+	margin: 0.5vh auto 0.5vh auto;
+	border-radius: 0.4rem;
 }
 
 .link {
@@ -48,12 +50,11 @@
 }
 
 .hr {
-	background-color: #000;
+	background-color: #ababab;
 	height: 1px;
 	border: none;
-	width: 80%;
-	margin-bottom: 0.1rem;
-	margin-top: 0.1rem;
+	width: 90%;
+	margin: 0.1rem auto 0.1rem auto;
 }
 
 .spacing {

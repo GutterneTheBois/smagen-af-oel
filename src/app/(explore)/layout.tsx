@@ -2,8 +2,7 @@ import { Footer, NavBar } from "@/components";
 import { DatabaseContextProvider } from "@/services";
 import { Khand } from "next/font/google";
 import Favicon from "../../../public/metadata/favicon.ico";
-import bg from "../../../public/background.png";
-import "./explore.scss";
+import "../globals.scss";
 import styles from "./explore.module.scss";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
@@ -21,15 +20,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body
-				style={{
-					backgroundImage: `url(${bg.src})`,
-				}}
-				className={`${khand.className} ${styles.app}`}
-			>
-				<NavBar push />
-				<DatabaseContextProvider>{children}</DatabaseContextProvider>
-				<Footer />
+			<body className={`${khand.className}`}>
+				<DatabaseContextProvider>
+					<NavBar push />
+					{children}
+					<Footer />
+				</DatabaseContextProvider>
 			</body>
 		</html>
 	);

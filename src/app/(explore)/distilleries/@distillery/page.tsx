@@ -19,7 +19,7 @@ const DistilleryGrid = () => {
 				setFilteredDistilleries(distilleries);
 			})();
 		}
-	}, [distilleries]);
+	}, [distilleries, refreshDistilleries, filteredDistilleries.length]);
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshDistilleries();
