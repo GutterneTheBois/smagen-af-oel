@@ -1,12 +1,14 @@
 import { useCallback, useState } from "react";
 import { Admin, Beer, Brewery, Distillery, Spirit } from "@prisma/client";
 import { genApiClient } from "../backend/appApiClient";
+import { prisma } from "@/lib/prisma";
 
 export type DatabaseHook = {
 	breweries: Brewery[];
 	refreshBreweries: () => Promise<void>;
 	createBrewery: (name: string, description?: string) => Promise<void>;
 	deleteBrewery: (id: string) => Promise<void>;
+	findSpecificBrewery: (name: string) => Promise<Brewery>;
 
 	beers: Beer[];
 	refreshBeers: () => Promise<void>;
@@ -42,7 +44,7 @@ export type DatabaseHook = {
 
 	refreshData: () => Promise<void>;
 	updateDescription: (
-		toUpdate: "brewery" | "distillery",
+		toUpdate: "brewery" | "distillery" | "beer" | "spirit",
 		id: string,
 		newDescription: string
 	) => Promise<void>;
@@ -91,6 +93,15 @@ export const useDbContextValue = (): DatabaseHook => {
 			await refreshBreweries();
 		},
 		[refreshBreweries]
+	);
+
+	const findSpecificBrewery = useCallback(
+		async (name: string): Promise<Brewery> => {
+			return (await prisma.brewery.findUnique({
+				where: { name: name },
+			})) as Brewery;
+		},
+		[]
 	);
 
 	/* Beer Functions */
@@ -255,7 +266,7 @@ export const useDbContextValue = (): DatabaseHook => {
 
 	const updateDescription = useCallback(
 		async (
-			elementToUpdate: "brewery" | "distillery",
+			elementToUpdate: "brewery" | "distillery" | "beer" | "spirit",
 			id: string,
 			newDescription: string
 		) => {
@@ -271,9 +282,15 @@ export const useDbContextValue = (): DatabaseHook => {
 				case "distillery":
 					await refreshDistilleries();
 					break;
+				case "beer":
+					await refreshBeers();
+					break;
+				case "spirit":
+					await refreshSpirits();
+					break;
 			}
 		},
-		[refreshBreweries, refreshDistilleries]
+		[refreshBreweries, refreshDistilleries, refreshBeers, refreshSpirits]
 	);
 
 	// admin
@@ -302,6 +319,7 @@ export const useDbContextValue = (): DatabaseHook => {
 		refreshBreweries,
 		createBrewery,
 		deleteBrewery,
+		findSpecificBrewery,
 
 		beers,
 		refreshBeers,

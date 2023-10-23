@@ -4,6 +4,8 @@ import { Khand } from "next/font/google";
 import Favicon from "../../../public/metadata/favicon.ico";
 import "../globals.scss";
 import styles from "./explore.module.scss";
+import { Modal } from "@/client-components";
+import { hasAgeCookie } from "@/services/actions";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
 
@@ -21,6 +23,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${khand.className}`}>
+				{!hasAgeCookie() && <Modal />}
 				<DatabaseContextProvider>
 					<NavBar push />
 					{children}
