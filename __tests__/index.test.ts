@@ -1,29 +1,43 @@
-import { Brewery, Prisma } from "@prisma/client";
+import { Brewery } from "@prisma/client";
 import { genApiClient } from "../src/services/backend/appApiClient";
-import { initScriptLoader } from "next/script";
 
-beforeAll(async () => {});
+beforeAll(async () => {
+  const client = await genApiClient();
+
+  await client.postRequest("brewery", {
+    name: "Dolleris A/S",
+    description: "Det her er en test",
+  });
+});
+
+beforeEach(async () => {
+  const client = await genApiClient();
+
+  const res: any = await client.getRequest("brewery");
+
+  const data = await res.json();
+
+  console.log(data.breweries.findLast((brewery: Brewery) => brewery.name));
+});
 
 it("should make GET request for breweries and receive status 200", async () => {
   const client = await genApiClient();
 
   const response: any = await client.getRequest("brewery");
 
-  console.log(response);
-
   expect(response.status).toEqual(200);
 });
 
-// test("should create new brewery and not match", async () => {
-//   const client = await genApiClient();
+it("should create new brewery and match", async () => {
+  const client = await genApiClient();
 
-//   const res: any = (await client.postRequest("brewery", {
-//     name: "Dolleris A/S",
-//     description: "Det her er en fejl test",
-//   })) as Brewery;
+  const res: any = await client.getRequest("brewery");
 
-//   await expect(res).resolves.toEqual({
-//     name: "Walther A/S",
-//     description: "Det her er en test",
-//   });
-// });
+  const data = await res.json();
+
+  expect(
+    data.breweries.findLast(
+      (brewery: Brewery) => brewery.name === "Dolleris A/S"
+    )
+  );
+});
