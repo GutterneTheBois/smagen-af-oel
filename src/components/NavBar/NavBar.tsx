@@ -1,6 +1,12 @@
 import { FC } from "react";
 import styles from "./navbar.module.scss";
 import Image from "next/image";
+import { getServerSession } from "next-auth";
+import { SignOutButton } from "../AuthComponents";
+import { authOptions } from "@/lib/auth";
+import { Button } from "@/client-components";
+import { TbGlassFullFilled } from "react-icons/tb";
+import AuthArea from "./AuthArea";
 
 type Item = {
 	name: string;
@@ -11,7 +17,9 @@ type NavBarProps = {
 	push?: boolean;
 };
 
-const NavBar: FC<NavBarProps> = ({ push }) => {
+const NavBar: FC<NavBarProps> = async ({ push }) => {
+	const session = await getServerSession(authOptions);
+
 	const items: Item[] = [
 		{
 			name: "Øl",
@@ -32,7 +40,7 @@ const NavBar: FC<NavBarProps> = ({ push }) => {
 	];
 
 	return (
-		<div className={`${push ? styles.navbar__container : ""}`}>
+		<header>
 			<div className={styles.navbar}>
 				<a href={"/"}>
 					<Image
@@ -52,8 +60,9 @@ const NavBar: FC<NavBarProps> = ({ push }) => {
 						{item.name}
 					</a>
 				))}
+				<AuthArea session={session} />
 			</div>
-		</div>
+		</header>
 	);
 };
 

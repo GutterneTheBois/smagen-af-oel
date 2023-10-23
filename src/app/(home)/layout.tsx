@@ -1,8 +1,10 @@
 import { DatabaseContextProvider } from "@/services";
-import "./globals.scss";
+import "../globals.scss";
 import { Footer, NavBar } from "@/components";
 import { Khand } from "next/font/google";
 import Favicon from "../../../public/metadata/favicon.ico";
+import styles from "./index.module.scss";
+import { InfoContextProvider } from "@/services/info/useInfo";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
 
@@ -12,23 +14,38 @@ export const metadata = {
 	icons: [{ rel: "icon", url: Favicon.src }],
 };
 
-export default function RootLayout({
+const RootLayout = ({
 	children,
-	beer,
+	random_beer,
+	botd,
+	announcements,
 }: {
 	children: React.ReactNode;
-	beer: React.ReactNode;
-}) {
+	random_beer: React.ReactNode;
+	botd: React.ReactNode;
+	announcements: React.ReactNode;
+}) => {
 	return (
 		<html lang="en">
-			<body className={khand.className}>
+			<body className={`${khand.className}`}>
 				<DatabaseContextProvider>
 					<NavBar />
-					{children}
-					{beer}
+					<main className={styles.main}>
+						{children}
+
+						<InfoContextProvider>
+							<div className={styles.grid}>
+								{botd}
+								{random_beer}
+								{announcements}
+							</div>
+						</InfoContextProvider>
+					</main>
+					<Footer attach />
 				</DatabaseContextProvider>
-				<Footer />
 			</body>
 		</html>
 	);
-}
+};
+
+export default RootLayout;

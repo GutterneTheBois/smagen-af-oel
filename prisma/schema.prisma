@@ -30,6 +30,7 @@ model Beer {
     image_url   String?
     brewery     Brewery @relation(fields: [breweryName], references: [name])
     breweryName String
+    botd        Boolean @default(false)
 
     @@map(name: "beers")
 }
@@ -55,4 +56,17 @@ model Spirit {
     distilleryName String
 
     @@map(name: "spirits")
+}
+
+model Announcement {
+    id          String @id @default(cuid())
+    title       String
+    description String
+
+    @@map(name: "announcements")
+}
+
+model Admin {
+    id   String @id @default(cuid())
+    name String @unique
 }

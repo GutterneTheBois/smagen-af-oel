@@ -39,7 +39,40 @@ entity Spirit {
     image_url: text
 }
 
-Beer }o--|| Brewery
-Spirit }o--|| Distillery
+entity BeerStock {
+    PK | id: cuid <<generated>>
+    --
+    * beerName: text <<FK>>
+    * amount: int
+}
+
+entity SpiritStock {
+    PK | id: cuid <<generated>>
+    --
+    * spiritName: text <<FK>>
+    * amount: int
+}
+
+entity Announcements {
+    PK | id: cuid <<generated>>
+    --
+    * title: text
+    * facebookUrl: text
+}
+
+entity Admin {
+    PK | id: cuid <<generated>>
+    --
+    * name: text
+}
+
+Beer }o-|| Brewery
+Spirit }o-|| Distillery
+
+Beer ||--o{ BeerStock
+Spirit ||--o{ SpiritStock
+
+BeerStock -[hidden]down-> Announcements
+Distillery -[hidden]down-> Admin
 
 @enduml
