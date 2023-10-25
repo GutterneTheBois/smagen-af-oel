@@ -22,9 +22,6 @@ export default async function Home() {
 					<h2>Nyheder</h2>
 				</div>
 			</div>
-			<div>
-				<ProductGrid />
-			</div>
 			{/* <main>
 			<div className={styles.grid}> */}
 			{/* random beer should render here */}
