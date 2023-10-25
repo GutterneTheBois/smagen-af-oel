@@ -65,3 +65,8 @@ model Announcement {
 
     @@map(name: "announcements")
 }
+
+model Admin {
+    id   String @id @default(cuid())
+    name String @unique
+}

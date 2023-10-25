@@ -1,7 +1,7 @@
 @startuml API
 actor Visitor
 
-participant "RestAPI" as A
+participant "API" as A
 participant "Prisma" as P
 participant "Database" as D
 

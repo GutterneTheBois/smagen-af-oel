@@ -6,6 +6,7 @@ import { SignOutButton } from "../AuthComponents";
 import { authOptions } from "@/lib/auth";
 import { Button } from "@/client-components";
 import { TbGlassFullFilled } from "react-icons/tb";
+import AuthArea from "./AuthArea";
 
 type Item = {
 	name: string;
@@ -59,48 +60,7 @@ const NavBar: FC<NavBarProps> = async ({ push }) => {
 						{item.name}
 					</a>
 				))}
-				<div className={styles.auth__area}>
-					{!session ? (
-						<a href="/login">
-							<Button>
-								<TbGlassFullFilled
-									style={{
-										height: "2vh",
-										width: "auto",
-										marginRight: "1vw",
-									}}
-								/>
-								<span>Log in</span>
-							</Button>
-						</a>
-					) : (
-						<div style={{ display: "flex" }}>
-							{(session.user?.name === "Nicolai Walther" ||
-								session.user?.name ===
-									"Mikkel Christensen") && (
-								<a href="/admin">
-									<Button>Test Page</Button>
-								</a>
-							)}
-							<Image
-								width={200}
-								height={200}
-								className={styles.user__img}
-								src={session.user?.image || ""}
-								alt={" "}
-							/>
-							<span
-								style={{
-									marginRight: "0.5vw",
-									paddingTop: "0.2vh",
-								}}
-							>
-								{session.user?.name}
-							</span>
-							<SignOutButton />
-						</div>
-					)}
-				</div>
+				<AuthArea session={session} />
 			</div>
 		</header>
 	);

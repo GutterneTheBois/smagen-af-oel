@@ -1,12 +1,14 @@
 import { useCallback, useState } from "react";
-import { Beer, Brewery, Distillery, Spirit } from "@prisma/client";
+import { Admin, Beer, Brewery, Distillery, Spirit } from "@prisma/client";
 import { genApiClient } from "../backend/appApiClient";
+import { prisma } from "@/lib/prisma";
 
 export type DatabaseHook = {
 	breweries: Brewery[];
 	refreshBreweries: () => Promise<void>;
 	createBrewery: (name: string, description?: string) => Promise<void>;
 	deleteBrewery: (id: string) => Promise<void>;
+	findSpecificBrewery: (name: string) => Promise<Brewery>;
 
 	beers: Beer[];
 	refreshBeers: () => Promise<void>;
@@ -42,10 +44,14 @@ export type DatabaseHook = {
 
 	refreshData: () => Promise<void>;
 	updateDescription: (
-		toUpdate: "brewery" | "distillery",
+		toUpdate: "brewery" | "distillery" | "beer" | "spirit",
 		id: string,
 		newDescription: string
 	) => Promise<void>;
+
+	admins: Admin[];
+	refreshAdmins: () => Promise<void>;
+	addAdmin: (name: string) => Promise<void>;
 };
 
 export const useDbContextValue = (): DatabaseHook => {
@@ -87,6 +93,15 @@ export const useDbContextValue = (): DatabaseHook => {
 			await refreshBreweries();
 		},
 		[refreshBreweries]
+	);
+
+	const findSpecificBrewery = useCallback(
+		async (name: string): Promise<Brewery> => {
+			return (await prisma.brewery.findUnique({
+				where: { name: name },
+			})) as Brewery;
+		},
+		[]
 	);
 
 	/* Beer Functions */
@@ -251,7 +266,7 @@ export const useDbContextValue = (): DatabaseHook => {
 
 	const updateDescription = useCallback(
 		async (
-			elementToUpdate: "brewery" | "distillery",
+			elementToUpdate: "brewery" | "distillery" | "beer" | "spirit",
 			id: string,
 			newDescription: string
 		) => {
@@ -267,9 +282,36 @@ export const useDbContextValue = (): DatabaseHook => {
 				case "distillery":
 					await refreshDistilleries();
 					break;
+				case "beer":
+					await refreshBeers();
+					break;
+				case "spirit":
+					await refreshSpirits();
+					break;
 			}
 		},
-		[refreshBreweries, refreshDistilleries]
+		[refreshBreweries, refreshDistilleries, refreshBeers, refreshSpirits]
+	);
+
+	// admin
+	const [admins, setAdmins] = useState<Admin[]>([]);
+
+	const refreshAdmins = useCallback(async () => {
+		const client = await genApiClient();
+		const res = await client.getRequest("admin");
+
+		const data = await res.json();
+		setAdmins(data.admins as Admin[]);
+	}, []);
+
+	const addAdmin = useCallback(
+		async (name: string) => {
+			const client = await genApiClient();
+			const request = await client.postRequest("admin", { name: name });
+
+			setAdmins([...admins, request.json() as Admin]);
+		},
+		[setAdmins]
 	);
 
 	return {
@@ -277,6 +319,7 @@ export const useDbContextValue = (): DatabaseHook => {
 		refreshBreweries,
 		createBrewery,
 		deleteBrewery,
+		findSpecificBrewery,
 
 		beers,
 		refreshBeers,
@@ -295,5 +338,9 @@ export const useDbContextValue = (): DatabaseHook => {
 
 		refreshData,
 		updateDescription,
+
+		admins,
+		refreshAdmins,
+		addAdmin,
 	};
 };

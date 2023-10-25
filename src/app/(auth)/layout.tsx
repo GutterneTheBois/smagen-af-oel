@@ -2,6 +2,9 @@ import "../globals.scss";
 import { Footer, NavBar } from "@/components";
 import { Khand } from "next/font/google";
 import Favicon from "../../../public/metadata/favicon.ico";
+import { DatabaseContextProvider } from "@/services";
+import { Modal } from "@/client-components";
+import { hasAgeCookie } from "@/services/actions";
 
 const khand = Khand({ subsets: ["latin"], weight: "400" });
 
@@ -15,8 +18,11 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<html lang="en">
 			<body className={`${khand.className}`}>
+				{!hasAgeCookie() && <Modal />}
 				<main>
-					<NavBar />
+					<DatabaseContextProvider>
+						<NavBar />
+					</DatabaseContextProvider>
 					{children}
 					<Footer attach />
 				</main>
