@@ -12,6 +12,5 @@ export const createAgeCookie = async (): Promise<void> => {
 
 export const hasAgeCookie = (): boolean => {
 	const cookieStore = cookies();
-
 	return cookieStore.has("age-cookie");
 };
