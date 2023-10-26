@@ -2,7 +2,6 @@ import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import styles from "./index.module.scss";
 import Image from "next/image";
-import { Button, SimpleGrid } from "@/client-components";
 import Link from "next/link";
 import Dropdown from "@/components/Views/Gridviews/components/Dropdown/Dropdown";
 import ProductGrid from "@/components/Views/Gridviews/ProductGrid";
@@ -22,9 +21,6 @@ export default async function Home() {
 				<div>
 					<h2>Nyheder</h2>
 				</div>
-			</div>
-			<div>
-				<ProductGrid />
 			</div>
 			{/* <main>
 			<div className={styles.grid}> */}

@@ -1,5 +1,6 @@
 import { Brewery } from "@prisma/client";
 import { genApiClient } from "../src/services/backend/appApiClient";
+import { dbClient } from "../src/services/backend/dbClient";
 
 beforeAll(async () => {
   const client = await genApiClient();
@@ -10,14 +11,15 @@ beforeAll(async () => {
   });
 });
 
-beforeEach(async () => {
-  const client = await genApiClient();
+afterEach(async () => {
+  const dbHandler = await dbClient();
 
-  const res: any = await client.getRequest("brewery");
+  const testBrewery = await dbHandler.findSpecificElement(
+    "brewery",
+    "Dolleris A/S"
+  );
 
-  const data = await res.json();
-
-  console.log(data.breweries.findLast((brewery: Brewery) => brewery.name));
+  console.log(testBrewery.description);
 });
 
 it("should make GET request for breweries and receive status 200", async () => {
@@ -40,4 +42,28 @@ it("should create new brewery and match", async () => {
       (brewery: Brewery) => brewery.name === "Dolleris A/S"
     )
   );
+});
+
+it("should update brewery and match", async () => {
+  const client = await genApiClient();
+
+  const dbHandler = await dbClient();
+
+  const testBrewery = await dbHandler.findSpecificElement(
+    "brewery",
+    "Dolleris A/S"
+  );
+
+  await client.putRequest(testBrewery.id, "Opdateret beskrivelse");
+
+  const updatedBrewery = await dbHandler.findSpecificElement(
+    "brewery",
+    "Dolleris A/S"
+  );
+
+  console.log(updatedBrewery.description);
+
+  console.log(await client.getRequest("brewery").then((res) => res.json()));
+
+  expect(testBrewery.description === "Opdateret beskrivelse");
 });

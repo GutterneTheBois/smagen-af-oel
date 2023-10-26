@@ -2,7 +2,6 @@
 	"name": "app",
 	"version": "0.1.0",
 	"private": true,
-	"type": "module",
 	"scripts": {
 		"full:start": "yarn docker:up && yarn db:init && yarn db:seed && yarn dev",
 		"dev": "next dev",
