@@ -13,7 +13,8 @@
             "ibu?": "<int> bitterness of the beer",
             "size": "<int> size of the can or bottle",
             "image_url?": "path to the image of the beer",
-            "breweryName": "foreign key to the brewery"
+            "breweryName": "foreign key to the brewery",
+            "botd": "<bool> isBeerOfTheDay? default=false"
         },
         {"...": "..."}
     ]
