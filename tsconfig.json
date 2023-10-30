@@ -35,8 +35,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "prisma/seed.mjs",
-    "__tests__/index.test.js"
-  ],
+    "__tests__/*"
+, "jestSetupFile.ts"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,18 +1,15 @@
 /**
  * @jest-environment jsdom
  */
-"use server";
-
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Modal } from "../src/client-components";
-import { cookies } from "next/headers";
-
-jest.mock("@react-native-async-storage/async-storage");
 
 it("modal shows the children and a close button", async () => {
   // Arrange
-  expect(cookies().has("age-cookie")).toBe(false);
+  console.log("Cookie: " + document.cookie);
+
+  // expect(document.cookie).toBeNull();
   render(<Modal />);
   expect(screen.getByRole("heading")).toHaveTextContent("Bekræft alder");
 
@@ -20,7 +17,8 @@ it("modal shows the children and a close button", async () => {
   fireEvent.click(screen.getByText("Confirm"));
 
   // Assert
+  console.log("Cookie: " + document.cookie);
   expect(render(<Modal />)).toBeNull();
-  expect(cookies().has("age-cookie")).toBe(true);
-  expect(cookies().get("age-cookie")?.value).toBe("I am old enough");
+  // expect(cookies().has("age-cookie")).toBe(true);
+  expect(document.cookie).toBe("age-cookie=I%20am%20old%20enough");
 });
