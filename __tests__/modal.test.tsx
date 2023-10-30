@@ -8,11 +8,13 @@ import "@testing-library/jest-dom";
 import { Modal } from "../src/client-components";
 import { cookies } from "next/headers";
 
+jest.mock("@react-native-async-storage/async-storage");
+
 it("modal shows the children and a close button", async () => {
   // Arrange
-  // expect(cookies().has("age-cookie")).toBe(false);
+  expect(cookies().has("age-cookie")).toBe(false);
   render(<Modal />);
-  expect(screen.getByRole("dialog")).toHaveTextContent("Are you 18 or older?");
+  expect(screen.getByRole("heading")).toHaveTextContent("Bekræft alder");
 
   // Act
   fireEvent.click(screen.getByText("Confirm"));
