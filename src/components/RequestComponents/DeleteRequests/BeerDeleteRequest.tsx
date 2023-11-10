@@ -18,7 +18,7 @@ const BeerDeleteRequest: FC = () => {
 	};
 
 	return (
-		<div>
+		<div style={{ marginLeft: "10vw" }}>
 			<h1>Delete Beer</h1>
 			<div>
 				<select onChange={onChange} defaultValue={"select"}>

@@ -38,23 +38,8 @@ export const POST = async (req: NextRequest) => {
 	return NextResponse.json({ createBeer });
 };
 
-export const PUT = async (req: NextRequest) => {
-	const { id, newDescription } = await req.json();
-
-	const updateBeer = await prisma.beer.update({
-		where: {
-			id: id,
-		},
-		data: {
-			description: newDescription,
-		},
-	});
-
-	return NextResponse.json({ updateBeer });
-};
-
 export const PATCH = async (req: NextRequest) => {
-	const { id, newDescription } = await req.json();
+	const { id, newDescription, image_url } = await req.json();
 
 	const updateBeer = await prisma.beer.update({
 		where: {
@@ -62,6 +47,7 @@ export const PATCH = async (req: NextRequest) => {
 		},
 		data: {
 			description: newDescription,
+			image_url: image_url,
 		},
 	});
 

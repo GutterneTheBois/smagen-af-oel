@@ -27,3 +27,42 @@ it("should make GET request for breweries and receive status 200", async () => {
 //     description: "Det her er en test",
 //   });
 // });
+
+	await client.patchRequest("brewery", {
+		id: testBrewery.id,
+		newDescription: "Opdateret beskrivelse",
+	});
+
+	console.log(testBrewery.description);
+
+	console.log(await client.getRequest("brewery").then((res) => res.json()));
+
+	const updatedBrewery = await dbHandler.findSpecificElement(
+		"brewery",
+		"Dolleris A/S"
+	);
+
+	expect(updatedBrewery.description).toBe("Opdateret beskrivelse");
+});
+
+it("should delete brewery", async () => {
+	const client = await genApiClient();
+
+	const dbHandler = await dbClient();
+
+	const testBrewery = await dbHandler.findSpecificElement(
+		"brewery",
+		"Dolleris A/S"
+	);
+
+	await client.postRequest("brewery/delete", {
+		id: testBrewery.id,
+	});
+
+	const shouldBeNull = await dbHandler.findSpecificElement(
+		"brewery",
+		"Dolleris A/S"
+	);
+
+	expect(shouldBeNull).toBeNull();
+});

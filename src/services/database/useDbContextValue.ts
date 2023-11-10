@@ -42,7 +42,8 @@ export type DatabaseHook = {
 	updateDescription: (
 		toUpdate: "brewery" | "distillery" | "beer" | "spirit",
 		id: string,
-		newDescription: string
+		newDescription: string,
+		image_url?: string
 	) => Promise<void>;
 	deleteData: (
 		typeToDelete: "brewery" | "beer" | "distillery" | "spirit",
@@ -268,9 +269,10 @@ export const useDbContextValue = (): DatabaseHook => {
 		async (
 			elementToUpdate: "brewery" | "distillery" | "beer" | "spirit",
 			id: string,
-			newDescription: string
+			newDescription: string,
+			image_url?: string
 		) => {
-			const update = { id, newDescription };
+			const update = { id, newDescription, image_url };
 
 			const client = await genApiClient();
 			await client.patchRequest(elementToUpdate, update);
