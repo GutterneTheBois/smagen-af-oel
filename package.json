@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"full:start": "yarn docker:up && yarn db:init && yarn db:seed && yarn dev",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
@@ -12,8 +13,11 @@
 		"db:seed": "npx prisma db seed",
 		"docker:up": "docker compose up -d",
 		"docker:down": "docker compose down",
-		"test": "next dev && jest --watch"
+		"test:first": "yarn full:start && jest --watch",
+		"test": "jest",
+		"test:watch": "jest --watch"
 	},
+	
 	"prisma": {
 		"seed": "node prisma/seed.mjs"
 	},
@@ -29,8 +33,7 @@
 		"eslint": "^8.50.0",
 		"eslint-config-next": "^13.5.3",
 		"jest-environment-jsdom": "^29.7.0",
-		"jest-mock-extended": "2.0.4",
-		"next": "^13.5.3",
+		"next": "^13.5.6",
 		"next-auth": "^4.23.1",
 		"nodemailer": "^6.9.5",
 		"prisma": "^5.3.1",
@@ -44,6 +47,7 @@
 	"devDependencies": {
 		"@types/jest": "^29.5.5",
 		"jest": "^29.7.0",
+		"react-test-renderer": "^18.2.0",
 		"ts-jest": "^29.1.1"
 	}
 }
