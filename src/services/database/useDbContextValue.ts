@@ -7,7 +7,6 @@ export type DatabaseHook = {
 	breweries: Brewery[];
 	refreshBreweries: () => Promise<void>;
 	createBrewery: (name: string, description?: string) => Promise<void>;
-	deleteBrewery: (id: string) => Promise<void>;
 	findSpecificBrewery: (name: string) => Promise<Brewery>;
 
 	beers: Beer[];
@@ -22,12 +21,10 @@ export type DatabaseHook = {
 		ibu?: number,
 		description?: string
 	) => Promise<void>;
-	deleteBeer: (id: string) => Promise<void>;
 
 	distilleries: Distillery[];
 	refreshDistilleries: () => Promise<void>;
 	createDistillery: (name: string, description?: string) => Promise<void>;
-	deleteDistillery: (id: string) => Promise<void>;
 
 	spirits: Spirit[];
 	refreshSpirits: () => Promise<void>;
@@ -40,13 +37,16 @@ export type DatabaseHook = {
 		image_url?: string,
 		description?: string
 	) => Promise<void>;
-	deleteSpirit: (id: string) => Promise<void>;
 
 	refreshData: () => Promise<void>;
 	updateDescription: (
 		toUpdate: "brewery" | "distillery" | "beer" | "spirit",
 		id: string,
 		newDescription: string
+	) => Promise<void>;
+	deleteData: (
+		typeToDelete: "brewery" | "beer" | "distillery" | "spirit",
+		id: string
 	) => Promise<void>;
 
 	admins: Admin[];
@@ -196,7 +196,7 @@ export const useDbContextValue = (): DatabaseHook => {
 		async (id: string) => {
 			const client = await genApiClient();
 
-			await client.postRequest("distillery", { id });
+			await client.postRequest("distillery/delete", { id });
 
 			await refreshDistilleries();
 		},
@@ -273,9 +273,35 @@ export const useDbContextValue = (): DatabaseHook => {
 			const update = { id, newDescription };
 
 			const client = await genApiClient();
-			await client.putRequest(elementToUpdate, update);
+			await client.patchRequest(elementToUpdate, update);
 
 			switch (elementToUpdate) {
+				case "brewery":
+					await refreshBreweries();
+					break;
+				case "distillery":
+					await refreshDistilleries();
+					break;
+				case "beer":
+					await refreshBeers();
+					break;
+				case "spirit":
+					await refreshSpirits();
+					break;
+			}
+		},
+		[refreshBreweries, refreshDistilleries, refreshBeers, refreshSpirits]
+	);
+
+	const deleteData = useCallback(
+		async (
+			typeToDelete: "brewery" | "beer" | "distillery" | "spirit",
+			id: string
+		) => {
+			const client = await genApiClient();
+			await client.postRequest(`${typeToDelete}/delete`, { id });
+
+			switch (typeToDelete) {
 				case "brewery":
 					await refreshBreweries();
 					break;
@@ -318,26 +344,23 @@ export const useDbContextValue = (): DatabaseHook => {
 		breweries,
 		refreshBreweries,
 		createBrewery,
-		deleteBrewery,
 		findSpecificBrewery,
 
 		beers,
 		refreshBeers,
 		createBeer,
-		deleteBeer,
 
 		distilleries,
 		refreshDistilleries,
 		createDistillery,
-		deleteDistillery,
 
 		spirits,
 		refreshSpirits,
 		createSpirit,
-		deleteSpirit,
 
 		refreshData,
 		updateDescription,
+		deleteData,
 
 		admins,
 		refreshAdmins,

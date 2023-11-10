@@ -35,6 +35,17 @@ export class AppApiClient {
 			body: JSON.stringify(updateBody),
 		});
 	}
+
+	async patchRequest(endpoint: string, body: any): Promise<any> {
+		return await fetch(`${this.baseUrl}/api/${endpoint}`, {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application",
+			},
+			body: JSON.stringify(body),
+		});
+	}
 }
 
 export const genApiClient = async () => new AppApiClient();

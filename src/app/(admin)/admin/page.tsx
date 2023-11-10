@@ -12,66 +12,39 @@ import {
 	SpiritDeleteRequest,
 	SpiritPostRequest,
 	StatusField,
-} from "@/components/TestComponents";
+} from "@/components/RequestComponents";
+import styles from "./admin.module.scss";
 
 const AdminPage: FC = async () => {
 	return (
 		<>
+			<StatusField />
 			<div
-				style={{
-					display: "flex",
-					marginBottom: "2vh",
-					marginLeft: "2vw",
-				}}
+				className={styles.admin_field_container}
+				style={{ marginTop: "9vh" }}
 			>
 				<BreweryPostRequest />
 				<BreweryPutRequest />
 				<BreweryDeleteRequest />
-				<StatusField />
 			</div>
 			<hr />
-			<div
-				style={{
-					display: "flex",
-					marginBottom: "2vh",
-					marginLeft: "2vw",
-				}}
-			>
+			<div className={styles.admin_field_container}>
 				<BeerRequest />
 				<BeerDeleteRequest />
 			</div>
 			<hr />
-			<div
-				style={{
-					display: "flex",
-					marginTop: "2vh",
-					marginBottom: "2vh",
-					marginLeft: "2vw",
-				}}
-			>
+			<div className={styles.admin_field_container}>
 				<DistilleryPostRequest />
 				<DistilleryPutRequest />
 				<DistilleryDeleteRequest />
 			</div>
 			<hr />
-			<div
-				style={{
-					display: "flex",
-					marginTop: "2vh",
-					marginLeft: "2vw",
-				}}
-			>
+			<div className={styles.admin_field_container}>
 				<SpiritPostRequest />
 				<SpiritDeleteRequest />
 			</div>
 			<hr />
-			<div
-				style={{
-					display: "flex",
-					marginTop: "2vh",
-					marginLeft: "2vw",
-				}}
-			>
+			<div className={styles.admin_field_container}>
 				<AdminPostRequest />
 			</div>
 		</>

@@ -33,3 +33,18 @@ export const PUT = async (req: NextRequest) => {
 
 	return NextResponse.json({ updateBrewery });
 };
+
+export const PATCH = async (req: NextRequest) => {
+	const { id, newDescription } = await req.json();
+
+	const updateBrewery = await prisma.brewery.update({
+		where: {
+			id: id,
+		},
+		data: {
+			description: newDescription,
+		},
+	});
+
+	return NextResponse.json({ updateBrewery });
+};

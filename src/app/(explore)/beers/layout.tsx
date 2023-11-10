@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { DatabaseContextProvider } from "@/services";
 import { NavBar } from "@/components";
+import ProductGrid from "@/components/Views/Gridviews/ProductGrid";
 
 const BeerExploreLayout = async (props: {
 	children: ReactNode;
@@ -8,6 +9,7 @@ const BeerExploreLayout = async (props: {
 }) => {
 	return (
 		<main>
+			<ProductGrid />
 			{props.children}
 			{props.beer}
 		</main>
