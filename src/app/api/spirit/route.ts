@@ -27,7 +27,7 @@ export const POST = async (req: NextRequest) => {
 	return NextResponse.json({ createSpirit });
 };
 
-export const PUT = async (req: NextRequest) => {
+export const PATCH = async (req: NextRequest) => {
 	const { id, newDescription } = await req.json();
 
 	const updateSpirit = await prisma.spirit.update({

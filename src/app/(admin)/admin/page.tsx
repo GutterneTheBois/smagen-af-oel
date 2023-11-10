@@ -9,6 +9,7 @@ import {
 	DistilleryDeleteRequest,
 	DistilleryPostRequest,
 	DistilleryPutRequest,
+	ProductUpdateRequest,
 	SpiritDeleteRequest,
 	SpiritPostRequest,
 	StatusField,
@@ -30,6 +31,7 @@ const AdminPage: FC = async () => {
 			<hr />
 			<div className={styles.admin_field_container}>
 				<BeerRequest />
+				<ProductUpdateRequest type="beer" />
 				<BeerDeleteRequest />
 			</div>
 			<hr />
@@ -41,6 +43,7 @@ const AdminPage: FC = async () => {
 			<hr />
 			<div className={styles.admin_field_container}>
 				<SpiritPostRequest />
+				<ProductUpdateRequest type="spirit" />
 				<SpiritDeleteRequest />
 			</div>
 			<hr />
