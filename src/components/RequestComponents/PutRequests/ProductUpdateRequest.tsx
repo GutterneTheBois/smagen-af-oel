@@ -26,19 +26,16 @@ const ProductUpdateRequest: FC<UpdaterProps> = ({ type }) => {
 		image_url: undefined,
 	});
 
-	if (type === "beer") {
-		useEffect(() => {
-			(async () => {
-				await refreshBeers();
-			})();
-		}, [beers]);
-	} else if (type === "spirit") {
-		useEffect(() => {
-			(async () => {
-				await refreshSpirits();
-			})();
-		}, [spirits]);
-	}
+	useEffect(() => {
+		(async () => {
+			await refreshBeers();
+		})();
+	}, [beers]);
+	useEffect(() => {
+		(async () => {
+			await refreshSpirits();
+		})();
+	}, [spirits]);
 
 	const update = () => {
 		updateDescription(type, id, props.description, props.image_url);
