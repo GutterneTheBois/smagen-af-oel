@@ -9,7 +9,7 @@ export const GET = async (req: NextRequest) => {
 	return NextResponse.json({ botds });
 };
 
-export const PUT = async (req: NextRequest) => {
+export const PATCH = async (req: NextRequest) => {
 	const { id } = await req.json();
 
 	const beer = await prisma.beer.findUnique({

@@ -19,7 +19,10 @@ const ModalFooter: FC<FooterProps> = ({ toggle }) => {
 				Confirm
 			</Button>
 
-			<GhostButton className={styles.modalFooterBtn}>
+			<GhostButton
+				className={styles.modalFooterBtn}
+				linkTo="http://www.google.com"
+			>
 				<IoLogOut className={styles.modalIcon} />
 				Cancel
 			</GhostButton>

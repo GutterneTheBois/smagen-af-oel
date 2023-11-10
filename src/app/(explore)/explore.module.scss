@@ -5,103 +5,133 @@
 // }
 
 .title {
-  margin: 10vh 2vw auto 2vw;
-  color: #fff;
+	margin: 10vh 2vw auto 2vw;
+	color: #fff;
 }
 
 .pre__container {
-  position: sticky;
-  display: flex;
-  justify-content: space-between;
-  top: 8vh;
-  width: 100%;
-  background-color: forestgreen;
+	position: sticky;
+	display: flex;
+	justify-content: space-between;
+	top: 8vh;
+	width: 100%;
+	background-color: forestgreen;
 }
 
 .search {
-  z-index: 2;
-  position: fixed;
-  top: 2.5vh;
-  right: 30vw;
+	z-index: 2;
+	position: fixed;
+	top: 2.5vh;
+	right: 30vw;
 
-  &__input {
-    position: fixed;
-    top: 3.1vh;
-    right: 18.5vw;
-  }
+	&__input {
+		position: fixed;
+		top: 3.1vh;
+		right: 18.5vw;
+	}
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 
-  div {
-    justify-self: center;
-  }
+	div {
+		justify-self: center;
+	}
 }
 
 .products {
-  display: flex;
+	display: flex;
 }
 
 .fixed {
-  position: fixed;
+	position: fixed;
+	top: 11vh;
+	width: 25vw;
+	padding: 1vh 1vw;
+	background-color: rgba(255, 255, 255, 0.7);
+	color: #000;
+	border: 1px solid #000;
+	border-radius: 0.5rem;
+	text-align: center;
 }
 
-.beerContainer {
-  max-width: fit-content;
-  margin: 10vh auto;
-  padding: 1rem;
-  display: flex;
-  background-color: rgba(255, 255, 255, 0.7);
-  height: fit-content;
+.productContainer {
+	max-width: fit-content;
+	margin: 10vh auto;
+	padding: 1rem;
+	display: flex;
+	background-color: rgba(255, 255, 255, 0.7);
+	height: fit-content;
+	border: 1px solid #000;
+	border-radius: 0.5rem;
 
-  .imageColumn {
-    margin: 10 vh 2vw auto 2vw;
-    position: relative;
+	.imageColumn {
+		margin: 10 vh 2vw auto 2vw;
+		position: relative;
 
-    .beerImage {
-      height: auto;
-      width: 20vw;
-      margin: 10 vh 2vw auto 2vw;
-    }
-  }
+		.productImage {
+			height: auto;
+			width: 20vw;
+			margin: 10 vh 2vw auto 2vw;
+		}
+	}
 
-  .textColumn {
-    width: fit-content;
-    margin-left: 1rem;
+	.textColumn {
+		width: fit-content;
+		margin-left: 1rem;
 
-    .beerDescription {
-      & h1 {
-        font-weight: 700;
-        font-size: 36px;
-        color: #000;
-        border-bottom: #000 solid 0.1rem;
-        margin-bottom: 2rem;
-      }
+		.beerDescription {
+			& h1 {
+				font-weight: 700;
+				font-size: 36px;
+				color: #000;
+				border-bottom: #000 solid 0.1rem;
+				margin-bottom: 2rem;
+			}
 
-      & h2 {
-        font-weight: 700;
-        font-size: 28px;
-        color: #000;
-        border-bottom: #000 solid 0.1rem;
-        margin-bottom: 1rem;
-      }
+			& h2 {
+				font-weight: 700;
+				font-size: 28px;
+				color: #000;
+				border-bottom: #000 solid 0.1rem;
+				margin-bottom: 1rem;
+			}
 
-      & h4 {
-        font-size: 20px;
-        font-weight: 700;
-        color: #000;
-        border-bottom: #000 solid 0.1rem;
-        margin-bottom: 1rem;
-      }
+			& h3 {
+				font-weight: 700;
+				font-size: 28px;
+				color: #000;
+				border-bottom: #000 solid 0.1rem;
+				margin-bottom: 1rem;
+			}
 
-      & p {
-        font-size: 20px;
-        font-weight: 300;
-        color: #000;
-        border-bottom: #000 solid 0.1rem;
-      }
-    }
-  }
+			& h4 {
+				font-size: 20px;
+				font-weight: 700;
+				color: #000;
+				border-bottom: #000 solid 0.1rem;
+				margin-bottom: 1rem;
+			}
+
+			& p {
+				font-size: 20px;
+				font-weight: 300;
+				color: #000;
+				border-bottom: #000 solid 0.1rem;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.container {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.container {
+		grid-template-columns: 1fr 1fr;
+	}
 }

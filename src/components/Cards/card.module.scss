@@ -110,3 +110,15 @@
 		box-shadow: 0 2.5em 0 0;
 	}
 }
+
+@media screen and (max-width: 1100px) {
+	.card {
+		width: 30vw;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.card {
+		width: 40vw;
+	}
+}

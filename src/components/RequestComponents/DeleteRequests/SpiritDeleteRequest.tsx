@@ -5,7 +5,7 @@ import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
 import { Button } from "@/client-components";
 
 const SpiritDeleteRequest: FC = () => {
-	const { spirits, refreshSpirits, deleteSpirit } = useDb();
+	const { spirits, refreshSpirits, deleteData } = useDb();
 
 	const [id, setId] = useState<string>("");
 
@@ -34,7 +34,7 @@ const SpiritDeleteRequest: FC = () => {
 					)}
 				</select>
 				<hr />
-				<Button onClick={() => deleteSpirit(id)}>Submit</Button>
+				<Button onClick={() => deleteData("spirit", id)}>Submit</Button>
 			</div>
 		</div>
 	);

@@ -4,14 +4,14 @@ import { useDb } from "@/services";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
 import { Button } from "@/client-components";
 
-const BreweryDeleteRequest: FC = () => {
-	const { breweries, refreshBreweries, deleteBrewery } = useDb();
+const DistilleryDeleteRequest: FC = () => {
+	const { distilleries, refreshDistilleries, deleteData } = useDb();
 
 	const [id, setId] = useState<string>("");
 
 	const { loading } = useLoadingAsync(async () => {
-		await refreshBreweries();
-	}, [refreshBreweries]);
+		await refreshDistilleries();
+	}, [refreshDistilleries]);
 
 	const onChange = (ev: ChangeEvent<HTMLSelectElement>) => {
 		setId(ev.target.value);
@@ -19,25 +19,27 @@ const BreweryDeleteRequest: FC = () => {
 
 	return (
 		<div style={{ marginLeft: "10vw" }}>
-			<h1>Delete Brewery</h1>
+			<h1>Delete Distillery</h1>
 			<div>
 				<select onChange={onChange} defaultValue={"select"}>
-					<option value={"select"}>-- Choose Brewery --</option>
+					<option value={"select"}>-- Choose Distillery --</option>
 					{!loading && (
 						<>
-							{breweries.map((brewery, index) => (
-								<option key={index} value={brewery.id}>
-									{brewery.name}
+							{distilleries.map((distillery, index) => (
+								<option key={index} value={distillery.id}>
+									{distillery.name}
 								</option>
 							))}
 						</>
 					)}
 				</select>
 				<hr />
-				<Button onClick={() => deleteBrewery(id)}>Submit</Button>
+				<Button onClick={() => deleteData("distillery", id)}>
+					Submit
+				</Button>
 			</div>
 		</div>
 	);
 };
 
-export default BreweryDeleteRequest;
+export default DistilleryDeleteRequest;
