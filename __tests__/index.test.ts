@@ -59,6 +59,11 @@ it("should update brewery and match", async () => {
 		newDescription: "Opdateret beskrivelse",
 	});
 
+	await client.patchRequest("brewery", {
+		id: testBrewery.id,
+		newDescription: "Opdateret beskrivelse",
+	});
+  
 	console.log(testBrewery.description);
 
 	console.log(await client.getRequest("brewery").then((res) => res.json()));

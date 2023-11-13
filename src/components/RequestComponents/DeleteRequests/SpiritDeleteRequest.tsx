@@ -18,7 +18,7 @@ const SpiritDeleteRequest: FC = () => {
 	};
 
 	return (
-		<div>
+		<div style={{ marginLeft: "10vw" }}>
 			<h1>Delete Spirit</h1>
 			<div>
 				<select onChange={onChange} defaultValue={"select"}>
