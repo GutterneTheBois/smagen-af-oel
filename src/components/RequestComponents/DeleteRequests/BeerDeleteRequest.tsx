@@ -5,7 +5,7 @@ import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
 import { ChangeEvent, FC, useState } from "react";
 
 const BeerDeleteRequest: FC = () => {
-	const { beers, refreshBeers, deleteBeer } = useDb();
+	const { beers, refreshBeers, deleteData } = useDb();
 
 	const [id, setId] = useState<string>("");
 
@@ -18,7 +18,7 @@ const BeerDeleteRequest: FC = () => {
 	};
 
 	return (
-		<div>
+		<div style={{ marginLeft: "10vw" }}>
 			<h1>Delete Beer</h1>
 			<div>
 				<select onChange={onChange} defaultValue={"select"}>
@@ -34,7 +34,7 @@ const BeerDeleteRequest: FC = () => {
 					)}
 				</select>
 				<hr />
-				<Button onClick={() => deleteBeer(id)}>Submit</Button>
+				<Button onClick={() => deleteData("beer", id)}>Submit</Button>
 			</div>
 		</div>
 	);

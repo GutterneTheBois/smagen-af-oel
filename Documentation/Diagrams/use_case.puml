@@ -2,10 +2,10 @@
 
 left to right direction
 
-actor Guest as G
+actor Visitor as G
 actor Admin as A
 
-package RestAPI {
+package API {
     usecase "Send Get Request" as UC1
     usecase "Send Post Request" as UC2
     usecase "Send Put Request" as UC3
@@ -17,5 +17,58 @@ A --> UC1
 A --> UC2
 A --> UC3
 A --> UC4
+
+@enduml
+
+
+@startuml uc_diagram
+
+left to right direction
+
+actor Visitor as V
+actor Admin as A
+
+package Website {
+    usecase "Search products" as UC01
+    usecase "Search manufacturers" as UC02
+    usecase "Find specific product" as UC03
+    usecase "Find specific manufacturer" as UC04
+    usecase "Set age cookie" as UC05
+    usecase "Create new products" as UC06
+    usecase "Create new manufacturers" as UC07
+    usecase "Update products" as UC08
+    usecase "Update manufacturers" as UC09
+    usecase "Delete products" as UC10
+    usecase "Delete manufacturers" as UC11
+}
+
+V --> UC01
+V --> UC02
+V --> UC03
+V --> UC04
+V --> UC05
+UC01 <-- A
+UC02 <-- A
+UC03 <-- A
+UC04 <-- A
+UC05 <-- A
+UC06 <-- A
+UC07 <-- A
+UC08 <-- A
+UC09 <-- A
+UC10 <-- A
+UC11 <-- A
+
+
+' V --> UC01
+' V --> UC02
+' V --> UC03
+' V --> UC04
+' UC04 <-- A 
+' UC05 <-- A
+' UC06 <-- A
+' UC01 <-- A
+' UC02 <-- A
+' UC07 <-- A
 
 @enduml

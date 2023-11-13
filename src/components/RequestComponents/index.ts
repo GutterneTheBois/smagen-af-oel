@@ -3,8 +3,13 @@ export {
 	BreweryPostRequest,
 	DistilleryPostRequest,
 	SpiritPostRequest,
+	AdminPostRequest,
 } from "./PostRequests";
-export { BreweryPutRequest, DistilleryPutRequest } from "./PutRequests";
+export {
+	BreweryPutRequest,
+	DistilleryPutRequest,
+	ProductUpdateRequest,
+} from "./PutRequests";
 export {
 	BreweryDeleteRequest,
 	DistilleryDeleteRequest,

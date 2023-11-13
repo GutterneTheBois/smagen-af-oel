@@ -1,10 +1,14 @@
-import type { Config } from "@jest/types";
-// Sync object
-const config: Config.InitialOptions = {
+import nextJest from "next/jest.js";
+
+// Providing the path to your Next.js app which will enable loading next.config.js and .env files
+const createJestConfig = nextJest({ dir: "./" });
+
+// Any custom config you want to pass to Jest
+const customJestConfig = {
+  testEnvironment: "node",
   verbose: true,
-  transform: {
-    "^.+\\.tsx?$": "ts-jest",
-  },
-  // setupFilesAfterEnv: ["./src/lib/singleton.ts"],
+  setupFiles: ["./jestSetupFile.ts"],
 };
-export default config;
+
+// createJestConfig is exported in this way to ensure that next/jest can load the Next.js configuration, which is async
+export default createJestConfig(customJestConfig);

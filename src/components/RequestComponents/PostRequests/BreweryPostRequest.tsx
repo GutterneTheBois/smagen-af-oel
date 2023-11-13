@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, FC, useState, useRef } from "react";
+import { ChangeEvent, FC, useState, useRef, useEffect } from "react";
 import { useDb } from "@/services";
 import { Button } from "@/client-components";
 import { useLoadingAsync } from "@/utils/hooks/useLoadingAsync";
@@ -14,8 +14,8 @@ const BreweryPostRequest: FC = () => {
 		description: undefined,
 	});
 
-	const { loading } = useLoadingAsync(async () => {
-		await refreshBreweries();
+	useEffect(() => {
+		(async () => await refreshBreweries())();
 	}, []);
 
 	const onChange = (ev: ChangeEvent<HTMLInputElement>): void => {

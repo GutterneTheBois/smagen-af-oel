@@ -16,7 +16,7 @@ const StatusField: FC = () => {
 				position: "fixed",
 				backgroundColor: "black",
 				right: "2vw",
-				top: "10vh",
+				bottom: "2vh",
 			}}
 		>
 			<h2>Breweries: {!loading && breweries.length}</h2>
