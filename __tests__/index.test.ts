@@ -11,14 +11,6 @@ beforeAll(async () => {
 	});
 });
 
-afterEach(async () => {
-	const dbHandler = await dbClient();
-
-	const testBrewery = await dbHandler.findSpecificElement("brewery", "Test");
-
-	//console.log(testBrewery.description);
-});
-
 it("should make GET request for breweries and receive status 200", async () => {
 	const client = await genApiClient();
 
