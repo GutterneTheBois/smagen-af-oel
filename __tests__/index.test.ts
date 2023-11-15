@@ -6,7 +6,7 @@ beforeAll(async () => {
 	const client = await genApiClient();
 
 	await client.postRequest("brewery", {
-		name: "Dolleris A/S",
+		name: "Test",
 		description: "Det her er en test",
 	});
 });
@@ -14,10 +14,7 @@ beforeAll(async () => {
 afterEach(async () => {
 	const dbHandler = await dbClient();
 
-	const testBrewery = await dbHandler.findSpecificElement(
-		"brewery",
-		"Dolleris A/S"
-	);
+	const testBrewery = await dbHandler.findSpecificElement("brewery", "Test");
 
 	//console.log(testBrewery.description);
 });
@@ -38,9 +35,7 @@ it("should create new brewery and match", async () => {
 	const data = await res.json();
 
 	expect(
-		data.breweries.findLast(
-			(brewery: Brewery) => brewery.name === "Dolleris A/S"
-		)
+		data.breweries.findLast((brewery: Brewery) => brewery.name === "Test")
 	);
 });
 
@@ -49,10 +44,7 @@ it("should update brewery and match", async () => {
 
 	const dbHandler = await dbClient();
 
-	const testBrewery = await dbHandler.findSpecificElement(
-		"brewery",
-		"Dolleris A/S"
-	);
+	const testBrewery = await dbHandler.findSpecificElement("brewery", "Test");
 
 	await client.patchRequest("brewery", {
 		id: testBrewery.id,
@@ -63,10 +55,7 @@ it("should update brewery and match", async () => {
 
 	console.log(await client.getRequest("brewery").then((res) => res.json()));
 
-	const updatedBrewery = await dbHandler.findSpecificElement(
-		"brewery",
-		"Dolleris A/S"
-	);
+	const updatedBrewery = await dbHandler.findSpecificElement("brewery", "Test");
 
 	expect(updatedBrewery.description).toBe("Opdateret beskrivelse");
 });
@@ -76,19 +65,13 @@ it("should delete brewery", async () => {
 
 	const dbHandler = await dbClient();
 
-	const testBrewery = await dbHandler.findSpecificElement(
-		"brewery",
-		"Dolleris A/S"
-	);
+	const testBrewery = await dbHandler.findSpecificElement("brewery", "Test");
 
 	await client.postRequest("brewery/delete", {
 		id: testBrewery.id,
 	});
 
-	const shouldBeNull = await dbHandler.findSpecificElement(
-		"brewery",
-		"Dolleris A/S"
-	);
+	const shouldBeNull = await dbHandler.findSpecificElement("brewery", "Test");
 
 	expect(shouldBeNull).toBeNull();
 });
