@@ -2,28 +2,36 @@ import { Brewery } from "@prisma/client";
 import { genApiClient } from "../src/services/backend/appApiClient";
 import { dbClient } from "../src/services/backend/dbClient";
 import breweries from "../prisma/seed-data/breweries.json";
-import { before } from "node:test";
+
+type ReducedBrewery = Omit<Brewery, "id">;
+describe("Test of GET", () => {
+	it("should make GET request for breweries and match the Schema .json file", async () => {
+		const client = await genApiClient();
+		const response = await client.getRequest("brewery");
+
+		const data = await response.json();
+
+		const filterData = (name: string, description: string | null) => ({
+			name,
+			description,
+		});
+
+		const reducedData: ReducedBrewery[] = data.breweries.map(
+			({ name, description }: ReducedBrewery) => filterData(name, description)
+		);
+
+		expect(breweries).toEqual(reducedData);
+	});
+});
 
 describe("Test of Brewery API functions", () => {
-	before(async () => {
+	beforeAll(async () => {
 		const client = await genApiClient();
 
 		await client.postRequest("brewery", {
 			name: "Test",
 			description: "Det her er en test",
 		});
-	});
-
-	it("should make GET request for breweries and match the Schema .json file", async () => {
-		const client = await genApiClient();
-
-		const response: any = await client.getRequest("brewery");
-
-		const data = await response.json();
-
-		expect(data.breweries("name") + data.breweries("description")).toEqual(
-			breweries
-		);
 	});
 
 	it("should create new brewery and match", async () => {
