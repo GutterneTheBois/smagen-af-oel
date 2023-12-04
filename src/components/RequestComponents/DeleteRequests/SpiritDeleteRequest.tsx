@@ -11,7 +11,7 @@ const SpiritDeleteRequest: FC = () => {
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshSpirits();
-	}, [refreshSpirits]);
+	}, []);
 
 	const onChange = (ev: ChangeEvent<HTMLSelectElement>) => {
 		setId(ev.target.value);

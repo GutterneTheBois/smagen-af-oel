@@ -20,7 +20,7 @@ const ProductGrid: FC = () => {
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshBeers();
-	}, [beers]);
+	}, []);
 
 	useEffect(() => {
 		const lowered = queries.map((q) => q.toLowerCase());
