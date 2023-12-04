@@ -20,7 +20,7 @@ const DistilleryPutRequest: FC = () => {
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshDistilleries();
-	}, [distilleries]);
+	}, []);
 
 	return (
 		<div style={{ marginLeft: "10vw" }}>

@@ -30,12 +30,12 @@ const ProductUpdateRequest: FC<UpdaterProps> = ({ type }) => {
 		(async () => {
 			await refreshBeers();
 		})();
-	}, [beers]);
+	}, []);
 	useEffect(() => {
 		(async () => {
 			await refreshSpirits();
 		})();
-	}, [spirits]);
+	}, []);
 
 	const update = () => {
 		updateDescription(type, id, props.description, props.image_url);

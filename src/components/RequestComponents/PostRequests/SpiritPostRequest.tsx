@@ -9,7 +9,7 @@ const SpiritPostRequest: FC = () => {
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshDistilleries();
-	}, [refreshDistilleries]);
+	}, []);
 
 	const [inputStrings, setInputStrings] = useState({
 		name: "",

@@ -11,7 +11,7 @@ const BeerDeleteRequest: FC = () => {
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshBeers();
-	}, [refreshBeers]);
+	}, []);
 
 	const onChange = (ev: ChangeEvent<HTMLSelectElement>) => {
 		setId(ev.target.value);

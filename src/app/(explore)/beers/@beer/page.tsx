@@ -19,7 +19,7 @@ const BeerGrid = () => {
 				setFilteredBeers(beers);
 			})();
 		}
-	}, [beers, refreshBeers, filteredBeers.length]);
+	}, [beers, filteredBeers.length]);
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshBeers();

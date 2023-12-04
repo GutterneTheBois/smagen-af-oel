@@ -11,7 +11,7 @@ const DistilleryDeleteRequest: FC = () => {
 
 	const { loading } = useLoadingAsync(async () => {
 		await refreshDistilleries();
-	}, [refreshDistilleries]);
+	}, []);
 
 	const onChange = (ev: ChangeEvent<HTMLSelectElement>) => {
 		setId(ev.target.value);
