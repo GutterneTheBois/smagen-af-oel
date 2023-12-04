@@ -17,7 +17,8 @@ describe("Test of GET", () => {
 		});
 
 		const reducedData: ReducedBrewery[] = data.breweries.map(
-			({ name, description }: ReducedBrewery) => filterData(name, description)
+			({ name, description }: ReducedBrewery) =>
+				filterData(name, description)
 		);
 
 		expect(breweries).toEqual(reducedData);
@@ -30,7 +31,7 @@ describe("Test of Brewery API functions", () => {
 
 		await client.postRequest("brewery", {
 			name: "Test",
-			description: "Det her er en test",
+			description: null,
 		});
 	});
 
@@ -42,7 +43,9 @@ describe("Test of Brewery API functions", () => {
 		const data = await res.json();
 
 		expect(
-			data.breweries.findLast((brewery: Brewery) => brewery.name === "Test")
+			data.breweries.findLast(
+				(brewery: Brewery) => brewery.name === "Test"
+			)
 		);
 	});
 
@@ -51,7 +54,10 @@ describe("Test of Brewery API functions", () => {
 
 		const dbHandler = await dbClient();
 
-		const testBrewery = await dbHandler.findSpecificElement("brewery", "Test");
+		const testBrewery = await dbHandler.findSpecificElement(
+			"brewery",
+			"Test"
+		);
 
 		await client.patchRequest("brewery", {
 			id: testBrewery.id,
@@ -71,14 +77,17 @@ describe("Test of Brewery API functions", () => {
 
 		const dbHandler = await dbClient();
 
-		const testBrewery = await dbHandler.findSpecificElement("brewery", "Test");
+		let testBrewery = await dbHandler.findSpecificElement(
+			"brewery",
+			"Test"
+		);
 
 		await client.postRequest("brewery/delete", {
 			id: testBrewery.id,
 		});
 
-		const shouldBeNull = await dbHandler.findSpecificElement("brewery", "Test");
+		testBrewery = await dbHandler.findSpecificElement("brewery", "Test");
 
-		expect(shouldBeNull).toBeNull();
+		expect(testBrewery).toBeNull();
 	});
 });
