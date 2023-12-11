@@ -16,7 +16,7 @@
 		"test:first": "yarn full:start && jest --watch",
 		"test": "jest",
 		"test:watch": "jest --watch",
-		"test:app": "yarn start . | yarn test"
+		"validate": "yarn lint && yarn build"
 	},
 	"prisma": {
 		"seed": "node prisma/seed.mjs"
