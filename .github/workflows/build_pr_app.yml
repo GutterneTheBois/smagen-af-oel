@@ -50,9 +50,4 @@ jobs:
             - name: Build App
               uses: borales/actions-yarn@v4
               with:
-                  cmd: build
-
-            - name: Test app
-              uses: borales/actions-yarn@v4
-              with:
-                  cmd: test:app
+                  cmd: validate
