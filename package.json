@@ -15,7 +15,8 @@
 		"docker:down": "docker compose down",
 		"test:first": "yarn full:start && jest --watch",
 		"test": "jest",
-		"test:watch": "jest --watch"
+		"test:watch": "jest --watch",
+		"test:app": "yarn start . | yarn test"
 	},
 	"prisma": {
 		"seed": "node prisma/seed.mjs"
