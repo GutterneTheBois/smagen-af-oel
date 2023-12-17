@@ -28,6 +28,7 @@ model Beer {
     ibu         Int?
     size        Int
     image_url   String?
+    stockAmount Int?
     brewery     Brewery @relation(fields: [breweryName], references: [name])
     breweryName String
     botd        Boolean @default(false)
@@ -52,6 +53,7 @@ model Spirit {
     vol            Decimal
     size           Int
     image_url      String?
+    stockAmount    Int?
     distillery     Distillery @relation(fields: [distilleryName], references: [name])
     distilleryName String
 
