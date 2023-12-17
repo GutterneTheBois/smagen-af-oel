@@ -6,6 +6,7 @@
         "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/xd9zmwbmh9jdxw5i6scvg/nordicRom.jpeg?rlkey=pi98q2i4x3aiqxlhw91k5vovb&raw=1"
     },
     {
@@ -15,6 +16,7 @@
         "distilleryName": "Marsk",
         "vol": 40,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/rse1kg1p0qi4yy1v638wm/orangeRom.jpeg?rlkey=5ff1gan48fltpy3pphhvvekzi&raw=1"
     },
     {
@@ -24,6 +26,7 @@
         "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/dxhu6wacit34b1xzaqy3i/sortSolRom.jpeg?rlkey=j2kks9kyxgf5fzesa3t2wsgj7&raw=1"
     },
     {
@@ -33,6 +36,7 @@
         "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/l842s7g4lhie0b39wow7y/originalGin.jpeg?rlkey=rhvf46ds6tjic4gecu5tm36kl&raw=1"
     },
     {
@@ -42,6 +46,7 @@
         "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/e3fplm9i1ltxyyuc25bvp/appleGin.jpeg?rlkey=amdmqk2beq7yynfq9wfgyec0g&raw=1"
     },
     {
@@ -51,6 +56,7 @@
         "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/f3adw7mayit4arsdcxh08/kokosRom.jpeg?rlkey=gqqlvzzprp8l0am4ii4qwyizq&raw=1"
     },
     {
@@ -60,6 +66,7 @@
         "distilleryName": "Marsk",
         "vol": 43,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/c82qwiovnmkndgofr4wq9/klitroseGin.jpeg?rlkey=trkqdjaa3vjtnumreptj2nrus&raw=1"
     },
     {
@@ -69,6 +76,7 @@
         "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/fgh55fhq9f9g6kxal5rkh/citrusGin.jpeg?rlkey=h7colboyuopxn4lkrbdf2qpmh&raw=1"
     },
     {
@@ -78,6 +86,7 @@
         "distilleryName": "Marsk",
         "vol": 40,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/e3ndbfighnxkobkozmis4/pinkGrapeGin.jpeg?rlkey=jqe0l7tvj1rdkn1hknlcuevnp&raw=1"
     },
     {
@@ -87,6 +96,7 @@
         "distilleryName": "Marsk",
         "vol": 38,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/80sl1685ry0wfh6cebfbp/rhubarbGin.jpeg?rlkey=7mermq6ob5nixo3ff6c53ch59&raw=1"
     },
     {
@@ -96,6 +106,7 @@
         "distilleryName": "Kimerud",
         "vol": 42,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/ehwxvkbp40jbiqo1bse2d/kimerudAged.jpeg?rlkey=aa9304ahg09nnj7qhdnh2othz&raw=1"
     },
     {
@@ -105,6 +116,7 @@
         "distilleryName": "Kimerud",
         "vol": 38,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/5qe4whkax0239xl9i1z5m/kimerudPink.jpeg?rlkey=z52diqgy6y3nc07bdm3q1hexm&raw=1"
     },
     {
@@ -114,6 +126,7 @@
         "distilleryName": "Kimerud",
         "vol": 40,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/2su85nd99wvffljscpl0w/kimerudGin.jpeg?rlkey=szs11v8aau225a6i3dlwp7vx5&raw=1"
     },
     {
@@ -123,6 +136,7 @@
         "distilleryName": "Brewdog Distilling Co.",
         "vol": 40,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/nf3fi6re2or8z0hwo1x7x/lonewolfGin.jpeg?rlkey=u8hp25ekxtnn47y8r3x4l1h1e&raw=1"
     }
 ]

@@ -2,43 +2,44 @@ import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (req: NextRequest) => {
-	const spirits = await prisma.spirit.findMany();
+    const spirits = await prisma.spirit.findMany();
 
-	return NextResponse.json({ spirits });
+    return NextResponse.json({ spirits });
 };
 
 export const POST = async (req: NextRequest) => {
-	const body = await req.json();
+    const body = await req.json();
 
-	const spirit = Object.assign({}, body);
-	delete spirit.distilleryName;
+    const spirit = Object.assign({}, body);
+    delete spirit.distilleryName;
 
-	const createSpirit = await prisma.spirit.create({
-		data: {
-			...spirit,
-			distillery: {
-				connect: {
-					name: body.distilleryName,
-				},
-			},
-		},
-	});
+    const createSpirit = await prisma.spirit.create({
+        data: {
+            ...spirit,
+            distillery: {
+                connect: {
+                    name: body.distilleryName,
+                },
+            },
+        },
+    });
 
-	return NextResponse.json({ createSpirit });
+    return NextResponse.json({ createSpirit });
 };
 
 export const PATCH = async (req: NextRequest) => {
-	const { id, newDescription, image_url } = await req.json();
+    const { id, newDescription, image_url, stockAmount } = await req.json();
 
-	const updateSpirit = await prisma.spirit.update({
-		where: {
-			id: id,
-		},
-		data: {
-			description: newDescription,
-			image_url: image_url,
-		},
-	});
+    const updateSpirit = await prisma.spirit.update({
+        where: {
+            id: id,
+        },
+        data: {
+            description: newDescription,
+            image_url: image_url,
+            stockAmount: stockAmount,
+        },
+    });
 
-	return NextResponse.json({ updateSpirit });
+    return NextResponse.json({ updateSpirit });
 };

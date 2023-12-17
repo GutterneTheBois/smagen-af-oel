@@ -19,7 +19,47 @@ deactivate D
 P --> A: Process Response
 deactivate P
 
-A --> User: Render Response
+A --> Visitor: Render Response
 deactivate A
+
+@enduml
+
+@startuml login
+actor Admin
+
+participant "API" as api
+participant "OAuth" as oauth
+
+Admin -> api: request
+activate api
+activate Admin
+api -> oauth: request
+deactivate api
+activate oauth
+oauth -> Admin: response (Authenticated)
+deactivate oauth
+deactivate Admin
+
+alt OAuth failed
+oauth -> Admin: Not authenticated
+end
+
+@enduml
+
+@startuml cookie
+
+actor Visitor as v
+
+participant "Website" as w
+participant "Modal" as m
+
+v -> w: enters site
+w -> m: opens Modal
+m -> w: confirmation
+w -> v: flags browser with age-cookie
+alt cancellation
+m -> w: rejection
+w -> v: redirects to external website
+end
 
 @enduml

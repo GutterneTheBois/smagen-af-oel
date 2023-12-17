@@ -7,6 +7,7 @@
         "vol": 9.2,
         "ibu": 50,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/r0eqfkbzusixcpb5niwgg/flygtning.jpeg?rlkey=yjsy0eg1k7uyc6udqgxbveu23&raw=1"
     },
     {
@@ -17,6 +18,7 @@
         "vol": 20,
         "ibu": null,
         "size": 700,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/4pkalyzihbsiv1sdkqe1v/varmoel.jpeg?rlkey=lza48pwyn3zg106tcsdrpwqu6&raw=1"
     },
     {
@@ -27,6 +29,7 @@
         "vol": 5.3,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/56w3s9yjyeu5v2ttqrsqj/oats.jpeg?rlkey=td6bkp2cj96fh6yr1e4jxcmar&raw=1"
     },
     {
@@ -37,6 +40,7 @@
         "vol": 6.2,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/czz82phf0efb3rswia25s/rainbows.jpeg?rlkey=lg0ra1zvkfhbroqpx8duqcw3g&raw=1"
     },
     {
@@ -47,6 +51,7 @@
         "vol": 7.2,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/s/1797d68h7qu5t27/spontan.jpeg?raw=1"
     },
     {
@@ -57,6 +62,7 @@
         "vol": 10.3,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/56v9cangnp1ywysao8dc3/covfefeStd.jpeg?rlkey=u5lmgyzu9bt99fon035arjtzc&raw=1"
     },
     {
@@ -67,6 +73,7 @@
         "vol": 10.3,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/mznk9qjyaga1b3fgi9a5s/covfefeElg.jpeg?rlkey=a2vk9eenoyn4uo0s1ru05aovj&raw=1"
     },
     {
@@ -77,6 +84,7 @@
         "vol": 10.3,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/2wb3d6yuxrjitnjowkmbh/covfefeWhisky.jpeg?rlkey=d7exoozgnpk42kjfjs72j70mu&raw=1"
     },
     {
@@ -87,6 +95,7 @@
         "vol": 10.3,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/v9snquwtq5v2ucymx49eq/covfefeEg.jpeg?rlkey=8ygtadfgs10ic7xzg1lla0o7x&raw=1"
     },
     {
@@ -97,6 +106,7 @@
         "vol": 7,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/0lykgpk8k3k3cawq7efco/grauballeBock.jpeg?rlkey=ac0y8x7xpdtgo8lrr8rev450l&raw=1"
     },
     {
@@ -107,6 +117,7 @@
         "vol": 6,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/beesissltwsmiz6ob5exx/herslevPaaske.jpeg?rlkey=ju2a1di2qe034ehlgqtmvtdqx&raw=1"
     },
     {
@@ -117,6 +128,7 @@
         "vol": 5,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/qlqj093n4qcvrngmeffx9/aeroePaaske.jpeg?rlkey=cec6mdppjqaio2n6ahrldrur1&raw=1"
     },
     {
@@ -127,6 +139,7 @@
         "vol": 5.5,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/3pe4nry711igl3vp2q5vt/ayingerPils.jpeg?rlkey=th3kghj22v83u2qrg8hj67y72&raw=1"
     },
     {
@@ -137,6 +150,7 @@
         "vol": 12.2,
         "ibu": 30,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/ou7h9y4s64hdxhejyrsgk/whiteWedding.jpeg?rlkey=5d3ohabvay66j9qd7964qbazc&raw=1"
     },
     {
@@ -147,6 +161,7 @@
         "vol": 10,
         "ibu": null,
         "size": 750,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/f6jota6wy0pce1em341j4/goudenEaster.jpeg?rlkey=wqwlfax51ulb4k1j8fs3ocroz&raw=1"
     },
     {
@@ -157,6 +172,7 @@
         "vol": 11.2,
         "ibu": 10,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/v8imqceg6udxt61zy2s6z/gorm.jpeg?rlkey=8zsqe868huo3sojhvsqtkhiy2&raw=1"
     },
     {
@@ -167,6 +183,7 @@
         "vol": 12.2,
         "ibu": 30,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/i6bupatoitzjd58jnyuk5/redWedding.jpeg?rlkey=61c06z1qhltlrxoftwepyquop&raw=1"
     },
     {
@@ -177,6 +194,7 @@
         "vol": 7.3,
         "ibu": 48,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/eqsios4jtl2k5ymsrchoo/margeret.jpeg?rlkey=0rq9rov75vg5xnlxv7ihrg4yd&raw=1"
     },
     {
@@ -187,6 +205,7 @@
         "vol": 7.4,
         "ibu": 16,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/iicm2do9djnzw3uoc5279/1741.jpeg?rlkey=5707af2z5e50rcxcgofe3c8z2&raw=1"
     },
     {
@@ -197,6 +216,7 @@
         "vol": 12,
         "ibu": 40,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/jqis0shixs82dg0xc9kqk/fanoeWAR.jpeg?rlkey=v5w6qmn32lrtexxugg03heam9&raw=1"
     },
     {
@@ -207,6 +227,7 @@
         "vol": 5.4,
         "ibu": 40,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/6r9wzkus8hgjyomn4g81w/mussolini.jpeg?rlkey=lievtw2v7wbdnh29i13im3d23&raw=1"
     },
     {
@@ -217,6 +238,7 @@
         "vol": 5.5,
         "ibu": 19,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/s/b5azbuul91z5o4j/bringBrown.jpeg?raw=1"
     },
     {
@@ -227,6 +249,7 @@
         "vol": 15,
         "ibu": 75,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/s/8msstai7ficca3n/15imp.jpeg?raw=1"
     },
     {
@@ -237,6 +260,7 @@
         "vol": 5,
         "ibu": 16,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/un4ryb6pxzhtvsk4ov3gg/farFromKoln.jpeg?rlkey=e018eq8hroegdvwquoj3yym3i&raw=1"
     },
     {
@@ -247,6 +271,7 @@
         "vol": 7.4,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/vyhkexjgby5d3oh6u9iqp/bringOak.jpeg?rlkey=73ii1bm6h6m6vjbwtjn59b1m7&raw=1"
     },
     {
@@ -257,6 +282,7 @@
         "vol": 9.3,
         "ibu": 12,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/lvynjvv2l8hw5bf46i8ei/bigBang2022.jpeg?rlkey=qihiahyq7pxjxxl92hb28s04n&raw=1"
     },
     {
@@ -267,6 +293,7 @@
         "vol": 10.1,
         "ibu": 59,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/pud1v6wlaodayh0sh0ppk/puft.jpeg?rlkey=62v9fwgin9xm44fwljiekouxo&raw=1"
     },
     {
@@ -277,6 +304,7 @@
         "vol": 12,
         "ibu": 65,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/9kv2gkc00tzqizgsfubf0/krigFred.jpeg?rlkey=siv9x6exukq2yhgltpk1eqsu5&raw=1"
     },
     {
@@ -287,6 +315,7 @@
         "vol": 12.7,
         "ibu": 81,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/4bf6suxvt7zfk6ueiu55s/600.jpeg?rlkey=mfo07doeavwqduukzbptbhf8u&raw=1"
     },
     {
@@ -297,6 +326,7 @@
         "vol": 8,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/jpm61f7nerbbr2384qe7u/olaDubh12.jpeg?rlkey=jcz81sdh3u8s62ca04ygjefje&raw=1"
     },
     {
@@ -307,6 +337,7 @@
         "vol": 8,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/9x2g05pcwf3ft82vbqfgq/olaDubh14.jpeg?rlkey=ej9xbbdw1okte6yily83i3kme&raw=1"
     },
     {
@@ -317,6 +348,7 @@
         "vol": 8,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/tsk0854ep3ve1tuo103no/olaDubh16.jpeg?rlkey=lym8dqi0vtt2jnoev0hxchtpt&raw=1"
     },
     {
@@ -327,6 +359,7 @@
         "vol": 8,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/d6wmhcviq8jfnc0b3740h/olaDubh18.jpeg?rlkey=ecviwiwti3rmul3rspg0am3c4&raw=1"
     },
     {
@@ -337,6 +370,7 @@
         "vol": 8,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/88mifs15rwug6uib6gfex/olaDubh21.jpeg?rlkey=z7ou2vop3iom2oib662cihckg&raw=1"
     },
     {
@@ -347,6 +381,7 @@
         "vol": 12,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/r4mqwqtl8tcsxvg7kg6wm/matryoshka.jpeg?rlkey=4gwowp3u2qfu9pdnk0ooy4gdv&raw=1"
     },
     {
@@ -357,6 +392,7 @@
         "vol": 10,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/2u0uy3vjq9840o59q4uyk/pepper.jpeg?rlkey=99e37r6jpitg53ybgh75d0njs&raw=1"
     },
     {
@@ -367,6 +403,7 @@
         "vol": 10,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/q8qi8o4u4ls4kne73j0wx/fermento.jpeg?rlkey=pq0e6bs4cxc3rsyu5kvcq9l77&raw=1"
     },
     {
@@ -377,6 +414,7 @@
         "vol": 8,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/ldjcj9uwv38s5xfswux9h/catSkill.jpeg?rlkey=bapkugniape8ogqrwy7775ea0&raw=1"
     },
     {
@@ -387,6 +425,7 @@
         "vol": 10,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/5b38jgqpi7ts04hz9os05/grandOpening.jpeg?rlkey=bkzipxmqoiyl6xcm7bs9aefko&raw=1"
     },
     {
@@ -397,6 +436,7 @@
         "vol": 11.8,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/5rrpl7uxv5qyzvgwjisa7/hel.jpeg?rlkey=crs3daw0dwsn5yvp8gmbqmd8x&raw=1"
     },
     {
@@ -407,6 +447,7 @@
         "vol": 10.4,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/6npemsy3k7chws882wpxz/said.jpeg?rlkey=6h2bbhytvqa70rse8g7v1b7xi&raw=1"
     },
     {
@@ -417,6 +458,7 @@
         "vol": 10.4,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/xsnmm66cykw7h6i4j910z/unusual.jpeg?rlkey=k8ydfqnt10odfsotvx5njj7ie&raw=1"
     },
     {
@@ -427,6 +469,7 @@
         "vol": 10.2,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/m2dfpn47kpfk6i1x9etk5/mooi.jpeg?rlkey=pnwh0l7sql8m37i88h343n3w6&raw=1"
     },
     {
@@ -437,6 +480,7 @@
         "vol": 11.7,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/px9jod1qzzbu3tonazi01/negen.jpeg?rlkey=clklh6o1qndqialm4wwv0v1t6&raw=1"
     },
     {
@@ -447,6 +491,7 @@
         "vol": 13,
         "ibu": null,
         "size": 473,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/1jn2ke6646i5pnne5qos5/vikingShake.jpeg?rlkey=etm3g6a8yymxduc95qjmspq4r&raw=1"
     },
     {
@@ -457,6 +502,7 @@
         "vol": 12,
         "ibu": null,
         "size": 473,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/uu5cokmll8ztzqetxaspz/treeblood.jpeg?rlkey=p7ftcki9zgoloesjev3pphelw&raw=1"
     },
     {
@@ -467,6 +513,7 @@
         "vol": 12,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/j7g33lolm1clwa9a84cis/george.jpeg?rlkey=6fem8fbn7cabis1afcg13kpwa&raw=1"
     },
     {
@@ -477,6 +524,7 @@
         "vol": 13.6,
         "ibu": null,
         "size": 473,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/610fiavhk753oaz9m2uat/cocoaShake.jpeg?rlkey=1oibrnkoqjcwypvwpzvixtysy&raw=1"
     },
     {
@@ -487,6 +535,7 @@
         "vol": 12.5,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/9zr4dq6t5gdr3ngtucfs2/clock.jpeg?rlkey=7pjl6j372pmnb64y62ar7e3r4&raw=1"
     },
     {
@@ -497,6 +546,7 @@
         "vol": 10,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/u1n5fmw84w06gg7n8kxn9/slope.jpeg?rlkey=ix1c0p2n7x598quqsbnesr9wn&raw=1"
     },
     {
@@ -507,6 +557,7 @@
         "vol": 7,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/pabccjzp84ncrfo43036k/sourbon.jpeg?rlkey=1e58x5nhzkrmzr93gd3z863h2&raw=1"
     },
     {
@@ -517,6 +568,7 @@
         "vol": 8,
         "ibu": null,
         "size": 750,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/7n35p17r45g984tt6g9w3/funken.jpeg?rlkey=ifx2r0ws3lw31gyontlvced35&raw=1"
     },
     {
@@ -527,6 +579,7 @@
         "vol": 7,
         "ibu": null,
         "size": 750,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/md7y1pzk9tri61ayaxfy3/geuzeboon.jpeg?rlkey=r1dz9dbl1uuec2g1fjddinfc7&raw=1"
     },
     {
@@ -537,6 +590,7 @@
         "vol": 8.5,
         "ibu": null,
         "size": 750,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/458xo44ka0ubxamt85juj/anno1521.jpeg?rlkey=34rmtckz6rf7p0td4tq8ubtm5&raw=1"
     },
     {
@@ -547,6 +601,7 @@
         "vol": 11,
         "ibu": null,
         "size": 750,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/fz5ykgbm6a2l68001pvuc/GCImperial.jpeg?rlkey=nv4xlq9y4vghh8cf3sq926xrs&raw=1"
     },
     {
@@ -557,6 +612,7 @@
         "vol": 8.5,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/u14f0m8w178mn4f5ig394/GCClassic.jpeg?rlkey=pza0mxfxetdxc439l41m48krf&raw=1"
     },
     {
@@ -567,6 +623,7 @@
         "vol": 8,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/z9n6gi60lgms5lu8hzpe4/GCAmbrio.jpeg?rlkey=v36tz82xsemnl1hvrm9do8rkm&raw=1"
     },
     {
@@ -577,6 +634,7 @@
         "vol": 12,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/r24rrowihiqfoowyo3udr/browneyes.jpeg?rlkey=ekcvhcmtw1fmdp26pg8jklt1i&raw=1"
     },
     {
@@ -587,6 +645,7 @@
         "vol": 8,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/nuduvz9f7od7e2ukuyinz/pleasure.jpeg?rlkey=j4ro51p7hakyvw86mfka0vrmd&raw=1"
     },
     {
@@ -597,6 +656,7 @@
         "vol": 8,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/fu4shomu1l23byq790o1s/sexyblond.jpeg?rlkey=g3aurwpmiwjaqcf2nryuazls5&raw=1"
     },
     {
@@ -607,6 +667,7 @@
         "vol": 13.2,
         "ibu": 30,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/wscaj6ezrhlr73o4thwh6/poppelsStout.jpeg?rlkey=ypcuinff1l36h20wmx8u8xg3a&raw=1"
     },
     {
@@ -617,6 +678,7 @@
         "vol": 13.5,
         "ibu": 25,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/7hc8t71drqv904i8s34aj/poppelsBA.jpeg?rlkey=ghxr22fka7x77bduvoiu9y8c9&raw=1"
     },
     {
@@ -627,6 +689,7 @@
         "vol": 12.5,
         "ibu": 25,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/7kp2asafa9j4hl4m0846m/poppelsRhum.jpeg?rlkey=cz0cilea7qlwxtyx38e8ljqrt&raw=1"
     },
     {
@@ -637,6 +700,7 @@
         "vol": 10.5,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/wk0b1lq63w0xiorcmmv8n/heavyhitter.jpeg?rlkey=gn6umald0o2looldia7nlh91o&raw=1"
     },
     {
@@ -647,6 +711,7 @@
         "vol": 6.4,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/ucgrn8vbbscqsccb202ep/hwg.jpeg?rlkey=sauooswfp56gfwiqxrdc1nb6s&raw=1"
     },
     {
@@ -657,6 +722,7 @@
         "vol": 7,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/32tguah1f365lapomtjct/oudegueuze.jpeg?rlkey=1aqn1ge59021g9wguvwtor1kh&raw=1"
     },
     {
@@ -667,6 +733,7 @@
         "vol": 6.4,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/xfj50yfkjqvon75k9f5pf/quetsche.jpeg?rlkey=mgmdgvydotq6fpl5zji1j3v29&raw=1"
     },
     {
@@ -677,6 +744,7 @@
         "vol": 8,
         "ibu": 40,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/eteay4llw95ngff9i55cm/baristaen.jpeg?rlkey=279rgrbzxmneuhrddnu4csvff&raw=1"
     },
     {
@@ -687,6 +755,7 @@
         "vol": 10,
         "ibu": 50,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/n3rm2qg8n1h5a41daytxu/elskerinden.jpeg?rlkey=4garm2xg5b2htqy0i6aqcixr8&raw=1"
     },
     {
@@ -697,6 +766,7 @@
         "vol": 5.8,
         "ibu": 500,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/yiuyy56dyao6bk7k4jolc/psykopaten.jpeg?rlkey=gb9j1qeyd2l3k5oyvt1wzq1as&raw=1"
     },
     {
@@ -707,6 +777,7 @@
         "vol": 7.5,
         "ibu": 70,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/divp2ped3l4mm664vwtdv/agenten.jpeg?rlkey=oji6de2t02sydihkvqj7a8956&raw=1"
     },
     {
@@ -717,6 +788,7 @@
         "vol": 11.5,
         "ibu": 70,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/jt43egs6fdxfaa614f2a0/fyrb-deren.jpeg?rlkey=ezjrbx6ofx5upd9nchsext4aj&raw=1"
     },
     {
@@ -727,6 +799,7 @@
         "vol": 6.5,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/8qiduyfgu6d5q31bbshsx/vandervelden.jpeg?rlkey=8o8jbxkq4tlhirb1ex9knfyzi&raw=1"
     },
     {
@@ -737,6 +810,7 @@
         "vol": 6.2,
         "ibu": null,
         "size": 250,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/yj2d9ym2enve66ifeai2y/duchesse.jpeg?rlkey=yubsadk4h2ulp7za3s0k6xltq&raw=1"
     },
     {
@@ -747,6 +821,7 @@
         "vol": 11.7,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/kzssfe1ew8gk9d3imnqwi/GCInfused.jpeg?rlkey=xxzogfet5w8im0m5obp9tr3aq&raw=1"
     },
     {
@@ -757,6 +832,7 @@
         "vol": 10.2,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/d34ru88dbi54a7hbzwa2i/mirror.jpeg?rlkey=i6dj56q4bhek30qcuehdw78qx&raw=1"
     },
     {
@@ -767,6 +843,7 @@
         "vol": 7.5,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/u9rnvhkjny4acu1rtatt9/ponder.jpeg?rlkey=al5piaymfuvbrb3t7f8jgvkxa&raw=1"
     },
     {
@@ -777,6 +854,7 @@
         "vol": 6,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/k0ib5irefghlevt1rn6k7/dwell.jpeg?rlkey=6tsblmhoa0549iwbjkasdokxs&raw=1"
     },
     {
@@ -787,6 +865,7 @@
         "vol": 5.5,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/kdk21kj034d7c5rc38peq/paradox.jpeg?rlkey=asukvvf6izxo1gu5my68asams&raw=1"
     },
     {
@@ -797,6 +876,7 @@
         "vol": 7.5,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/pbnei7ze4q3urvgw4m9yg/romanoid.jpeg?rlkey=rmjrxnsmj03zojd1uc29r6a75&raw=1"
     },
     {
@@ -807,6 +887,7 @@
         "vol": 7.5,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/ktd7esr3h0me8jt32oehr/doubledippy.jpeg?rlkey=ir322ltfj143d7hykegfsdhy5&raw=1"
     },
     {
@@ -817,6 +898,7 @@
         "vol": 10,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/4qc43izatnv6gfzchrh4l/space.jpeg?rlkey=1hu57i8lz0ksm13pll5li832a&raw=1"
     },
     {
@@ -827,6 +909,7 @@
         "vol": 7.5,
         "ibu": null,
         "size": 440,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/vr2rvuar0xz7goaj8h2xi/illusion.jpeg?rlkey=0j4ap9q802rs8dhyjp2lv6v7j&raw=1"
     },
     {
@@ -837,6 +920,7 @@
         "vol": 11.5,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/8zt8f1fmdeet0v7yib5yq/tonka.jpeg?rlkey=ifi6edz1a5a1a5spylv3p2p8e&raw=1"
     },
     {
@@ -847,6 +931,7 @@
         "vol": 10.5,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/r062aqagv2m3bh6zqfqpq/berrypavlova.jpeg?rlkey=nw6s0lwk2n9z0d3gh5al0myj3&raw=1"
     },
     {
@@ -857,6 +942,7 @@
         "vol": 11.5,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/psyfvs34flsnk51n8ldqm/bbpie.jpeg?rlkey=yj5oiaj2garr6yx2ucndfru1u&raw=1"
     },
     {
@@ -867,6 +953,7 @@
         "vol": 11.5,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/gv06bcx4wnjgw52jhkhqu/toffee.jpeg?rlkey=pdf71e6f0xo9jj22mur3isor7&raw=1"
     },
     {
@@ -877,6 +964,7 @@
         "vol": 10.5,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/i4b6l0n3e0b89jhi1m119/cheesecake.jpeg?rlkey=m8j6237wqlspcj5m1ajp9zvxo&raw=1"
     },
     {
@@ -887,6 +975,7 @@
         "vol": 5.3,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/rf0bizz72jwolij5xphz9/bairischpils.jpeg?rlkey=q0ldweqbehgbrgdpl4117xbxv&raw=1"
     },
     {
@@ -897,6 +986,7 @@
         "vol": 4.9,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/u01pmsj1scus24qlm06p0/keller.jpeg?rlkey=ow3aiweayaguewx957m1gheyz&raw=1"
     },
     {
@@ -907,6 +997,7 @@
         "vol": 5.8,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/xts6gax8n51cambr7qzat/urweisse.jpeg?rlkey=nsv4heysf0qhf6mq3nre3bxb4&raw=1"
     },
     {
@@ -917,6 +1008,7 @@
         "vol": 6.7,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/y25mzm0i6o93ev01xibhs/celebrator.jpeg?rlkey=6emfk7ot6656cdu2uv95r9bwt&raw=1"
     },
     {
@@ -927,6 +1019,7 @@
         "vol": 5.4,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/c9mu04i22oh4z62ycein1/weissbier.jpeg?rlkey=x7heede96x807dqgiqi4dc2nl&raw=1"
     },
     {
@@ -937,6 +1030,7 @@
         "vol": 8.2,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/x5ej1su9skratv5jbt6af/aventinusdb.jpeg?rlkey=6upebinjf5db2r586fbbvmg3c&raw=1"
     },
     {
@@ -947,6 +1041,7 @@
         "vol": 12,
         "ibu": null,
         "size": 330,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/s/bcqcw8qza3v3fuq/aventinuseb.jpeg?raw=1"
     },
     {
@@ -957,6 +1052,7 @@
         "vol": 5.2,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/dg9xlu2eb55ngaof5u5aj/dvana.jpeg?rlkey=bkjbj0uvohjscobisvrdgquza&raw=1"
     },
     {
@@ -967,6 +1063,7 @@
         "vol": 5.9,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/i3eic1zq8iwf5ri9yv9qv/tmava.jpeg?rlkey=7aghxentm92f6cucth1f04jk8&raw=1"
     },
     {
@@ -977,6 +1074,7 @@
         "vol": 11,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/pl4j5yellt4k1bnjcuveh/ris.jpeg?rlkey=075vpabbzs0hgupahor10n6ia&raw=1"
     },
     {
@@ -987,6 +1085,7 @@
         "vol": 9.2,
         "ibu": null,
         "size": 500,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/iq0400np5tmwsnpm78lib/chilitripel.jpeg?rlkey=t4c1er99ftuc7hpbr2mvxgk5b&raw=1"
     },
     {
@@ -997,6 +1096,7 @@
         "vol": 8,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/qda8gl04bi00qjr4zjexy/winterw2021.jpeg?rlkey=pzsngitk88004du8k9d0zi8bz&raw=1"
     },
     {
@@ -1007,6 +1107,7 @@
         "vol": 10.3,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/sebjgfknnp8qcxqwou03i/soulwarmer.jpeg?rlkey=eigf5ghso5qried1d2hohchpp&raw=1"
     },
     {
@@ -1017,6 +1118,7 @@
         "vol": 5.3,
         "ibu": null,
         "size": 750,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/sgfpla72sptoychgzrwr0/brownbourbon.jpeg?rlkey=hd2qrkbcxx07v4d2bmych8wxd&raw=1"
     },
     {
@@ -1027,6 +1129,7 @@
         "vol": 7.5,
         "ibu": null,
         "size": 750,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/4wr4bvhz25uszek7r2cqn/farmhouse.jpeg?rlkey=4d3t5nfylhzkqdpsp0u5bo544&raw=1"
     },
     {
@@ -1037,6 +1140,7 @@
         "vol": 5.2,
         "ibu": null,
         "size": 750,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/jcmynhekt1qmhkebagsxm/saisonbuck.jpeg?rlkey=esa5fse1ntdamsqkis34jfza5&raw=1"
     },
     {
@@ -1047,6 +1151,7 @@
         "vol": 10,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/1tfehq7cfkzhryhcs2cu0/BAStrong.jpeg?rlkey=s4m2w77iz6tnkte6r088m964i&raw=1"
     },
     {
@@ -1057,6 +1162,7 @@
         "vol": 5.2,
         "ibu": null,
         "size": 375,
+        "stockAmount": null,
         "image_url": "https://www.dropbox.com/scl/fi/xm9kdrsb4j7aceuse4gae/blacknight.jpeg?rlkey=s9bbk6lc6uqybk9uzszf50yhz&raw=1"
     }
 ]
