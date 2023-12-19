@@ -41,7 +41,7 @@ export class AppApiClient {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
-				Accept: "application",
+				Accept: "application/json",
 			},
 			body: JSON.stringify(body),
 		});
