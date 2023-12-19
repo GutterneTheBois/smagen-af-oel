@@ -12,6 +12,7 @@
             "vol": "<decimal> alcohol %",
             "ibu?": "<int> bitterness of the beer",
             "size": "<int> size of the can or bottle",
+            "stockAmount": "<int> amount of the beer in stock",
             "image_url?": "path to the image of the beer",
             "breweryName": "foreign key to the brewery",
             "botd": "<bool> isBeerOfTheDay? default=false"
@@ -34,6 +35,7 @@
             "type": "spirit type",
             "vol": "<decimal> alcohol %",
             "size": "<int> size of the bottle",
+            "stockAmount": "<int> amount of the spirit in stock",
             "image_url?": "path to the image of the spirit",
             "distilleryName": "foreign key to the distillery"
         },
