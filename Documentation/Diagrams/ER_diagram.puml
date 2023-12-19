@@ -17,6 +17,7 @@ entity Beer {
     * vol: decimal
     ibu: int
     * size: int
+    * stockAmount: int
     image_url: text
 }
 
@@ -36,21 +37,8 @@ entity Spirit {
     * type: text
     * vol: decimal
     * size: int
+    * stockAmount: int
     image_url: text
-}
-
-entity BeerStock {
-    PK | id: cuid <<generated>>
-    --
-    * beerName: text <<FK>>
-    * amount: int
-}
-
-entity SpiritStock {
-    PK | id: cuid <<generated>>
-    --
-    * spiritName: text <<FK>>
-    * amount: int
 }
 
 entity Announcements {
@@ -66,13 +54,10 @@ entity Admin {
     * name: text
 }
 
-Beer }o-|| Brewery
-Spirit }o-|| Distillery
+Beer }o--|| Brewery
+Spirit }o--|| Distillery
 
-Beer ||--o{ BeerStock
-Spirit ||--o{ SpiritStock
-
-BeerStock -[hidden]down-> Announcements
+Brewery -[hidden]down-> Announcements
 Distillery -[hidden]down-> Admin
 
 @enduml
