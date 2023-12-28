@@ -9,6 +9,7 @@ Visitor -> A: sendServiceRequest
 activate A
 
 A -> P: Process Request
+activate P
 
 P -> D: Create Query
 activate D
@@ -53,13 +54,21 @@ actor Visitor as v
 participant "Website" as w
 participant "Modal" as m
 
+activate v
+activate w
 v -> w: enters site
+
+activate m
 w -> m: opens Modal
 m -> w: confirmation
 w -> v: flags browser with age-cookie
+
 alt cancellation
 m -> w: rejection
 w -> v: redirects to external website
+deactivate m
 end
+deactivate v
+deactivate w
 
 @enduml
