@@ -6,7 +6,7 @@ export const createAgeCookie = async (): Promise<void> => {
 
 	const debugExpire = 1000 * 10; // 10 seconds for debugging
 	cookies().set("age-cookie", "I am old enough", {
-		expires: Date.now() + debugExpire,
+		expires: Date.now() + expiring,
 	});
 };
 
